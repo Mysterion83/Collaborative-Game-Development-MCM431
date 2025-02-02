@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class SettingsMenu : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown graphicsDropdown;
     public Slider volumeSlider;
     public Slider brightnessSlider;
     public AudioMixer audioMixer;
@@ -40,9 +41,20 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
+        //populate graphics dropdown
+        graphicsDropdown.ClearOptions();
+        graphicsDropdown.AddOptions(new List<string> { "Low", "Medium", "High", "Ultra" });
+
         // Load Saved Settings
+        graphicsDropdown.value = PlayerPrefs.GetInt("GraphicsQuality", QualitySettings.GetQualityLevel());
         volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
         brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 1f);
+
+        //Apply saved graphics quality
+        SetGraphicsQuality(graphicsDropdown.value);
+
+        //Add listeners for real-time updates
+        graphicsDropdown.onValueChanged.AddListener(SetGraphicsQuality);
     }
 
     public void SetResolution(int resolutionIndex)
@@ -51,6 +63,12 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
         Debug.Log($"Resolution Set To: {resolution.width} x {resolution.height}");
+    }
+
+    public void SetGraphicsQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+        Debug.Log($"Graphics Quality Set To: {QualitySettings.names[qualityIndex]}");
     }
 
     public void SetVolume(float volume)
@@ -74,6 +92,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("Volume", volumeSlider.value);
         PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
         PlayerPrefs.SetInt("Resolution", resolutionDropdown.value);
+        PlayerPrefs.SetInt("GraphicsQuality", graphicsDropdown.value);
 
         // Force save to prevent data loss
         PlayerPrefs.Save();

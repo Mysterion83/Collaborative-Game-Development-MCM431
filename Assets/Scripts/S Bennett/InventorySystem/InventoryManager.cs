@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     GameObject Inventory;
     bool inventoryOpen = true;
     
-    public ItemSlot[] itemSlot;
+    [SerializeField] private ItemSlot[] itemSlot;
 
     void Start()
     {
@@ -17,12 +17,6 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Add an item
-            throw new NotImplementedException();
-        }
-
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (!inventoryOpen)
@@ -40,13 +34,13 @@ public class InventoryManager : MonoBehaviour
 
     // Attempts to add an item to the inventory by looping through each slot //
     // If the slot is empty, it will add the item to the nearest available slot //
-    public void AddItem(string itemName, string itemDescription, Sprite itemSprite)
+    public void AddItem(ItemSO inItem)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
             if (!itemSlot[i].slotHasItem)
             {
-                itemSlot[i].AddItem(itemName, itemDescription, itemSprite);
+                itemSlot[i].AddItem(inItem);
                 return;
             }
         }
@@ -58,8 +52,8 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < itemSlot.Length; i++) 
         {
-            itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemSelected = false;
+            itemSlot[i].selectedShader.SetActive(false);
         }
     }
 }

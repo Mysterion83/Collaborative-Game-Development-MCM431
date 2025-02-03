@@ -9,21 +9,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
     // Class References //
     private InventoryManager inventoryManager;
+    private ItemInspectPanel inspectPanel;
 
     // Item Data //
-    private string itemName;
-    private Sprite itemSprite;
+    public int itemID;
+    public string itemName;
+    public Sprite itemSprite;
+    public string itemDescription;
     public bool slotHasItem;
-    private string itemDescription;
-    private Sprite emptySprite;
 
     // Item Slot Data //
-    [SerializeField] private Image itemImage;
-
-    // Item Description Data // 
-    private Image itemDescriptionImage;
-    private TMP_Text ItemNameText;
-    private TMP_Text ItemDescriptionText;
+    [SerializeField] private Sprite emptySprite;
+    public Image itemInspectImage;
+    
 
     // Item Selection //
     public GameObject selectedShader;
@@ -32,16 +30,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        inspectPanel = GameObject.Find("InspectPanel").GetComponent<ItemInspectPanel>();
+        itemInspectImage.sprite = emptySprite;
     }
 
-    public void AddItem(string itemName, string itemDescription, Sprite itemSprite)
+    public void AddItem(ItemSO inItem)
     {
-        this.itemName = itemName;
-        this.itemDescription = itemDescription;
-        this.itemSprite = itemSprite;
+        itemID = inItem.GetItemID();
+        itemName = inItem.GetItemName();
+        itemDescription = inItem.GetItemDescription();
+        itemSprite = inItem.GetItemSprite();
 
         slotHasItem = true;
-        itemImage.sprite = itemSprite;
+        itemInspectImage.sprite = itemSprite;
     }
 
     // Checks if the mouse has clicked this particular item slot //
@@ -55,20 +56,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     // Called when this specific item slot is clicked //
     // Passes the currently stored item slot data for this specific item slot to the item inspector //
-    // If the slot is empty when selected, it will reset the inspector to its default, empty state //
+    // If the slot is empty when selected, it will reset the item inspect panel //
     private void OnLeftClick()
     {
         inventoryManager.DeselectAllItemSlots();
-        selectedShader.SetActive(true);
         thisItemSelected = true;
+        selectedShader.SetActive(true);
 
-        ItemNameText.text = itemName;
-        ItemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
-
-        if (itemDescriptionImage == null)
+        if (!slotHasItem)
         {
-            itemDescriptionImage.sprite = emptySprite;
+            inspectPanel.ResetInspectPanel();
+            return;
         }
+
+        inspectPanel.UpdateInspectPanel(itemName, itemDescription, itemInspectImage);
     }
 }

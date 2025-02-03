@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c67ff7ad827ac4b9828cab850d3cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot:
+  itemSlots:
   - {fileID: 8566055912940031794}
   - {fileID: 625666695}
   - {fileID: 537585262}

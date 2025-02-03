@@ -34,6 +34,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemInspectImage.sprite = emptySprite;
     }
 
+    public int GetStoredItemID()
+    {
+        return itemID;
+    }
+
     public void AddItem(ItemSO inItem)
     {
         itemID = inItem.GetItemID();
@@ -43,6 +48,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         slotHasItem = true;
         itemInspectImage.sprite = itemSprite;
+    }
+
+    public void RemoveItem()
+    {
+        itemID = 0;
+        itemName = "";
+        itemDescription = "";
+        itemSprite = emptySprite;
+
+        slotHasItem = false;
+        itemInspectImage.sprite = emptySprite;
     }
 
     // Checks if the mouse has clicked this particular item slot //

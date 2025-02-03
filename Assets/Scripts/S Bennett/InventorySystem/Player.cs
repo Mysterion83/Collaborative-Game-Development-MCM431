@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     // Upon colliding with the item, it will destroy it //
     public void OnTriggerEnter(Collider other)
     {
-        var item = other.GetComponent<Item>();
+        Item item = other.GetComponent<Item>();
         if (item)
         {
             Destroy(other.gameObject);

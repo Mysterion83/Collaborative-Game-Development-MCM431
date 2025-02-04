@@ -25,46 +25,46 @@ public class LevelTeleportSystem : MonoBehaviour
     bool IsTeleporting = false;
 
     [SerializeField]
-    Volume vol;
+    Volume volume;
+
+    private bool IsFadingOut = false;
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentTeleportTimer = TeleportDelay;
         CurrentCooldownTimer = 0;
+        volume.weight = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CurrentTeleportTimer -= Time.deltaTime;
-        if (CurrentTeleportTimer < TeleportDelay)
-        {
-            vol.weight = (1f / Mathf.Abs(CurrentTeleportTimer) - (1 / TeleportDelay));
-        }
-        else vol.weight = 0f;
-
         if (IsTeleporting)
         {
-            if (CurrentTeleportTimer <= 0) 
+            CurrentTeleportTimer -= Time.deltaTime;
+            volume.weight = Mathf.Clamp01(1f - (CurrentTeleportTimer / TeleportDelay));
+
+            if (CurrentTeleportTimer <= 0)
             {
                 Teleport();
                 CurrentCooldownTimer = CooldownTime;
                 IsTeleporting = false;
+                IsFadingOut = true;
             }
-
         }
-        else if (CurrentCooldownTimer > 0)
+        else if (IsFadingOut)
         {
-            CurrentCooldownTimer -= Time.deltaTime;
-        }
-        else
-        {
-            CurrentTeleportTimer = TeleportDelay;
-            if (Input.GetKeyDown(KeyCode.Space)) 
+            volume.weight -= Time.deltaTime / CooldownTime;
+            if (volume.weight <= 0f) 
             {
-                IsTeleporting = true;
+                IsFadingOut = false;
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            IsTeleporting = true;
+            CurrentTeleportTimer = TeleportDelay;
         }
     }
 

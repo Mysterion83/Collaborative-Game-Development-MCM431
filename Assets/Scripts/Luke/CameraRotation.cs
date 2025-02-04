@@ -5,18 +5,22 @@ using UnityEngine;
 public class CameraRotation : MonoBehaviour
 {
     // Rotation around the axis
+    [SerializeField]
     private float RotX = 0;
+
+    [SerializeField]
     private float RotY = 0;
 
     // Sensitivity multiplier
-    public float sensitivity = 2.0f;
+    [SerializeField]
+    private float sensitivity = 2.0f;
 
     // Clamp values for vertical rotation
     public float minY = -90f;
     public float maxY = 90f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Get mouse movement input
         float MouseX = Input.GetAxis("Mouse X") * sensitivity;

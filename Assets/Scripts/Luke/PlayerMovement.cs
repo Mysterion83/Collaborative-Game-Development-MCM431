@@ -8,8 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float MoveSpeed = 5f;
 
+    // Serialized variable for the force applied to the player when jumping
+    [SerializeField]
+    private float JumpForce = 5f;
+
     // Reference to the Rigidbody component
     private Rigidbody rb;
+
+    private bool IsJumping;
 
     void Start()
     {
@@ -17,8 +23,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && !IsJumping)
+        {
+            rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            IsJumping = true;
+        }
+
         // Get input from the keyboard
         float MoveHorizontal = Input.GetAxisRaw("Horizontal");
         float MoveVertical = Input.GetAxisRaw("Vertical");
@@ -34,5 +46,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Apply movement to the Rigidbody
         rb.MovePosition(transform.position + Movement * MoveSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            IsJumping = false;
+        }
     }
 }

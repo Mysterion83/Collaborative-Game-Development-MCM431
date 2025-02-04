@@ -12,19 +12,24 @@ public class InteractionSystem : MonoBehaviour
         {
             return;
         }
-        if (hit.collider.gameObject.tag == "Interactable")
+        if (hit.collider.gameObject.tag != "Interactable")
         {
-            Interactable interaction = hit.collider.gameObject.GetComponent<Interactable>();
-            if (interaction == null) 
-            {
-                Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component");
-                return;
-            }
+            return;
+        }
+        Interactable interaction = hit.collider.gameObject.GetComponent<Interactable>();
+        if (interaction == null)
+        {
+            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component");
+            return;
+        }
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                interaction.Interact(Input.mouseScrollDelta.y);
-            }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            interaction.Interact();
+        }
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            interaction.ScrollInteract(Input.mouseScrollDelta.y);
         }
     }
 }

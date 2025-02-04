@@ -27,7 +27,6 @@ public class ObjectLinkSystem : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
         if (LinkedObject == null)
         {
             Destroy(gameObject);

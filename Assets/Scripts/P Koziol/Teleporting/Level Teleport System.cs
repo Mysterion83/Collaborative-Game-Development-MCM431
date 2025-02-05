@@ -4,83 +4,94 @@ using UnityEngine.Rendering;
 public class LevelTeleportSystem : MonoBehaviour
 {
     [SerializeField]
-    GameObject LevelOneObject;
-    [SerializeField]
-    GameObject LevelTwoObject;
+    [Tooltip("The First Level Empty Object in the Scene")]
+    private GameObject _levelOneObject;
 
     [SerializeField]
-    LevelEnum levelEnum;
+    [Tooltip("The Second Level Empty Object in the Scene")]
+    private GameObject _levelTwoObject;
+
 
     [SerializeField]
-    float TeleportDelay = 1f;
-    [SerializeField]
-    float CurrentTeleportTimer;
+    public LevelEnum CurrentLevel;
 
     [SerializeField]
-    float CooldownTime = 3f;
-    [SerializeField]
-    float CurrentCooldownTimer;
+    [Tooltip("The time it takes for the player to teleport while having the teleport screen effects play")]
+    private float _TeleportDelay = 1f;
 
     [SerializeField]
-    bool IsTeleporting = false;
+    private float _currentTeleportTimer;
 
     [SerializeField]
-    Volume volume;
+    [Tooltip("The time it takes for the player to be allowed to teleport again while having the teleport screen effects play")]
+    private float _cooldownTime = 3f;
 
-    private bool IsFadingOut = false;
+    [SerializeField]
+    private bool _isTeleporting = false;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    [Tooltip("The Volume used for the teleport effects")]
+    private Volume _volume;
+
+    private bool _isOnCooldown = false;
+
+    private void Start()
     {
-        CurrentTeleportTimer = TeleportDelay;
-        CurrentCooldownTimer = 0;
-        volume.weight = 0f;
+        _currentTeleportTimer = _TeleportDelay;
+        _volume.weight = 0f;
+        _volume = GetComponentInChildren<Volume>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (IsTeleporting)
+        if (_isTeleporting)
         {
-            CurrentTeleportTimer -= Time.deltaTime;
-            volume.weight = Mathf.Clamp01(1f - (CurrentTeleportTimer / TeleportDelay));
+            PlayTeleportEffect();
 
-            if (CurrentTeleportTimer <= 0)
+            if (_currentTeleportTimer <= 0)
             {
                 Teleport();
-                CurrentCooldownTimer = CooldownTime;
-                IsTeleporting = false;
-                IsFadingOut = true;
             }
         }
-        else if (IsFadingOut)
+        else if (_isOnCooldown)
         {
-            volume.weight -= Time.deltaTime / CooldownTime;
-            if (volume.weight <= 0f) 
-            {
-                IsFadingOut = false;
-            }
+            PlayCooldownEffect();
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            IsTeleporting = true;
-            CurrentTeleportTimer = TeleportDelay;
+            _isTeleporting = true;
+            _currentTeleportTimer = _TeleportDelay;
         }
     }
-
-    void Teleport()
+    private void PlayTeleportEffect()
     {
-        Vector3 LocalPosition = gameObject.transform.localPosition;
-        if (levelEnum == LevelEnum.LevelOne)
+        _currentTeleportTimer -= Time.deltaTime;
+        _volume.weight = Mathf.Clamp01(1f - (_currentTeleportTimer / _TeleportDelay));
+    }
+    private void PlayCooldownEffect()
+    {
+        _volume.weight -= Time.deltaTime / _cooldownTime;
+        if (_volume.weight <= 0f)
         {
-            levelEnum = LevelEnum.LevelTwo;
-            gameObject.transform.parent = LevelTwoObject.transform;
+            _isOnCooldown = false;
+        }
+    }
+    private void Teleport()
+    {
+        Vector3 localPosition = gameObject.transform.localPosition;
+        if (CurrentLevel == LevelEnum.LevelOne)
+        {
+            CurrentLevel = LevelEnum.LevelTwo;
+            gameObject.transform.parent = _levelTwoObject.transform;
         }
         else
         {
-            levelEnum = LevelEnum.LevelOne;
-            gameObject.transform.parent = LevelOneObject.transform;
+            CurrentLevel = LevelEnum.LevelOne;
+            gameObject.transform.parent = _levelOneObject.transform;
         }
-        transform.localPosition = LocalPosition;
+        transform.localPosition = localPosition;
+
+        _isTeleporting = false;
+        _isOnCooldown = true;
     }
 }

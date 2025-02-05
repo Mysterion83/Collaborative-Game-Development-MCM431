@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableDial : Interactable
 {
     [SerializeField]
-    float Sensitivity = 1f;
+    private float _sensitivity = 1f;
     [SerializeField]
-    float DialValue = 0f;
+    private float _dialValue = 0f;
 
     public override void Interact()
     {
         return;
     }
-    public override void ScrollInteract(float MouseScrollDelta)
+    public override void ScrollInteract(float mouseScrollDelta)
     {
-        DialValue += MouseScrollDelta * Sensitivity;
-        if (DialValue < 0f) DialValue += 360f;
-        else if (DialValue > 360f) DialValue -= 360f;
+        _dialValue += mouseScrollDelta * _sensitivity;
+        if (_dialValue < 0f) _dialValue += 360f;
+        else if (_dialValue > 360f) _dialValue -= 360f;
     }
     public float GetDialValue()
     {
-        return DialValue;
+        return _dialValue;
     }
 }

@@ -368,14 +368,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec036f3129f658b4897fa50ffb7c84ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelOneObject: {fileID: 1518456168}
-  LevelTwoObject: {fileID: 1435715932}
-  levelEnum: 0
-  TeleportDelay: 1
-  CurrentTeleportTimer: 0
-  CooldownTime: 3
-  IsTeleporting: 0
-  volume: {fileID: 128345530}
+  _levelOneObject: {fileID: 0}
+  _levelTwoObject: {fileID: 0}
+  CurrentLevel: 0
+  _TeleportDelay: 1
+  _currentTeleportTimer: 0
+  _cooldownTime: 3
+  _isTeleporting: 0
+  _volume: {fileID: 0}
 --- !u!1 &202467550
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c0d14d7340268449aa67be1f426306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxInteractionDistance: 10
+  _maxInteractionDistance: 0
 --- !u!114 &1446237627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,8 +1078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9698811611e3254494f71b483a3dfa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sensitivity: 1
-  DialValue: 0
+  _sensitivity: 1
+  _dialValue: 0
 --- !u!1 &1716353361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,12 +1473,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkedObject: {fileID: 7314621552172016360}
-  IsPresentObject: 1
-  PreviousPositionDistanceLeeway: 0.00001
-  PreviousAngleLeeway: 0.000001
-  PreviousPosition: {x: 0, y: 0, z: 0}
-  PreviousRotation: {x: 0, y: 0, z: 0, w: 0}
+  _linkedObject: {fileID: 7314621552172016360}
+  _isPresentObject: 1
+  _previousPositionDistanceLeeway: 0.0000001
+  _previousAngleLeeway: 0.0000001
 --- !u!114 &7314621552172016360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,12 +1489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkedObject: {fileID: 5597016542216671584}
-  IsPresentObject: 0
-  PreviousPositionDistanceLeeway: 0.00001
-  PreviousAngleLeeway: 0.000001
-  PreviousPosition: {x: 0, y: 0, z: 0}
-  PreviousRotation: {x: 0, y: 0, z: 0, w: 0}
+  _linkedObject: {fileID: 5597016542216671584}
+  _isPresentObject: 0
+  _previousPositionDistanceLeeway: 0.0000001
+  _previousAngleLeeway: 0.0000001
 --- !u!54 &7684664422407142023
 Rigidbody:
   m_ObjectHideFlags: 0

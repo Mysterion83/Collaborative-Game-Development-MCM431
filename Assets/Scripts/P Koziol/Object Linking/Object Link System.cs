@@ -1,47 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectLinkSystem : MonoBehaviour
 {
     [SerializeField]
-    ObjectLinkSystem LinkedObject;
-    [SerializeField]
-    bool IsPresentObject;
+    private ObjectLinkSystem _linkedObject;
 
     [SerializeField]
-    float PreviousPositionDistanceLeeway = 0.0000001f;
+    [Tooltip("If selected, any movement or rotation won't affect the other object")]
+    private bool _isPresentObject;
+
     [SerializeField]
-    float PreviousAngleLeeway = 0.0000001f;
+    [Tooltip("The minimum change in position per FixedUpdate tick for the other object's position to be set to the other object.")]
+    [Range(0f, 10f)]
+    private float _previousPositionDistanceLeeway = 0.0000001f;
+
     [SerializeField]
-    Vector3 PreviousPosition;
-    [SerializeField]
-    Quaternion PreviousRotation;
+    [Tooltip("The minimum change in rotation per FixedUpdate tick for the other object's rotation to be set to the other object.")]
+    [Range(0f, 180f)]
+    private float _previousAngleLeeway = 0.0000001f;
+
+    
+    private Vector3 _previousPosition;
+    private Quaternion _previousRotation;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        PreviousPosition = transform.localPosition;
-        PreviousRotation = transform.localRotation;
+        _previousPosition = transform.localPosition;
+        _previousRotation = transform.localRotation;
     }
     private void FixedUpdate()
     {
-        if (LinkedObject == null)
+        if (_linkedObject == null)
         {
             Destroy(gameObject);
         }
-        if (!IsPresentObject && LinkedObject.transform.localPosition != transform.localPosition && Vector3.Distance(transform.localPosition, PreviousPosition) > PreviousPositionDistanceLeeway)
+        if (!_isPresentObject && _linkedObject.transform.localPosition != transform.localPosition && Vector3.Distance(transform.localPosition, _previousPosition) > _previousPositionDistanceLeeway)
         {
-            Vector3 LocalPos = transform.localPosition;
-            LinkedObject.transform.localPosition = LocalPos;
+            Vector3 localPos = transform.localPosition;
+            _linkedObject.transform.localPosition = localPos;
         }
-        if (!IsPresentObject && LinkedObject.transform.localRotation != transform.localRotation && Quaternion.Angle(transform.localRotation, PreviousRotation) > PreviousAngleLeeway)
+        if (!_isPresentObject && _linkedObject.transform.localRotation != transform.localRotation && Quaternion.Angle(transform.localRotation, _previousRotation) > _previousAngleLeeway)
         {
-            Quaternion LocalRot = transform.localRotation;
-            LinkedObject.transform.localRotation = LocalRot;
+            Quaternion localRot = transform.localRotation;
+            _linkedObject.transform.localRotation = localRot;
         }
-        PreviousPosition = transform.localPosition;
-        PreviousRotation = transform.localRotation;
+        _previousPosition = transform.localPosition;
+        _previousRotation = transform.localRotation;
+    }
+
+    public void ForceTeleport()
+    {
+        if (_isPresentObject) _linkedObject.ForceTeleport();
+        else
+        {
+            Vector3 localPos = transform.localPosition;
+            _linkedObject.transform.localPosition = localPos;
+
+            Quaternion localRot = transform.localRotation;
+            _linkedObject.transform.localRotation = localRot;
+        }
     }
 }

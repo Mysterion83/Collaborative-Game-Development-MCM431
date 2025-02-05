@@ -5,7 +5,7 @@ public class InteractionSystem : MonoBehaviour
     [SerializeField]
     private float _maxInteractionDistance;
 
-    void Update()
+    private void Update()
     {
         Ray interactionRay = new Ray(transform.position, transform.forward);
         if (!Physics.Raycast(interactionRay, out RaycastHit hit, _maxInteractionDistance)) //Raycast Check to see if the ray hit something

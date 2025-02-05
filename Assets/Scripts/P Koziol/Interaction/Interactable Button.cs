@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableButton : Interactable
@@ -9,9 +7,9 @@ public class InteractableButton : Interactable
 
     public override void Interact()
     {
-        foreach (Interactable interactObject in _objectsToInteractWith)
+        foreach (Interactable interactableObject in _objectsToInteractWith)
         {
-            interactObject.Interact();
+            interactableObject.Interact();
         }
     }
 

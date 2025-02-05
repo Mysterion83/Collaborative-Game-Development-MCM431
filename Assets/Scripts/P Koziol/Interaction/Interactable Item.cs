@@ -5,7 +5,7 @@ public class InteractableItem : Interactable
         throw new System.NotImplementedException();
     }
 
-    public override void ScrollInteract(float MouseScrollDelta)
+    public override void ScrollInteract(float mouseScrollDelta)
     {
         return;
     }

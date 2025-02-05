@@ -5,17 +5,17 @@ using UnityEngine;
 public class InteractableButton : Interactable
 {
     [SerializeField]
-    Interactable[] ObjectsToInteractWith;
+    private Interactable[] _objectsToInteractWith;
 
     public override void Interact()
     {
-        foreach (Interactable InteractObject in ObjectsToInteractWith)
+        foreach (Interactable interactObject in _objectsToInteractWith)
         {
-            InteractObject.Interact();
+            interactObject.Interact();
         }
     }
 
-    public override void ScrollInteract(float MouseScrollDelta)
+    public override void ScrollInteract(float mouseScrollDelta)
     {
         return;
     }

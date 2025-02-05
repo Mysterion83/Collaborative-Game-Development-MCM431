@@ -374,9 +374,8 @@ MonoBehaviour:
   TeleportDelay: 1
   CurrentTeleportTimer: 0
   CooldownTime: 3
-  CurrentCooldownTimer: 0
   IsTeleporting: 0
-  volume: {fileID: 0}
+  volume: {fileID: 128345530}
 --- !u!1 &202467550
 GameObject:
   m_ObjectHideFlags: 0

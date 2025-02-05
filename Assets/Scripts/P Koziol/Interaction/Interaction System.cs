@@ -3,12 +3,12 @@ using UnityEngine;
 public class InteractionSystem : MonoBehaviour
 {
     [SerializeField]
-    float MaxInteractionDistance;
+    private float _maxInteractionDistance;
 
     void Update()
     {
-        Ray InteractionRay = new Ray(transform.position, transform.forward);
-        if (!Physics.Raycast(InteractionRay, out RaycastHit hit, MaxInteractionDistance)) //Raycast Check to see if the ray hit something
+        Ray interactionRay = new Ray(transform.position, transform.forward);
+        if (!Physics.Raycast(interactionRay, out RaycastHit hit, _maxInteractionDistance)) //Raycast Check to see if the ray hit something
         {
             return;
         }

@@ -7,15 +7,22 @@ public class TitleScreenController : MonoBehaviour
 {
     // SCENE NAMES REQUIRED FOR NAVIGATON
     [SerializeField] public string TitleScreenScene;
-    [SerializeField] public string GameScene;
-    [SerializeField] public string SettingsMenuScene;
+    [SerializeField] public string Level1Scene;
+    [SerializeField] GameObject TitleScreenCanvas;
+    [SerializeField] GameObject SettingsMenuCanvas;
 
-    // SCENE NAVIGATION
+    private void Start()
+    {
+        SettingsMenuCanvas.SetActive(false);
+    }
+
+
+    // SCENE NAVIGATION BETWEEN TITLE AND GAME
     public void LoadTitleScreen()
     {
-        if (string.IsNullOrEmpty(TitleScreenScene))
+        if (TitleScreenScene == "")
         {
-            Debug.LogWarning("TITLE SCREEN SCENE NAME NOT PROVIDED");
+            Debug.LogWarning("Title screen scene name not provided");
         }
         else
         {
@@ -23,33 +30,35 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
-    public void LoadGame()
+    public void Play()
     {
-        if (string.IsNullOrEmpty(GameScene))
+        if (Level1Scene == "")
         {
-            Debug.LogWarning("GAME SCENE NAME NOT PROVIDED");
+            Debug.LogWarning("Level 1 scene name not provided");
         }
         else
         {
-            SceneManager.LoadSceneAsync(GameScene, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(Level1Scene, LoadSceneMode.Single);
         }
     }
 
-    public void LoadSettingsMenu()
+    public void Settings()
     {
-        if (string.IsNullOrEmpty(SettingsMenuScene))
+        if (!SettingsMenuCanvas.activeSelf)
         {
-            Debug.LogWarning("SETTINGS MENU SCENE NAME NOT PROVIDED");
+            TitleScreenCanvas.SetActive(false);
+            SettingsMenuCanvas.SetActive(true);
         }
         else
         {
-            SceneManager.LoadSceneAsync(SettingsMenuScene, LoadSceneMode.Single);
+            TitleScreenCanvas.SetActive(true);
+            SettingsMenuCanvas.SetActive(false);
         }
     }
 
     public void QuitGame()
     {
-        Debug.Log("EXITED GAME ON TITLE SCREEN");
+        Debug.Log("Exited game");
         Application.Quit();
     }
 }

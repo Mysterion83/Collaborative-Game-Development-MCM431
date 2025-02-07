@@ -44,24 +44,30 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Removes an item from the inventory based on the item's ID //
+    // Loops through the Item Slot array in reverse-order //
     public void RemoveItem(ItemSO itemToRemove)
     {
         int targetItemID = itemToRemove.GetItemID();
 
-        for (int i = 0; i < itemSlots.Length; i++)
+        for (int i = itemSlots.Length - 1; i > 0; i--)
         {
+            Debug.Log("Iteration " + i);
+
             if (!itemSlots[i].slotHasItem) continue;
 
             int storedItemID = itemSlots[i].GetStoredItemID();
+            Debug.Log("This Slot Contains a " + itemSlots[i].itemName);
+            Debug.Log("This Item's ID is " + storedItemID);
 
             if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
             {
+                Debug.Log($"Match Found: {itemToRemove.GetItemName()} matches {itemSlots[i].itemName}, removing this item...");
                 itemSlots[i].RemoveItem();
-                return;
+                Debug.Log("Item Removed");
             }
         }
 
-        Debug.LogError("Target item does not exist within the inventory and could not be deleted");
+        Debug.LogError($"Target item '{itemToRemove.GetItemName()}' does not exist within the inventory and could not be deleted");
     }
 
     // Called when an item is selected within the inventory // 

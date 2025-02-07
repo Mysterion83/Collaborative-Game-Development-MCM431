@@ -8,7 +8,7 @@ public class ItemSO : ScriptableObject
     // These details can be edited within the inspector //
 
     [Header("Item Details")]
-    private static int itemID;
+    [SerializeField] private int itemID;
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private string itemName;
     [TextArea(10, 15)][SerializeField] private string itemDescription;

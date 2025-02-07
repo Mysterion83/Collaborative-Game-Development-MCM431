@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee4b741829eee841bdf5c27df9f8b2c, type: 3}
   m_Name: DebugItem02
   m_EditorClassIdentifier: 
+  itemID: 2
   itemSprite: {fileID: 21300000, guid: 173d1ba76ae961e41ac747e8b9ef6ca2, type: 3}
   itemName: Debug Item 02 (Key)
   itemDescription: This is another Debugging Item for testing purposes

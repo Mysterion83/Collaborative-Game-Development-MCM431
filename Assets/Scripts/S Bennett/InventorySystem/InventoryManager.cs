@@ -49,11 +49,12 @@ public class InventoryManager : MonoBehaviour
     {
         int targetItemID = itemToRemove.GetItemID();
 
-        for (int i = itemSlots.Length - 1; i > 0; i--)
+        for (int i = itemSlots.Length - 1; i >= 0; i--)
         {
             Debug.Log("Iteration " + i);
 
             if (!itemSlots[i].slotHasItem) continue;
+                Debug.Log("Continuing...");
 
             int storedItemID = itemSlots[i].GetStoredItemID();
             Debug.Log("This Slot Contains a " + itemSlots[i].itemName);

@@ -97,7 +97,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,11 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkedObject: {fileID: 5597016542738813051}
-  IsPresentObject: 0
-  PreviousPositionDistanceLeeway: 0.00001
-  PreviousPosition: {x: 0, y: 0, z: 0}
-  PreviousRotation: {x: 0, y: 0, z: 0}
+  _linkedObject: {fileID: 0}
+  _isPresentObject: 0
+  _previousPositionDistanceLeeway: 0.0000001
+  _previousAngleLeeway: 0.0000001
 --- !u!54 &5084602115012263734
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -303,11 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkedObject: {fileID: 7314621552589333491}
-  IsPresentObject: 1
-  PreviousPositionDistanceLeeway: 0.00001
-  PreviousPosition: {x: 0, y: 0, z: 0}
-  PreviousRotation: {x: 0, y: 0, z: 0}
+  _linkedObject: {fileID: 0}
+  _isPresentObject: 0
+  _previousPositionDistanceLeeway: 0.0000001
+  _previousAngleLeeway: 0.0000001
 --- !u!54 &7684664421482314652
 Rigidbody:
   m_ObjectHideFlags: 0

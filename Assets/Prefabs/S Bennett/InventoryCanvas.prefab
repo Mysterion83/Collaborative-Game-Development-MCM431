@@ -112,14 +112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 123966207792083037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05486dd0aa768d648812cd56587f81db, type: 3}
+  m_Script: {fileID: 11500000, guid: f9c67ff7ad827ac4b9828cab850d3cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot:
-  - {fileID: 8298814287666630159}
-  - {fileID: 5006869790950008405}
-  - {fileID: 1441344082945886903}
-  - {fileID: 3707512292517757751}
+  itemSlots: []
 --- !u!1 &146924256318659194
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,12 +504,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4102069936685755771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c63d51b6f1ce44baeaba6917ca2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4765a8fd75b0a1e4b86ebba7771a9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 0
+  itemName: 
+  itemSprite: {fileID: 0}
+  itemDescription: 
   slotHasItem: 0
-  itemImage: {fileID: 0}
-  selectedShader: {fileID: 6051278267945713054}
+  emptySprite: {fileID: 0}
+  itemInspectImage: {fileID: 0}
+  selectedShader: {fileID: 0}
   thisItemSelected: 0
 --- !u!1 &4507282379507263822
 GameObject:
@@ -1234,12 +1235,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7432518291086609025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c63d51b6f1ce44baeaba6917ca2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4765a8fd75b0a1e4b86ebba7771a9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 0
+  itemName: 
+  itemSprite: {fileID: 0}
+  itemDescription: 
   slotHasItem: 0
-  itemImage: {fileID: 0}
-  selectedShader: {fileID: 1868474584346823023}
+  emptySprite: {fileID: 0}
+  itemInspectImage: {fileID: 0}
+  selectedShader: {fileID: 0}
   thisItemSelected: 0
 --- !u!1 &8189173161417948506
 GameObject:
@@ -1404,12 +1410,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8354402436984680956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c63d51b6f1ce44baeaba6917ca2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4765a8fd75b0a1e4b86ebba7771a9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 0
+  itemName: 
+  itemSprite: {fileID: 0}
+  itemDescription: 
   slotHasItem: 0
-  itemImage: {fileID: 0}
-  selectedShader: {fileID: 9107704723135530407}
+  emptySprite: {fileID: 0}
+  itemInspectImage: {fileID: 0}
+  selectedShader: {fileID: 0}
   thisItemSelected: 0
 --- !u!1 &8566055913734584537
 GameObject:
@@ -1499,12 +1510,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8566055913734584537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c63d51b6f1ce44baeaba6917ca2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4765a8fd75b0a1e4b86ebba7771a9ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 0
+  itemName: 
+  itemSprite: {fileID: 0}
+  itemDescription: 
   slotHasItem: 0
-  itemImage: {fileID: 0}
-  selectedShader: {fileID: 3591756248288578332}
+  emptySprite: {fileID: 0}
+  itemInspectImage: {fileID: 0}
+  selectedShader: {fileID: 0}
   thisItemSelected: 0
 --- !u!1 &8807424492025814027
 GameObject:

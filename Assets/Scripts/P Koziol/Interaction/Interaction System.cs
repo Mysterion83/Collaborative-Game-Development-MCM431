@@ -20,7 +20,7 @@ public class InteractionSystem : MonoBehaviour
         Interactable[] interactions = hit.collider.gameObject.GetComponents<Interactable>();
         if (interactions == null)
         {
-            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component", gameObject);
+            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component");
             return;
         }
 

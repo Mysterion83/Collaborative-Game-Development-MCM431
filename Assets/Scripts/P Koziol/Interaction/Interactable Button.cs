@@ -7,6 +7,7 @@ public class InteractableButton : Interactable
 
     public override void Interact()
     {
+        if (_objectsToInteractWith.Length == 0) Debug.LogWarning("Interactable Button: Button Does not have any interactables to interact with", gameObject);
         foreach (Interactable interactableObject in _objectsToInteractWith)
         {
             interactableObject.Interact();

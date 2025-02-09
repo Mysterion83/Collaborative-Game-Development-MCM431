@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent (typeof(Camera))]
 public class InteractionSystem : MonoBehaviour
 {
     [SerializeField]
@@ -16,20 +17,26 @@ public class InteractionSystem : MonoBehaviour
         {
             return;
         }
-        Interactable interaction = hit.collider.gameObject.GetComponent<Interactable>();
-        if (interaction == null)
+        Interactable[] interactions = hit.collider.gameObject.GetComponents<Interactable>();
+        if (interactions == null)
         {
-            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component");
+            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component", gameObject);
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            interaction.Interact();
+            foreach (Interactable interaction in interactions)
+            {
+                interaction.Interact();
+            }
         }
         if (Input.mouseScrollDelta.y != 0)
         {
-            interaction.ScrollInteract(Input.mouseScrollDelta.y);
+            foreach (Interactable interaction in interactions)
+            {
+                interaction.ScrollInteract(Input.mouseScrollDelta.y);
+            }
         }
     }
 }

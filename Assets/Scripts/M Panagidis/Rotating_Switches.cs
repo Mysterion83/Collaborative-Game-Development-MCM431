@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class Rotating_Switches : MonoBehaviour
 {
-    public List<GameObject> rotatingObjects = new List<GameObject>();
-    public List<Vector3> rotatingAngles = new List<Vector3>();
-    public List<bool> rotatingDirections = new List<bool>();
-    public float rotationSpeed = 1f;
+    public List<GameObject> rotatingObjects = new List<GameObject>(); // Objects to rotate
+    public List<Vector3> rotationAmount = new List<Vector3>(); // Rotation angles
+    public List<bool> Clockwise = new List<bool>(); // Direction of rotation
+    public float rotationDuration = 1f; // Time to rotate
 
-    public void Rotate()
+    private bool isRotating = false;
+
+    IEnumerator RotateOverTime(GameObject obj, Vector3 angle)
     {
-        Debug.Log("1");
-        for (int i = 0; i < rotatingObjects.Count; i++)
+        isRotating = true;
+        Quaternion startRotation = obj.transform.rotation;
+        Quaternion endRotation = obj.transform.rotation * Quaternion.Euler(angle);
+        float elapsedTime = 0;
+
+        while (elapsedTime < rotationDuration)
         {
-            Debug.Log("2");
-            if (rotatingObjects[i] != null && rotatingAngles[i] != null && rotatingDirections[i] != null)
-            {
-                Debug.Log("3");
-                rotatingObjects[i].transform.rotation = Quaternion.Lerp(rotatingObjects[i].transform.rotation, Quaternion.Euler(new Vector3(rotatingAngles[i].x, rotatingAngles[i].y * (rotatingDirections[i] ? -1f : 1f), rotatingAngles[i].z)), Time.deltaTime * rotationSpeed);
-            }
+            obj.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / rotationDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+
+        obj.transform.rotation = endRotation; // Ensure it reaches the exact rotation
+        isRotating = false;
     }
 
-// Update is called once per frame
-void Update()
+    void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && !isRotating) // Temporary Interaction system just to make sure it works
+        {
+            for (int i = 0; i < rotatingObjects.Count; i++)
+            {
+                if (i < rotationAmount.Count && i < Clockwise.Count)
+                {
+                    // Determine rotation direction
+                    Vector3 rotation = Clockwise[i] ? rotationAmount[i] : -rotationAmount[i];
+                    StartCoroutine(RotateOverTime(rotatingObjects[i], rotation));
+                }
+            }
+        }
     }
 }

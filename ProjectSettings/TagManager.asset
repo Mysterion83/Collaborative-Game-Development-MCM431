@@ -7,14 +7,15 @@ TagManager:
   - Interactable
   - Ground
   - Inventory
+  - Button
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
-  - 
+  - Heavy
   - 
   - 
   - 

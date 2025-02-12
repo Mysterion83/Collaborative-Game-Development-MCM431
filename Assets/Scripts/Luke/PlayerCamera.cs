@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerCamera : MonoBehaviour
+{
+    public float MouseSensitivity = 2f;
+    private float xRotation = 0f; // Stores the vertical rotation of the camera
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+        // Handle mouse look
+        float MouseX = Input.GetAxis("Mouse X") * MouseSensitivity;
+        float MouseY = Input.GetAxis("Mouse Y") * MouseSensitivity;
+
+        // Update the vertical rotation of the camera
+        xRotation -= MouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // Apply the vertical rotation to the camera
+        Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        
+        // Rotate the player based on horizontal mouse movement
+        transform.Rotate(Vector3.up * MouseX);
+    }
+}

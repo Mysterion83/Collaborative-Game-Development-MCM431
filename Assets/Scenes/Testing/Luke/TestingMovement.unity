@@ -375,8 +375,9 @@ GameObject:
   - component: {fileID: 360611525}
   - component: {fileID: 360611524}
   - component: {fileID: 360611523}
-  - component: {fileID: 360611522}
   - component: {fileID: 360611527}
+  - component: {fileID: 360611529}
+  - component: {fileID: 360611528}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -384,21 +385,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &360611522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360611521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9867cf54053b48e4ab97b20450639cff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ForwardForce: 10
-  SidewaysForce: 5
-  JumpForce: 5
 --- !u!136 &360611523
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -484,7 +470,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1274993834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &360611527
@@ -514,6 +501,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &360611528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360611521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f39bcf46f8932c4baef84c472feab22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 5
+  SprintSpeed: 10
+  JumpForce: 5
+  MouseSensitivity: 2
+--- !u!143 &360611529
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360611521}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1274993831
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +555,6 @@ GameObject:
   - component: {fileID: 1274993833}
   - component: {fileID: 1274993832}
   - component: {fileID: 1274993836}
-  - component: {fileID: 1274993835}
-  - component: {fileID: 1274993837}
   - component: {fileID: 1274993838}
   m_Layer: 0
   m_Name: Main Camera
@@ -603,30 +630,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274993831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.694, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 360611526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1274993835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274993831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63049ef35d52f4940bbded8568c4dbde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotX: 0
-  RotY: 0
-  sensitivity: 2
-  minY: -90
-  maxY: 90
 --- !u!114 &1274993836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,22 +681,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &1274993837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274993831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d3ee26373808749aa93942cc75202e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 360611526}
-  Distance: 0
-  Height: 0
-  Damping: 20
 --- !u!114 &1274993838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,7 +822,7 @@ GameObject:
   - component: {fileID: 1742661050}
   - component: {fileID: 1742661049}
   - component: {fileID: 1742661048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -926,7 +920,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1274993834}
   - {fileID: 91161969}
   - {fileID: 360611526}
   - {fileID: 1742661051}

@@ -31,19 +31,14 @@ public class ObjectLinkSystem : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (_linkedObject == null)
-        {
-            Destroy(gameObject);
-        }
+        if (!ObjectLinkCheck()) return;
         if (!_isPresentObject && _linkedObject.transform.localPosition != transform.localPosition && Vector3.Distance(transform.localPosition, _previousPosition) > _previousPositionDistanceLeeway)
         {
-            Vector3 localPos = transform.localPosition;
-            _linkedObject.transform.localPosition = localPos;
+            _linkedObject.transform.localPosition = transform.localPosition;
         }
         if (!_isPresentObject && _linkedObject.transform.localRotation != transform.localRotation && Quaternion.Angle(transform.localRotation, _previousRotation) > _previousAngleLeeway)
         {
-            Quaternion localRot = transform.localRotation;
-            _linkedObject.transform.localRotation = localRot;
+            _linkedObject.transform.localRotation = transform.localRotation;
         }
         _previousPosition = transform.localPosition;
         _previousRotation = transform.localRotation;
@@ -51,14 +46,22 @@ public class ObjectLinkSystem : MonoBehaviour
 
     public void ForceTeleport()
     {
+        if (!ObjectLinkCheck()) return;
         if (_isPresentObject) _linkedObject.ForceTeleport();
         else
         {
-            Vector3 localPos = transform.localPosition;
-            _linkedObject.transform.localPosition = localPos;
-
-            Quaternion localRot = transform.localRotation;
-            _linkedObject.transform.localRotation = localRot;
+            _linkedObject.transform.localPosition = transform.localPosition;
+            _linkedObject.transform.localRotation = transform.localRotation;
         }
+    }
+
+    public bool ObjectLinkCheck()
+    {
+        if (_linkedObject == null)
+        {
+            Destroy(gameObject);
+            return false;
+        }
+        return true;
     }
 }

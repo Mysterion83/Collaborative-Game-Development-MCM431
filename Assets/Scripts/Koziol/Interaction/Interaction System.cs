@@ -4,7 +4,7 @@ using UnityEngine;
 public class InteractionSystem : MonoBehaviour
 {
     [SerializeField]
-    private float _maxInteractionDistance;
+    private float _maxInteractionDistance = 5f;
 
     private void Update()
     {
@@ -18,9 +18,9 @@ public class InteractionSystem : MonoBehaviour
             return;
         }
         Interactable[] interactions = hit.collider.gameObject.GetComponents<Interactable>();
-        if (interactions == null)
+        if (interactions.Length == 0)
         {
-            Debug.LogError("Interaction System: Interactable Object Does Not Have a Devired Interactable Component");
+            Debug.LogError("Interaction System: Interactable Object Does Not Have a Derived Interactable Component");
             return;
         }
 

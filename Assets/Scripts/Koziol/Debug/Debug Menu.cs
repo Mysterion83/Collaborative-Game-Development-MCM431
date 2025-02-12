@@ -21,7 +21,7 @@ public class DebugMenu : MonoBehaviour
     int FramesForAvg;
 
     List<float> FPSRecordings;
-    UInt64 TotalFrames = 1;
+    ulong TotalFrames = 1;
 
     float TotalRunTime = 0;
 
@@ -31,11 +31,18 @@ public class DebugMenu : MonoBehaviour
 
     void Start()
     {
-        LTS = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LevelTeleportSystem>();
         FPSRecordings = new List<float>();
+
         DebugText = GetComponentInChildren<TextMeshProUGUI>();
-        PlayerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         debugActive = false;
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        if (Player != null)
+        {
+            Player.TryGetComponent<Transform>(out PlayerPosition);
+            LTS = Player.GetComponentInChildren<LevelTeleportSystem>();
+        }
+        else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
 
     /// <summary>
@@ -44,26 +51,29 @@ public class DebugMenu : MonoBehaviour
     void Update()
     {
         TotalRunTime += Time.deltaTime;
+        UpdateFPSArray();
         if (Input.GetKeyDown(KeyCode.F1))
         {
             ToggleDebugMenu();
         }
         if (debugActive)
         {
-            UpdateFPSArray();
-            DebugText.text = $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\nTotal Frames: {TotalFrames}\nTotal Runtime: {TotalRunTime}s\n" +
+            
+            DebugText.text = 
+                $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\n" +
+                $"Total Frames: {TotalFrames}\n" +
+                $"Total Runtime: {TotalRunTime}s\n" +
                 $"Current Level: {GetCurrentLevel()} \n" +
-                $"Player Position (Global): x:{PlayerPosition.position.x}, y:{PlayerPosition.position.y}, z:{PlayerPosition.position.z}\n" +
-                $"Player Position (Global, Rounded): [x]:{Mathf.Round(PlayerPosition.position.x)}, [y]:{Mathf.Round(PlayerPosition.position.y)}, [z]:{Mathf.Round(PlayerPosition.position.z)}\n" +
-                $"Player Position (Local): x:{PlayerPosition.localPosition.x}, y:{PlayerPosition.localPosition.y}, z:{PlayerPosition.localPosition.z}\n" +
-                $"Player Position (Local, Rounded): [x]:{Mathf.Round(PlayerPosition.localPosition.x)}, [y]:{Mathf.Round(PlayerPosition.localPosition.y)}, [z]:{Mathf.Round(PlayerPosition.localPosition.z)}";
+                $"Player Position (Global): {GetPlayerPosition(DebugPostionType.Global)}\n" +
+                $"Player Position (Global, Rounded): {GetPlayerPosition(DebugPostionType.GlobalRounded)}\n" +
+                $"Player Position (Local): {GetPlayerPosition(DebugPostionType.Local)}\n" +
+                $"Player Position (Local, Rounded): {GetPlayerPosition(DebugPostionType.LocalRounded)}";
         }
         else
         {
             DebugText.text = "";
         }
         TotalFrames++;
-
     }
     void ToggleDebugMenu()
     {
@@ -106,5 +116,39 @@ public class DebugMenu : MonoBehaviour
         if (LTS == null) return "N/A";
         if (LTS.CurrentLevel == LevelEnum.LevelOne) return "Present";
         return "Past";
+    }
+    string GetPlayerPosition(DebugPostionType PositionType)
+    {
+        if (PlayerPosition == null) return "N/A";
+        float x = 0, y = 0, z = 0;
+        switch (PositionType)
+        {
+            case DebugPostionType.Global:
+                x = PlayerPosition.position.x; 
+                y = PlayerPosition.position.y; 
+                z = PlayerPosition.position.z;
+                break;
+            case DebugPostionType.GlobalRounded:
+                x = Mathf.Round(PlayerPosition.position.x);
+                y = Mathf.Round(PlayerPosition.position.y);
+                z = Mathf.Round(PlayerPosition.position.z);
+                break;
+            case DebugPostionType.Local:
+                x = PlayerPosition.localPosition.x;
+                y = PlayerPosition.localPosition.y;
+                z = PlayerPosition.localPosition.z;
+                break;
+            case DebugPostionType.LocalRounded:
+                x = Mathf.Round(PlayerPosition.localPosition.x);
+                y = Mathf.Round(PlayerPosition.localPosition.y);
+                z = Mathf.Round(PlayerPosition.localPosition.z);
+                break;
+        }
+
+        if (PositionType == DebugPostionType.Global | PositionType == DebugPostionType.Local)
+        {
+            return $"x: {x}, y: {y}, z: {z}";
+        }
+        return $"[x]: {x}, [y]: {y}, [z]: {z}";
     }
 }

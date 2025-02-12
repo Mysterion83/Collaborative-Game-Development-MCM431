@@ -38,8 +38,8 @@ public class LevelTeleportSystem : MonoBehaviour
     private void Start()
     {
         _currentTeleportTimer = _TeleportDelay;
-        _volume.weight = 0f;
         _volume = GetComponentInChildren<Volume>();
+        _volume.weight = 0f;
     }
 
     private void Update()

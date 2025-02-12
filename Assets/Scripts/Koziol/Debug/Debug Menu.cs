@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class DebugMenu : MonoBehaviour
 {
-    TextMeshProUGUI Text;
+    TextMeshProUGUI DebugText;
 
     Transform PlayerPosition;
 
@@ -17,8 +17,10 @@ public class DebugMenu : MonoBehaviour
     [SerializeField]
     int FramesStored;
 
-    float[] FPSRecordings;
-    int FPSrecordingPointer = 0;
+    [SerializeField]
+    int FramesForAvg;
+
+    List<float> FPSRecordings;
     UInt64 TotalFrames = 1;
 
     float TotalRunTime = 0;
@@ -30,14 +32,14 @@ public class DebugMenu : MonoBehaviour
     void Start()
     {
         LTS = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LevelTeleportSystem>();
-        FPSRecordings = new float[FramesStored];
-        Text = GetComponentInChildren<TextMeshProUGUI>();
+        FPSRecordings = new List<float>();
+        DebugText = GetComponentInChildren<TextMeshProUGUI>();
         PlayerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         debugActive = false;
     }
 
     /// <summary>
-    /// Changes the debug text to reflect the current frame rate, Current Level, camera position and more.
+    /// Changes the debug DebugText to reflect the current frame rate, Current Level, camera position and more.
     /// </summary>
     void Update()
     {
@@ -49,7 +51,7 @@ public class DebugMenu : MonoBehaviour
         if (debugActive)
         {
             UpdateFPSArray();
-            Text.text = $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\nTotal Frames: {TotalFrames}\nTotal Runtime: {TotalRunTime}s\n" +
+            DebugText.text = $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\nTotal Frames: {TotalFrames}\nTotal Runtime: {TotalRunTime}s\n" +
                 $"Current Level: {GetCurrentLevel()} \n" +
                 $"Player Position (Global): x:{PlayerPosition.position.x}, y:{PlayerPosition.position.y}, z:{PlayerPosition.position.z}\n" +
                 $"Player Position (Global, Rounded): [x]:{Mathf.Round(PlayerPosition.position.x)}, [y]:{Mathf.Round(PlayerPosition.position.y)}, [z]:{Mathf.Round(PlayerPosition.position.z)}\n" +
@@ -58,7 +60,7 @@ public class DebugMenu : MonoBehaviour
         }
         else
         {
-            Text.text = "";
+            DebugText.text = "";
         }
         TotalFrames++;
 
@@ -69,17 +71,27 @@ public class DebugMenu : MonoBehaviour
     }
     void UpdateFPSArray()
     {
-        FPSRecordings[FPSrecordingPointer] = 1.0f / Time.deltaTime;
-        FPSrecordingPointer = (FPSrecordingPointer + 1) % FramesStored;
+        FPSRecordings.Add(1.0f / Time.deltaTime);
+        while (FPSRecordings.Count > FramesStored)
+        {
+            FPSRecordings.RemoveAt(0);
+        }
+
     }
     float GetAverageFPS()
     {
         float FpsTotal = 0;
-        foreach (var f in FPSRecordings)
+        int FramesToCheck = FramesForAvg;
+        if (FramesToCheck >= FPSRecordings.Count)
         {
-            FpsTotal += f;
+            FramesToCheck = FPSRecordings.Count - 1;
         }
-        return FpsTotal / FPSRecordings.Length;
+        while (FramesToCheck > 0) 
+        {
+            FpsTotal += FPSRecordings[FPSRecordings.Count - FramesToCheck - 1];
+            FramesToCheck--;
+        }
+        return FpsTotal / FramesForAvg;
     }
     float GetMinFPS()
     {
@@ -91,6 +103,7 @@ public class DebugMenu : MonoBehaviour
     }
     string GetCurrentLevel()
     {
+        if (LTS == null) return "N/A";
         if (LTS.CurrentLevel == LevelEnum.LevelOne) return "Present";
         return "Past";
     }

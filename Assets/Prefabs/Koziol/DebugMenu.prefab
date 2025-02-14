@@ -218,7 +218,7 @@ MonoBehaviour:
     Level: XXXXXXX \nPlayer Position (Global): x:XXXXXXXX, y:XXXXXXXX, z:XXXXXXXX\nPlayer
     Position (Global, Rounded): [x]:XXXXX, [y]:XXXXX, [z]:XXXXX\nPlayer Position
     (Local): x:XXXXXXXX, y:XXXXXXXX, z:XXXXXXXX\nPlayer Position (Local, Rounded):
-    [x]:XXXXX, [y]:XXXXX, [z]:XXXXX"
+    [x]:XXXXX, [y]:XXXXX, [z]:XXXXX\nMovement Speed: XX.XX m/s"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

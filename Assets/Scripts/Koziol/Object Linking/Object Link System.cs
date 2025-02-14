@@ -11,12 +11,10 @@ public class ObjectLinkSystem : MonoBehaviour
 
     [SerializeField]
     [Tooltip("The minimum change in position per FixedUpdate tick for the other object's position to be set to the other object.")]
-    [Range(0f, 10f)]
     private float _previousPositionDistanceLeeway = 0.0000001f;
 
     [SerializeField]
     [Tooltip("The minimum change in rotation per FixedUpdate tick for the other object's rotation to be set to the other object.")]
-    [Range(0f, 180f)]
     private float _previousAngleLeeway = 0.0000001f;
 
     

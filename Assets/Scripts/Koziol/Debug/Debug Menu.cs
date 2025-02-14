@@ -58,8 +58,7 @@ public class DebugMenu : MonoBehaviour
         }
         if (debugActive)
         {
-            
-            DebugText.text = 
+            DebugText.text =
                 $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\n" +
                 $"Total Frames: {TotalFrames}\n" +
                 $"Total Runtime: {TotalRunTime}s\n" +
@@ -67,7 +66,8 @@ public class DebugMenu : MonoBehaviour
                 $"Player Position (Global): {GetPlayerPosition(DebugPostionType.Global)}\n" +
                 $"Player Position (Global, Rounded): {GetPlayerPosition(DebugPostionType.GlobalRounded)}\n" +
                 $"Player Position (Local): {GetPlayerPosition(DebugPostionType.Local)}\n" +
-                $"Player Position (Local, Rounded): {GetPlayerPosition(DebugPostionType.LocalRounded)}";
+                $"Player Position (Local, Rounded): {GetPlayerPosition(DebugPostionType.LocalRounded)}" +
+                $"Movement Speed: {GetPlayerMovementspeed()} m/s";
         }
         else
         {
@@ -150,5 +150,10 @@ public class DebugMenu : MonoBehaviour
             return $"x: {x}, y: {y}, z: {z}";
         }
         return $"[x]: {x}, [y]: {y}, [z]: {z}";
+    }
+    float GetPlayerMovementspeed()
+    {
+        Debug.LogWarning("Debug Menu: GetPlayerMovementspeed is not Implemented");
+        return 0;
     }
 }

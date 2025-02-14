@@ -31,6 +31,14 @@ public class Player : MonoBehaviour
         {
             inventoryManager.RemoveTargetItem(TestItem1);
         }
+        // Temp
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (inventoryManager.HasItem(TestItem3))
+            {
+                Debug.Log("Item 3 Found!");
+            } 
+        }
     }
 
     // Checks to see if the player collides with an item //

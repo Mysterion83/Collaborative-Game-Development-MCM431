@@ -21,6 +21,23 @@ public class InventoryManager : MonoBehaviour
         HandleInventoryUI();
     }
 
+    // Checks if the inventory has a specific item based on its ID
+    public bool HasItem(ItemSO itemToCheck)
+    {
+        int targetItemID = itemToCheck.GetItemID();
+
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            int storedItemID = itemSlots[i].GetStoredItemID();
+
+            if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Attempts to add an item to the inventory by looping through each slot //
     // If the slot is empty, it will add the item to the nearest available slot //
     public void AddItem(ItemSO inItem)

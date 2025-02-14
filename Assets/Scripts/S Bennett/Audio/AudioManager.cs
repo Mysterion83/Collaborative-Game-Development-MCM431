@@ -1,65 +1,57 @@
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     [Header("====== Audio Mixers ======")]
-    [SerializeField] private AudioMixer MainAudioMixer;
+    [SerializeField] public AudioMixer MainAudioMixer;
 
-    [Header("====== Sliders ======")]
-    [SerializeField] private Slider masterSlider;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    [Header("====== Audio Sources ======")]
+    [SerializeField] private AudioSource MasterAudioSource;
+    [SerializeField] private AudioSource MusicAudioSource;
+    [SerializeField] private AudioSource SFXAudioSource;
 
-    [Header("====== Audio Clips ======")]
+    [Header("====== Music Clips ======")]
+    [SerializeField] public AudioClip[] musicClips;
 
-    void Start()
+    [Header("====== SFX Clips ======")]
+    [SerializeField] public AudioClip[] sfxClips;
+
+    // Audio Management //
+    public void PlayMusic(AudioClip clipToPlay)
     {
-        // Checks if audio settings have been previously stored before //
-        if (PlayerPrefs.HasKey("masterVolume"))
-        {
-            LoadAllChannelVolumes();
-        }
-        else // Audio settings setup in case audio has not been previously setup or accidentally deleted //
-        {
-            SetMasterChannelVolume();
-            SetMusicChannelVolume();
-            SetSFXChannelVolume();
-        }
+        MusicAudioSource.PlayOneShot(clipToPlay);
+    }
+    public void PlaySFX(AudioClip clipToPlay)
+    {
+        SFXAudioSource.PlayOneShot(clipToPlay);
     }
 
-    // Log10 applies the volume logarithmically, with a min value of 0.0001 & a max volume of 10000 //
-   
-    public void SetMasterChannelVolume()
+    public void PauseMusic()
     {
-        float masterVolume = masterSlider.value;
-        MainAudioMixer.SetFloat("Master", Mathf.Log10(masterVolume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", masterVolume);
+        MusicAudioSource.Pause();
+    }
+    public void PauseSFX()
+    {
+        SFXAudioSource.Pause();
+    }
+    public void PauseAllSounds()
+    {
+        PauseMusic();
+        PauseSFX();
     }
 
-    public void SetMusicChannelVolume()
+    public void StopMusic()
     {
-        float musicVolume = musicSlider.value;
-        MainAudioMixer.SetFloat("Music", Mathf.Log10(musicVolume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", musicVolume);
+        MusicAudioSource.Stop();
     }
-
-    public void SetSFXChannelVolume()
+    public void StopSFX()
     {
-        float sfxVolume = sfxSlider.value;
-        MainAudioMixer.SetFloat("SFX", Mathf.Log10(sfxVolume) * 20);
-        PlayerPrefs.SetFloat("sfxVolume", sfxVolume);
+        SFXAudioSource.Stop();
     }
-
-    public void LoadAllChannelVolumes()
+    public void StopAllSounds()
     {
-        masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
-
-        SetMasterChannelVolume();
-        SetMusicChannelVolume();
-        SetSFXChannelVolume();
+        StopMusic();
+        StopSFX();
     }
 }

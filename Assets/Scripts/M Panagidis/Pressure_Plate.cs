@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pressure_Plate : MonoBehaviour
 {
     public bool plateON = false;
+    private Switches switches;
 
     public void OnTriggerStay(Collider collider)
     {
@@ -22,9 +23,13 @@ public class Pressure_Plate : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        switches = gameObject.GetComponent<Switches>();
+    }
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Switches>().switchON = plateON;
+        switches.switchON = plateON;
     }
 }

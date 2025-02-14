@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rotating_Switches : MonoBehaviour
@@ -7,41 +9,98 @@ public class Rotating_Switches : MonoBehaviour
     public List<GameObject> rotatingObjects = new List<GameObject>(); // Objects to rotate
     public List<Vector3> rotationAmount = new List<Vector3>(); // Rotation angles
     public List<bool> Clockwise = new List<bool>(); // Direction of rotation
-    public float rotationDuration = 1f; // Time to rotate
+    public List<Animator> animators = new List<Animator>();
+    public List<bool> isRotating = new List<bool>();
+    private List<Animator> tempAnimators = new List<Animator>();
+    private List<Vector3> rotationTargets = new List<Vector3>();
+    
+    private static bool isAllRotating = false;
 
-    private bool isRotating = false;
+    public string animBoolName;
 
-    IEnumerator RotateOverTime(GameObject obj, Vector3 angle)
+    private int exitCount = 100;
+
+    private void Start()
     {
-        isRotating = true;
-        Quaternion startRotation = obj.transform.rotation;
-        Quaternion endRotation = obj.transform.rotation * Quaternion.Euler(angle);
-        float elapsedTime = 0;
-
-        while (elapsedTime < rotationDuration)
+        for (int i = 0; i < rotatingObjects.Count; i++)
         {
-            obj.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / rotationDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            if (rotatingObjects[i] != null)
+            {
+                animators.Add(rotatingObjects[i].GetComponent<Animator>());
+                isRotating.Add(false);
+                rotationTargets.Add(rotationAmount[i]);
+            }
         }
-
-        obj.transform.rotation = endRotation; // Ensure it reaches the exact rotation
-        isRotating = false;
     }
+
+    private void ClearAnimators()
+    {
+        for (int i = 0; i < tempAnimators.Count; i++)
+        {
+            tempAnimators.RemoveAt(i);
+        }
+    }
+
+    private void RotateAll()
+    {
+        ClearAnimators();
+        for (int i = 0; i < isRotating.Count; i++)
+        {
+            isRotating[i] = true;
+            tempAnimators.Add(animators[i]);
+        }
+    }
+
+    private bool CheckAllNotRotating()
+    {
+        bool allNotRotating = true;
+        for (int i = 0; i < isRotating.Count; i++)
+        {
+            if (isRotating[i])
+            {
+                allNotRotating = false;
+                break;
+            }
+        }
+        return allNotRotating;
+    }
+
+    private void UpdateRotationAmount()
+    {
+        for (int i = 0; i < rotationTargets.Count; i++)
+        {
+            rotationTargets[i] += rotationAmount[i];
+        }
+    }
+
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isRotating) // Temporary Interaction system just to make sure it works
+        if (Input.GetKeyDown(KeyCode.E) && !isAllRotating) // Temporary Interaction system just to make sure it works
         {
-            for (int i = 0; i < rotatingObjects.Count; i++)
+            RotateAll();
+        }
+        while (!CheckAllNotRotating() || exitCount != 0)
+        {
+            for (int i = 0; i < isRotating.Count; i++)
             {
-                if (i < rotationAmount.Count && i < Clockwise.Count)
+                if (isRotating[i])
                 {
-                    // Determine rotation direction
-                    Vector3 rotation = Clockwise[i] ? rotationAmount[i] : -rotationAmount[i];
-                    StartCoroutine(RotateOverTime(rotatingObjects[i], rotation));
+                    tempAnimators[i].SetBool(animBoolName, true);
+                }
+                else
+                {
+                    tempAnimators[i].SetBool(animBoolName, false);
+
+                }
+                if (rotatingObjects[i].transform.rotation == Quaternion.Euler(rotationTargets[i]))
+                {
+                    isRotating[i] = false;
                 }
             }
+            exitCount--;
         }
+        exitCount = 100;
+        UpdateRotationAmount();
     }
 }

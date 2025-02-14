@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+    private Switches switches;
     public bool buttonON = false;
 
+    private void Start()
+    {
+        switches = gameObject.GetComponent<Switches>();
+    }
     public void Update()
     {
-        gameObject.GetComponent<Switches>().switchON = buttonON;
+        switches.switchON = buttonON;
     }
 }
 

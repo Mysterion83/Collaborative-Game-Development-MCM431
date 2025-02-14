@@ -5,12 +5,12 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public List<GameObject> switches = new List<GameObject>();
+    private List<Switches> switchesScripts = new List<Switches>();
 
     private bool activated = false;
 
-    public Vector3 targetRotation = new Vector3(0, 80, 0);
-    public Vector3 defaultRotation = new Vector3(0, 0, 0);
-    public float rotationSpeed = 1;
+    public Animator animator;
+    public string animBoolName;
 
     public bool CheckSwitches()
     {
@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
         {
             if (switches[i] != null)
             {
-                if (!switches[i].GetComponent<Switches>().switchON)
+                if (!switchesScripts[i].switchON)
                 {
                     SwitchOn = false;
                     break;
@@ -32,7 +32,13 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < switches.Count; i++)
+        {
+            if (switches[i] != null)
+            {
+                switchesScripts.Add(switches[i].GetComponent<Switches>());
+            }
+        }
     }
 
     // Update is called once per frame
@@ -41,12 +47,11 @@ public class Door : MonoBehaviour
         activated = CheckSwitches();
         if (activated)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * rotationSpeed); 
+            animator.SetBool(animBoolName, true); 
         }
         else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(defaultRotation), Time.deltaTime * rotationSpeed);
-
+            animator.SetBool(animBoolName, false);
         }
     }
 }

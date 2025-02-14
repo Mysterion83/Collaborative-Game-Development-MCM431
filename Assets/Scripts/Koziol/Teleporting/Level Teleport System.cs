@@ -42,7 +42,7 @@ public class LevelTeleportSystem : MonoBehaviour
 
         _currentTeleportTimer = _TeleportDelay;
 
-        _volume = GetComponentInChildren<Volume>();
+        _volume = GetComponent<Volume>();
         _volume.weight = 0f;
 
         gameObject.transform.parent = _levelOneObject.transform;

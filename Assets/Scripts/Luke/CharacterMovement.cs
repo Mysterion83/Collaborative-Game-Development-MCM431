@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float MoveSpeed = 5f;
+    public float MoveSpeed = 10f;
     public float SprintSpeed = 10f;
     public float JumpForce = 5f;
 
@@ -14,8 +14,6 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate()
@@ -27,11 +25,16 @@ public class CharacterMovement : MonoBehaviour
         float MoveX = Input.GetAxis("Horizontal");
         float MoveZ = Input.GetAxis("Vertical");
 
-        // Create a movement vector based on the player's orientation
         Vector3 move = transform.right * MoveX + transform.forward * MoveZ;
 
-        // Move the player using the Rigidbody
-        rb.MovePosition(rb.position + move * (Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : MoveSpeed) * Time.fixedDeltaTime);
+        // Normalise the movement vector to ensure consistent speed
+        if (move.magnitude > 1)
+        {
+            move.Normalize();
+        }
+
+        float currentSpeed = GetCurrentSpeed();
+        rb.AddForce(move * currentSpeed, ForceMode.Acceleration);
 
         // Handle jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -40,5 +43,20 @@ public class CharacterMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         }
+    }
+
+    // Method to determine the current speed based on input
+    private float GetCurrentSpeed()
+    {
+        float speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = SprintSpeed;
+        }
+        else
+        {
+            speed = MoveSpeed;
+        }
+        return speed;
     }
 }

@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -376,8 +376,8 @@ GameObject:
   - component: {fileID: 360611524}
   - component: {fileID: 360611523}
   - component: {fileID: 360611527}
-  - component: {fileID: 360611529}
   - component: {fileID: 360611528}
+  - component: {fileID: 360611529}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -513,36 +513,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f39bcf46f8932c4baef84c472feab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  MoveSpeed: 7.5
   SprintSpeed: 10
   JumpForce: 5
-  MouseSensitivity: 2
---- !u!143 &360611529
-CharacterController:
+--- !u!114 &360611529
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360611521}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b275a1fca835648a0609239cd726b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseSensitivity: 2
 --- !u!1 &1274993831
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +897,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.646, z: 0}
-  m_LocalScale: {x: 8.0711, y: 8.0711, z: 8.0711}
+  m_LocalScale: {x: 273.02917, y: 273.02917, z: 273.02917}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

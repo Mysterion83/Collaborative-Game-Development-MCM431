@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     public float MouseSensitivity = 2f;
-    private float xRotation = 0f; // Stores the vertical rotation of the camera
+    private float xRotation = 0f;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        LockCursor();
     }
 
     void Update()
@@ -27,5 +27,10 @@ public class PlayerCamera : MonoBehaviour
         
         // Rotate the player based on horizontal mouse movement
         transform.Rotate(Vector3.up * MouseX);
+    }
+
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

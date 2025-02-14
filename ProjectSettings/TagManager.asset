@@ -7,6 +7,8 @@ TagManager:
   - Interactable
   - Ground
   - Inventory
+  - LevelOne
+  - LevelTwo
   layers:
   - Default
   - TransparentFX

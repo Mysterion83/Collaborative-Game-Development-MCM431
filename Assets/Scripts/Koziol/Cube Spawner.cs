@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+using System;
 using UnityEngine;
 
+[Obsolete("CubeSpawner is a temporary system for physics testing. Do not use it in production code and prefabs.", false)]
 public class CubeSpawner : MonoBehaviour
 {
     [SerializeField]

@@ -39,9 +39,13 @@ public class LevelTeleportSystem : MonoBehaviour
     {
         _levelOneObject = GameObject.FindGameObjectWithTag("LevelOne");
         _levelTwoObject = GameObject.FindGameObjectWithTag("LevelTwo");
+
         _currentTeleportTimer = _TeleportDelay;
-        _volume = GetComponentInChildren<Volume>();
+
+        _volume = GetComponent<Volume>();
         _volume.weight = 0f;
+
+        gameObject.transform.parent = _levelOneObject.transform;
     }
 
     private void Update()

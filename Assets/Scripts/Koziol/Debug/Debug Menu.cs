@@ -6,142 +6,142 @@ using System.Collections.Generic;
 
 public class DebugMenu : MonoBehaviour
 {
-    TextMeshProUGUI DebugText;
+    private TextMeshProUGUI _debugText;
 
-    Transform PlayerPosition;
+    private Transform _playerPosition;
 
-    LevelTeleportSystem LTS;
+    private LevelTeleportSystem _lts;
 
 
-
-    [SerializeField]
-    int FramesStored;
 
     [SerializeField]
-    int FramesForAvg;
+    private int _framesStored;
 
-    List<float> FPSRecordings;
-    ulong TotalFrames = 1;
+    [SerializeField]
+    private int _framesForAverage;
 
-    float TotalRunTime = 0;
+    private List<float> _fpsRecordings;
+    private ulong _totalFrames = 1;
 
-    bool debugActive;
+    private float _totalRunTime = 0;
+
+    private bool _isDebugActive;
 
 
 
     void Start()
     {
-        FPSRecordings = new List<float>();
+        _fpsRecordings = new List<float>();
 
-        DebugText = GetComponentInChildren<TextMeshProUGUI>();
-        debugActive = false;
+        _debugText = GetComponentInChildren<TextMeshProUGUI>();
+        _isDebugActive = false;
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         if (Player != null)
         {
-            Player.TryGetComponent<Transform>(out PlayerPosition);
-            LTS = Player.GetComponentInChildren<LevelTeleportSystem>();
+            Player.TryGetComponent<Transform>(out _playerPosition);
+            _lts = Player.GetComponentInChildren<LevelTeleportSystem>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
 
     /// <summary>
-    /// Changes the debug DebugText to reflect the current frame rate, Current Level, camera position and more.
+    /// Changes the debug _debugText to reflect the current frame rate, Current Level, camera position and more.
     /// </summary>
     void Update()
     {
-        TotalRunTime += Time.deltaTime;
+        _totalRunTime += Time.deltaTime;
         UpdateFPSArray();
         if (Input.GetKeyDown(KeyCode.F1))
         {
             ToggleDebugMenu();
         }
-        if (debugActive)
+        if (_isDebugActive)
         {
-            DebugText.text =
+            _debugText.text =
                 $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\n" +
-                $"Total Frames: {TotalFrames}\n" +
-                $"Total Runtime: {TotalRunTime}s\n" +
+                $"Total Frames: {_totalFrames}\n" +
+                $"Total Runtime: {_totalRunTime}s\n" +
                 $"Current Level: {GetCurrentLevel()} \n" +
                 $"Player Position (Global): {GetPlayerPosition(DebugPostionType.Global)}\n" +
                 $"Player Position (Global, Rounded): {GetPlayerPosition(DebugPostionType.GlobalRounded)}\n" +
                 $"Player Position (Local): {GetPlayerPosition(DebugPostionType.Local)}\n" +
-                $"Player Position (Local, Rounded): {GetPlayerPosition(DebugPostionType.LocalRounded)}" +
+                $"Player Position (Local, Rounded): {GetPlayerPosition(DebugPostionType.LocalRounded)}\n" +
                 $"Movement Speed: {GetPlayerMovementspeed()} m/s";
         }
         else
         {
-            DebugText.text = "";
+            _debugText.text = "";
         }
-        TotalFrames++;
+        _totalFrames++;
     }
     void ToggleDebugMenu()
     {
-        debugActive = !debugActive;
+        _isDebugActive = !_isDebugActive;
     }
     void UpdateFPSArray()
     {
-        FPSRecordings.Add(1.0f / Time.deltaTime);
-        while (FPSRecordings.Count > FramesStored)
+        _fpsRecordings.Add(1.0f / Time.deltaTime);
+        while (_fpsRecordings.Count > _framesStored)
         {
-            FPSRecordings.RemoveAt(0);
+            _fpsRecordings.RemoveAt(0);
         }
 
     }
     float GetAverageFPS()
     {
         float FpsTotal = 0;
-        int FramesToCheck = FramesForAvg;
-        if (FramesToCheck >= FPSRecordings.Count)
+        int FramesToCheck = _framesForAverage;
+        if (FramesToCheck >= _fpsRecordings.Count)
         {
-            FramesToCheck = FPSRecordings.Count - 1;
+            FramesToCheck = _fpsRecordings.Count - 1;
         }
         while (FramesToCheck > 0) 
         {
-            FpsTotal += FPSRecordings[FPSRecordings.Count - FramesToCheck - 1];
+            FpsTotal += _fpsRecordings[_fpsRecordings.Count - FramesToCheck - 1];
             FramesToCheck--;
         }
-        return FpsTotal / FramesForAvg;
+        return FpsTotal / _framesForAverage;
     }
     float GetMinFPS()
     {
-        return FPSRecordings.Min();
+        return _fpsRecordings.Min();
     }
     float GetMaxFPS()
     {
-        return FPSRecordings.Max();
+        return _fpsRecordings.Max();
     }
     string GetCurrentLevel()
     {
-        if (LTS == null) return "N/A";
-        if (LTS.CurrentLevel == LevelEnum.LevelOne) return "Present";
+        if (_lts == null) return "N/A";
+        if (_lts.CurrentLevel == LevelEnum.LevelOne) return "Present";
         return "Past";
     }
     string GetPlayerPosition(DebugPostionType PositionType)
     {
-        if (PlayerPosition == null) return "N/A";
+        if (_playerPosition == null) return "N/A";
         float x = 0, y = 0, z = 0;
         switch (PositionType)
         {
             case DebugPostionType.Global:
-                x = PlayerPosition.position.x; 
-                y = PlayerPosition.position.y; 
-                z = PlayerPosition.position.z;
+                x = _playerPosition.position.x; 
+                y = _playerPosition.position.y; 
+                z = _playerPosition.position.z;
                 break;
             case DebugPostionType.GlobalRounded:
-                x = Mathf.Round(PlayerPosition.position.x);
-                y = Mathf.Round(PlayerPosition.position.y);
-                z = Mathf.Round(PlayerPosition.position.z);
+                x = Mathf.Round(_playerPosition.position.x);
+                y = Mathf.Round(_playerPosition.position.y);
+                z = Mathf.Round(_playerPosition.position.z);
                 break;
             case DebugPostionType.Local:
-                x = PlayerPosition.localPosition.x;
-                y = PlayerPosition.localPosition.y;
-                z = PlayerPosition.localPosition.z;
+                x = _playerPosition.localPosition.x;
+                y = _playerPosition.localPosition.y;
+                z = _playerPosition.localPosition.z;
                 break;
             case DebugPostionType.LocalRounded:
-                x = Mathf.Round(PlayerPosition.localPosition.x);
-                y = Mathf.Round(PlayerPosition.localPosition.y);
-                z = Mathf.Round(PlayerPosition.localPosition.z);
+                x = Mathf.Round(_playerPosition.localPosition.x);
+                y = Mathf.Round(_playerPosition.localPosition.y);
+                z = Mathf.Round(_playerPosition.localPosition.z);
                 break;
         }
 

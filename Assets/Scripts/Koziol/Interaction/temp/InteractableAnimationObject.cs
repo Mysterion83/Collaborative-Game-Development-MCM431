@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[Obsolete("InteractableAnimationObject is a temporary Interactable. Do not use it in production code and prefabs.", false)]
 public class InteractableAnimationObject : Interactable
 {
     [SerializeField]

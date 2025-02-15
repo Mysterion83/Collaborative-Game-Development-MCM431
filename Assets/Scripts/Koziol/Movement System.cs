@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Obsolete("MovementSystem is a temporary system. Do not use it in production code and prefabs.", false)]

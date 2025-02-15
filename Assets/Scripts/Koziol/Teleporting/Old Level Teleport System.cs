@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Obsolete("The OldLevelTeleportSystem is obsolete. Use LevelTeleportSystem Instead.",true)]

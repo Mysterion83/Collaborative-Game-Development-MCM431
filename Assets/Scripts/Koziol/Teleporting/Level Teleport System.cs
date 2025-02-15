@@ -4,6 +4,9 @@ using UnityEngine.Rendering;
 public class LevelTeleportSystem : MonoBehaviour
 {
     [SerializeField]
+    public bool IsAllowedToTeleport = true;
+
+    [SerializeField]
     [Tooltip("The First Level Empty Object in the Scene")]
     private GameObject _levelOneObject;
 
@@ -63,7 +66,7 @@ public class LevelTeleportSystem : MonoBehaviour
         {
             PlayCooldownEffect();
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) && IsAllowedToTeleport)
         {
             _isTeleporting = true;
             _currentTeleportTimer = _TeleportDelay;

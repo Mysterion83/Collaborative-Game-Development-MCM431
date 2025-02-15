@@ -5,28 +5,28 @@ using UnityEngine;
 public class InteractableAnimationObject : Interactable
 {
     [SerializeField]
-    Animator Anim = null;
+    private Animator _animator = null;
     [SerializeField]
-    bool IsOn = false;
+    private bool _isOn = false;
     [SerializeField]
-    string AnimBoolName = "";
+    private string AnimBoolName = "";
     
     public override void Interact()
     {
-        if (!IsOn)
+        if (!_isOn)
         {
-            IsOn = true;
-            Anim.SetBool(AnimBoolName, true);
+            _isOn = true;
+            _animator.SetBool(AnimBoolName, true);
         }
         else
         {
-            IsOn = false;
-            Anim.SetBool(AnimBoolName, false);
+            _isOn = false;
+            _animator.SetBool(AnimBoolName, false);
         }
     }
     public bool GetIsOn()
     {
-        return IsOn;
+        return _isOn;
     }
 
     public override void ScrollInteract(float mouseScrollDelta)

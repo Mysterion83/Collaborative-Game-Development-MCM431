@@ -3,18 +3,18 @@ using UnityEngine;
 public class InteractableItem : Interactable
 {
     [SerializeField]
-    private ItemSO Item;
+    private ItemSO _item;
 
     private InventoryManager _playerInventory;
 
     public void Start()
     {
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
-        if (_playerInventory == null) Debug.LogError("Interactable Item: Inventory Manager not found");
+        if (_playerInventory == null) Debug.LogError("Interactable _item: Inventory Manager not found");
     }
     public override void Interact()
     {
-        _playerInventory.AddItem(Item);
+        _playerInventory.AddItem(_item);
         Destroy(gameObject);
     }
 

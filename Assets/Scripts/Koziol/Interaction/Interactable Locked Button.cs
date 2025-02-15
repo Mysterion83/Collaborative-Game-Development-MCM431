@@ -5,9 +5,9 @@ using UnityEngine;
 public class InteractableLockedButton : InteractableButton
 {
     [SerializeField]
-    ItemSO _requiredItem;
+    private ItemSO _requiredItem;
     [SerializeField]
-    bool _DoesRemoveItem;
+    private bool _DoesRemoveItem;
 
     InventoryManager _playerInventory;
 

@@ -8,46 +8,62 @@ public class Rotating_Switches : MonoBehaviour
 {
     public List<GameObject> rotatingObjects = new List<GameObject>(); // Objects to rotate
     public List<Vector3> rotationAmount = new List<Vector3>(); // Rotation angles
-    public List<bool> Clockwise = new List<bool>(); // Direction of rotation
-    public List<Animator> animators = new List<Animator>();
-    public List<bool> isRotating = new List<bool>();
-    private List<Animator> tempAnimators = new List<Animator>();
+    public List<bool> isClockwise = new List<bool>(); // Direction of rotation
+    private List<Animator> animators = new List<Animator>();
     private List<Vector3> rotationTargets = new List<Vector3>();
+    private List<bool> isRotating = new List<bool>(); //checks if planets are still under rotation to prevent players from spamming interact
+    private List<bool> hasResetRotation = new List<bool>(); //checks if a rotation has been complete to prevent bugs
     
     private static bool isAllRotating = false;
 
+    //animation
     public string animBoolName;
-
-    private int exitCount = 100;
+    public string animBoolClockwiseName;
+    public string animFloatName;
+    public string animStateName;
 
     private void Start()
     {
+        //setting up all of the lists with initial elements
         for (int i = 0; i < rotatingObjects.Count; i++)
         {
             if (rotatingObjects[i] != null)
             {
                 animators.Add(rotatingObjects[i].GetComponent<Animator>());
+                rotationTargets.Add((isClockwise[i] ? rotationAmount[i] : new Vector3(0, 360 - rotationAmount[i].y, 0)));
                 isRotating.Add(false);
-                rotationTargets.Add(rotationAmount[i]);
+                hasResetRotation.Add(false);
+                if (isClockwise[i])
+                {
+                    animators[i].SetBool(animBoolClockwiseName, true);
+                }
+                else
+                {
+                    animators[i].SetBool(animBoolClockwiseName, false);
+                }
             }
-        }
-    }
-
-    private void ClearAnimators()
-    {
-        for (int i = 0; i < tempAnimators.Count; i++)
-        {
-            tempAnimators.RemoveAt(i);
         }
     }
 
     private void RotateAll()
     {
-        ClearAnimators();
-        for (int i = 0; i < isRotating.Count; i++)
+        for (int i = 0; i < animators.Count; i++)
         {
+            //activates animations
+            animators[i].SetBool(animBoolName, true);
+            animators[i].SetFloat(animFloatName, 1);
+
             isRotating[i] = true;
-            tempAnimators.Add(animators[i]);
+        }
+    }
+
+    private void resetRotateAll()
+    {
+        for (int i = 0; i < animators.Count; i++)
+        {
+            //disables animations
+            animators[i].SetBool(animBoolName,false);
+            isRotating[i] = false;
         }
     }
 
@@ -69,7 +85,12 @@ public class Rotating_Switches : MonoBehaviour
     {
         for (int i = 0; i < rotationTargets.Count; i++)
         {
-            rotationTargets[i] += rotationAmount[i];
+            if ((rotationTargets[i].y + rotationAmount[i].y * (isClockwise[i] ? 1 : -1)) * (isClockwise[i] ? 1 : -1) >= (isClockwise[i] ? 360 : 0))
+            {
+                rotationTargets[i] -= new Vector3(0, 360, 0) * (isClockwise[i] ? 1 : -1);
+                hasResetRotation[i] = true;
+            }
+            rotationTargets[i] += rotationAmount[i] * (isClockwise[i] ? 1 : -1);
         }
     }
 
@@ -80,27 +101,41 @@ public class Rotating_Switches : MonoBehaviour
         {
             RotateAll();
         }
-        while (!CheckAllNotRotating() || exitCount != 0)
+
+        if(!CheckAllNotRotating())
         {
-            for (int i = 0; i < isRotating.Count; i++)
+            for (int i = 0; i < animators.Count; i++)
             {
-                if (isRotating[i])
+                //checks if the planet is about to complete a rotation
+                if (hasResetRotation[i])
                 {
-                    tempAnimators[i].SetBool(animBoolName, true);
+                    //checks if planet reaches a point past 360 degrees
+                    float trueYRotation = rotatingObjects[i].transform.eulerAngles.y;
+                    if(rotatingObjects[i].transform.eulerAngles.y + rotationAmount[i].y * (isClockwise[i] ? 1 : -1) >= (isClockwise[i] ? 360 : -360))
+                    {
+                        trueYRotation -= (isClockwise[i] ? 360 : -360);
+                    }
+                    if (trueYRotation * (isClockwise[i] ? 1 : -1) >= rotationTargets[i].y * (isClockwise[i] ? 1 : -1))
+                    {
+                        hasResetRotation[i] = false;
+                        animators[i].SetFloat(animFloatName, 0);
+                        animators[i].SetBool(animBoolName, false);
+                        isRotating[i] = false;
+                        UpdateRotationAmount();
+                    }
                 }
                 else
                 {
-                    tempAnimators[i].SetBool(animBoolName, false);
-
-                }
-                if (rotatingObjects[i].transform.rotation == Quaternion.Euler(rotationTargets[i]))
-                {
-                    isRotating[i] = false;
+                    //checks if planet reaches the target point
+                    if ((rotatingObjects[i].transform.eulerAngles.y + (rotatingObjects[i].transform.eulerAngles.y <= 0 && !isClockwise[i] ? 360:0)) * (isClockwise[i] ? 1 : -1) >= rotationTargets[i].y * (isClockwise[i] ? 1 : -1))
+                    {
+                        animators[i].SetFloat(animFloatName, 0);
+                        animators[i].SetBool(animBoolName, false);
+                        isRotating[i] = false;
+                        UpdateRotationAmount();
+                    }
                 }
             }
-            exitCount--;
         }
-        exitCount = 100;
-        UpdateRotationAmount();
     }
 }

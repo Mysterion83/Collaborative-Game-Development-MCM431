@@ -547,6 +547,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340031808}
+  - component: {fileID: 340031809}
+  - component: {fileID: 340031811}
+  - component: {fileID: 340031810}
   m_Layer: 0
   m_Name: Planet1
   m_TagString: Untagged
@@ -570,6 +573,55 @@ Transform:
   - {fileID: 1195409698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &340031809
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340031807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d01e9994f195114583e82d45d8e82aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &340031810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340031807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d68919bb10b636469a3b01bea9d7464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectRotation: 0
+  correctRotation: 80
+  planetPuzzle: {fileID: 633722053}
+--- !u!114 &340031811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340031807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchON: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +863,67 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!1 &633722053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633722056}
+  - component: {fileID: 633722055}
+  - component: {fileID: 633722054}
+  m_Layer: 0
+  m_Name: PlanetPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &633722054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633722053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchON: 0
+--- !u!114 &633722055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633722053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d5d442b12ace84e853a2e208dbe713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planets:
+  - {fileID: 340031807}
+  errorRange: 1
+--- !u!4 &633722056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633722053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8559578157970865625, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       propertyPath: switches.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8559578157970865625, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       propertyPath: switches.Array.data[0]
@@ -1166,6 +1279,10 @@ PrefabInstance:
       propertyPath: switches.Array.data[4]
       value: 
       objectReference: {fileID: 1513025149}
+    - target: {fileID: -8559578157970865625, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      propertyPath: switches.Array.data[5]
+      value: 
+      objectReference: {fileID: 633722053}
     - target: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       propertyPath: m_Name
       value: Hinges
@@ -1217,9 +1334,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622105585}
-    - targetCorrespondingSourceObject: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1622105586}
   m_SourcePrefab: {fileID: 100100000, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
 --- !u!1 &1170231054
 GameObject:
@@ -1475,9 +1589,13 @@ MonoBehaviour:
   rotatingObjects:
   - {fileID: 340031807}
   rotationAmount:
-  - {x: 0, y: 15, z: 0}
-  Clockwise: 01
-  rotationDuration: 1
+  - {x: 0, y: 20, z: 0}
+  isClockwise: 01
+  maxExitCount: 1000
+  animBoolName: isRotating
+  animBoolClockwiseName: isClockwise
+  animFloatName: speedMultiplier
+  animStateName: Rotating
 --- !u!1 &1461934316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,27 +1888,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &1622105586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622105582}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.7327423, y: 3.115103, z: 0.5616784}
-  m_Center: {x: -0.7895694, y: -0.7031435, z: -0.009726286}
 --- !u!1 &1791871781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,3 +2010,4 @@ SceneRoots:
   - {fileID: 113583522}
   - {fileID: 1092233117}
   - {fileID: 340031808}
+  - {fileID: 633722056}

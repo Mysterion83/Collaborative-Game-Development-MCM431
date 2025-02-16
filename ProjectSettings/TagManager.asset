@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - Ground
   - Inventory
+  - AudioManager
   layers:
   - Default
   - TransparentFX

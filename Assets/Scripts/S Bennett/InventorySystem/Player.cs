@@ -29,11 +29,15 @@ public class Player : MonoBehaviour
         // Temporary, only here for testing purposes to see if Items can be removed from the inventory //
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            inventoryManager.RemoveItem(TestItem4);
-            inventoryManager.RemoveItem(TestItem3);
-            inventoryManager.RemoveItem(TestItem2);
-            inventoryManager.RemoveItem(TestItem1);
-
+            inventoryManager.RemoveTargetItem(TestItem1);
+        }
+        // Temp
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (inventoryManager.HasItem(TestItem3))
+            {
+                Debug.Log("Item 3 Found!");
+            } 
         }
     }
 

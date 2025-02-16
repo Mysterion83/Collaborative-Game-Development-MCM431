@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
+[Obsolete("MovementSystem is a temporary system. Do not use it in production code and prefabs.", false)]
 public class MovementSystem : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody rb;
+    Rigidbody _rb;
     [SerializeField]
-    float MovementSpeed = 5f;
+    float _movementSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -21,9 +21,9 @@ public class MovementSystem : MonoBehaviour
 
         RawInput = RawInput.normalized;
 
-        RawInput *= MovementSpeed;
+        RawInput *= _movementSpeed;
 
-        rb.velocity = new Vector3(RawInput.x, rb.velocity.y, RawInput.z);
+        _rb.velocity = new Vector3(RawInput.x, _rb.velocity.y, RawInput.z);
     }
 
     Vector3 GetRawInput()

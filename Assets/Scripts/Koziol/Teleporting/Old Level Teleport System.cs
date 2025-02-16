@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
+[Obsolete("The OldLevelTeleportSystem is obsolete. Use LevelTeleportSystem Instead.",true)]
 public class OldLevelTeleportSystem : MonoBehaviour
 {
     [SerializeField]

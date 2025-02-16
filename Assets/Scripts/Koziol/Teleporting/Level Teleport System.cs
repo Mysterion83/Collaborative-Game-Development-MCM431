@@ -4,6 +4,9 @@ using UnityEngine.Rendering;
 public class LevelTeleportSystem : MonoBehaviour
 {
     [SerializeField]
+    public bool IsAllowedToTeleport = true;
+
+    [SerializeField]
     [Tooltip("The First Level Empty Object in the Scene")]
     private GameObject _levelOneObject;
 
@@ -37,9 +40,15 @@ public class LevelTeleportSystem : MonoBehaviour
 
     private void Start()
     {
+        _levelOneObject = GameObject.FindGameObjectWithTag("LevelOne");
+        _levelTwoObject = GameObject.FindGameObjectWithTag("LevelTwo");
+
         _currentTeleportTimer = _TeleportDelay;
-        _volume = GetComponentInChildren<Volume>();
+
+        _volume = GetComponent<Volume>();
         _volume.weight = 0f;
+
+        gameObject.transform.parent = _levelOneObject.transform;
     }
 
     private void Update()
@@ -47,20 +56,22 @@ public class LevelTeleportSystem : MonoBehaviour
         if (_isTeleporting)
         {
             PlayTeleportEffect();
-
-            if (_currentTeleportTimer <= 0)
-            {
-                Teleport();
-            }
         }
         else if (_isOnCooldown)
         {
             PlayCooldownEffect();
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) && IsAllowedToTeleport)
         {
             _isTeleporting = true;
             _currentTeleportTimer = _TeleportDelay;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (_currentTeleportTimer <= 0 && _isTeleporting)
+        {
+            Teleport();
         }
     }
     private void PlayTeleportEffect()

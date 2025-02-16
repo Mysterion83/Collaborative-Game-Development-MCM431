@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Inventory
   - AudioManager
+  - LevelOne
+  - LevelTwo
   layers:
   - Default
   - TransparentFX

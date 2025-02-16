@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b876e285da9e14a86a056beedee49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FramesStored: 600
-  FramesForAvg: 100
+  _framesStored: 600
+  _framesForAverage: 60
 --- !u!1 &9060991002247601807
 GameObject:
   m_ObjectHideFlags: 0

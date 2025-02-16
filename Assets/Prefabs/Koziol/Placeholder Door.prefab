@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503e45f3f2e006f41aa2534f4ca51d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anim: {fileID: 7717092792698404679}
-  IsOn: 0
+  _animator: {fileID: 7717092792698404679}
+  _isOn: 0
   AnimBoolName: IsOpen
 --- !u!1 &3509314190779917077
 GameObject:

@@ -56,11 +56,6 @@ public class LevelTeleportSystem : MonoBehaviour
         if (_isTeleporting)
         {
             PlayTeleportEffect();
-
-            if (_currentTeleportTimer <= 0)
-            {
-                Teleport();
-            }
         }
         else if (_isOnCooldown)
         {
@@ -70,6 +65,13 @@ public class LevelTeleportSystem : MonoBehaviour
         {
             _isTeleporting = true;
             _currentTeleportTimer = _TeleportDelay;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (_currentTeleportTimer <= 0 && _isTeleporting)
+        {
+            Teleport();
         }
     }
     private void PlayTeleportEffect()

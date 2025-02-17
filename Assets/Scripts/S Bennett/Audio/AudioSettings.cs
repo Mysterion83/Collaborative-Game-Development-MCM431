@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[System.Obsolete("This class is obsolete and is only meant for testing purposes. Audio settings are now handled within the settings script.")]
 public class AudioSettings : MonoBehaviour
 {
     AudioManager audioManager;  

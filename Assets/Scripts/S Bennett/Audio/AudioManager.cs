@@ -6,52 +6,46 @@ public class AudioManager : MonoBehaviour
     [Header("====== Audio Mixers ======")]
     [SerializeField] public AudioMixer MainAudioMixer;
 
-    [Header("====== Audio Sources ======")]
-    [SerializeField] private AudioSource MasterAudioSource;
-    [SerializeField] private AudioSource MusicAudioSource;
-    [SerializeField] private AudioSource SFXAudioSource;
-
     [Header("====== Music Clips ======")]
     [SerializeField] public AudioClip[] musicClips;
 
     [Header("====== SFX Clips ======")]
     [SerializeField] public AudioClip[] sfxClips;
 
-    // Audio Management //
-    public void PlayMusic(AudioClip clipToPlay)
+    public void PlayMusicFromSource(AudioClip clipToPlay, AudioSource targetAudioSource)
     {
-        MusicAudioSource.PlayOneShot(clipToPlay);
+        targetAudioSource.PlayOneShot(clipToPlay);
     }
-    public void PlaySFX(AudioClip clipToPlay)
+    public void PlaySFXFromSource(AudioClip clipToPlay, AudioSource targetAudioSource)
     {
-        SFXAudioSource.PlayOneShot(clipToPlay);
-    }
-
-    public void PauseMusic()
-    {
-        MusicAudioSource.Pause();
-    }
-    public void PauseSFX()
-    {
-        SFXAudioSource.Pause();
-    }
-    public void PauseAllSounds()
-    {
-        PauseMusic();
-        PauseSFX();
+        targetAudioSource.PlayOneShot(clipToPlay);
     }
 
-    public void StopMusic()
+    public void PauseMusicFromSource(AudioSource targetAudioSource)
     {
-        MusicAudioSource.Stop();
+        targetAudioSource.Pause();
     }
-    public void StopSFX()
+    public void PauseSFXFromSource(AudioSource targetAudioSource)
     {
-        SFXAudioSource.Stop();
+        targetAudioSource.Pause();
     }
-    public void StopAllSounds()
+    public void PauseAllSounds(AudioSource targetAudioSource)
     {
-        StopMusic();
-        StopSFX();
+        PauseMusicFromSource(targetAudioSource);
+        PauseSFXFromSource(targetAudioSource);
+    }
+
+    public void StopMusicFromSource(AudioSource targetAudioSource)
+    {
+        targetAudioSource.Stop();
+    }
+    public void StopSFXFromSource(AudioSource targetAudioSource)
+    {
+        targetAudioSource.Stop();
+    }
+    public void StopAllSoundsFromSource(AudioSource targetAudioSource)
+    {
+        StopMusicFromSource(targetAudioSource);
+        StopSFXFromSource(targetAudioSource);
     }
 }

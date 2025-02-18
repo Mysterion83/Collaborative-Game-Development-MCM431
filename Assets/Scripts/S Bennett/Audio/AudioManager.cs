@@ -1,57 +1,65 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+public enum AudioMixerChannels
+{
+    Music,
+    SFX
+}
+
 public class AudioManager : MonoBehaviour
 {
-    [Header("====== Audio Mixers ======")]
-    [SerializeField] public AudioMixer MainAudioMixer;
+    public static AudioManager Instance;
 
-    [Header("====== Audio Sources ======")]
-    [SerializeField] private AudioSource MasterAudioSource;
-    [SerializeField] private AudioSource MusicAudioSource;
-    [SerializeField] private AudioSource SFXAudioSource;
+    [Header("====== Audio Mixers ======")]
+    public AudioMixer MainAudioMixer;
 
     [Header("====== Music Clips ======")]
-    [SerializeField] public AudioClip[] musicClips;
+    public AudioClip[] musicClips;
 
     [Header("====== SFX Clips ======")]
-    [SerializeField] public AudioClip[] sfxClips;
+    public AudioClip[] sfxClips;
 
-    // Audio Management //
-    public void PlayMusic(AudioClip clipToPlay)
+    private void Awake()
     {
-        MusicAudioSource.PlayOneShot(clipToPlay);
-    }
-    public void PlaySFX(AudioClip clipToPlay)
-    {
-        SFXAudioSource.PlayOneShot(clipToPlay);
-    }
-
-    public void PauseMusic()
-    {
-        MusicAudioSource.Pause();
-    }
-    public void PauseSFX()
-    {
-        SFXAudioSource.Pause();
-    }
-    public void PauseAllSounds()
-    {
-        PauseMusic();
-        PauseSFX();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void StopMusic()
+    public int GetMusicClip(string clipToPlay)
     {
-        MusicAudioSource.Stop();
+        for (int i = 0; i < musicClips.Length; i++)
+        {
+            AudioClip clipIteration = musicClips[i];
+
+            if (clipIteration.name == clipToPlay)
+            {
+                return i;
+            }
+        }
+        Debug.LogError($"Target Audio Clip: {clipToPlay}, was not found within the Music Array, double check spelling or present array members to ensure you are referencing the correct clip");
+        return -1;
     }
-    public void StopSFX()
+
+    public int GetSFXClip(string clipToPlay)
     {
-        SFXAudioSource.Stop();
-    }
-    public void StopAllSounds()
-    {
-        StopMusic();
-        StopSFX();
+        for (int i = 0; i < sfxClips.Length; i++)
+        {
+            AudioClip clipIteration = sfxClips[i];
+
+            if (clipIteration.name == clipToPlay)
+            {
+                return i;
+            }
+        }
+        Debug.LogError($"Target Audio Clip: {clipToPlay}, was not found within the SFX Array, double check spelling or present array members to ensure you are referencing the correct clip");
+        return -1;
     }
 }

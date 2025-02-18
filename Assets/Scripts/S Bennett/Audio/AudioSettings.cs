@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[System.Obsolete("This class is obsolete and is only meant for testing purposes. Audio settings are now handled within the settings script.")]
 public class AudioSettings : MonoBehaviour
 {
-    AudioManager audioManager;  
     private AudioMixer MainAudioMixer;
 
     [Header("====== Sliders ======")]
@@ -14,8 +14,7 @@ public class AudioSettings : MonoBehaviour
 
     void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        MainAudioMixer = audioManager.MainAudioMixer;
+        MainAudioMixer = AudioManager.Instance.MainAudioMixer;
 
         // Checks if audio settings have been previously stored before //
         if (PlayerPrefs.HasKey("masterVolume"))

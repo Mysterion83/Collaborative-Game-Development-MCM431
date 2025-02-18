@@ -4,35 +4,25 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+    AudioManager audioManager;
+
     [SerializeField] private AudioSource ThisMusicSource;
     [SerializeField] private AudioSource ThisSFXSource;
 
-    [Header("====== Audio Clips ======")]
-    [SerializeField] public AudioClip[] audioClips;
-
-    private int GetAudioClip(string clipToPlay)
+    private void Start()
     {
-        for (int i = 0; i < audioClips.Length; i++)
-        {
-            AudioClip clipIteration = audioClips[i];
-
-            if (clipIteration.name == clipToPlay)
-            {
-                return i;
-            }
-        }
-        Debug.LogError($"Target Audio Clip: {clipToPlay}, was not found within the AudioClips Array, double check spelling or present array members to ensure you are referencing the correct clip");
-        return -1;
+        audioManager = AudioManager.Instance;
     }
 
-    public void PlayAudio(string clipToPlay, string channelType)
+    // Called whenever a specific Audio Controller is needed to play Audio
+    public void PlayAudioClip(string clipToPlay, AudioMixerChannels channelType)
     {
         switch (channelType)
         {
-            case "Music":
+            case AudioMixerChannels.Music:
                 PlayMusic(clipToPlay);
                 break;
-            case "SFX":
+            case AudioMixerChannels.SFX:
                 PlaySFX(clipToPlay);
                 break;
             default:
@@ -41,15 +31,21 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    // Attempts to Play Audio, if the audioClipArrayPosition is -1 (due to the clip not being found),
+    // It will throw an error saying the clip was not found and return to prevent an 'array out of bounds' error
     private void PlayMusic(string clipToPlay)
     {
-        int audioClipArrayPosition = GetAudioClip(clipToPlay);
-        ThisMusicSource.PlayOneShot(audioClips[audioClipArrayPosition]);
+        int audioClipArrayPosition = audioManager.GetMusicClip(clipToPlay);
+        if (audioClipArrayPosition == -1) return;
+
+        ThisMusicSource.PlayOneShot(audioManager.musicClips[audioClipArrayPosition]);
     }
     private void PlaySFX(string clipToPlay)
     {
-        int audioClipArrayPosition = GetAudioClip(clipToPlay);
-        ThisSFXSource.PlayOneShot(audioClips[audioClipArrayPosition]);
+        int audioClipArrayPosition = audioManager.GetSFXClip(clipToPlay);
+        if (audioClipArrayPosition == -1) return;
+
+        ThisSFXSource.PlayOneShot(audioManager.sfxClips[audioClipArrayPosition]);
     }
 
     public void PauseMusic()

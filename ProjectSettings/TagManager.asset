@@ -9,6 +9,7 @@ TagManager:
   - Inventory
   - LevelOne
   - LevelTwo
+  - AudioObject
   layers:
   - Default
   - TransparentFX

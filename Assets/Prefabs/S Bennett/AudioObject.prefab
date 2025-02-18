@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7553457429841937930}
   m_Layer: 0
   m_Name: AudioObject
-  m_TagString: Untagged
+  m_TagString: AudioObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,8 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisMusicSource: {fileID: 7325015900367154297}
   ThisSFXSource: {fileID: 503549112889009732}
-  musicClips: []
-  sfxClips: []
 --- !u!1 &6502235119340160709
 GameObject:
   m_ObjectHideFlags: 0

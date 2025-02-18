@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,13 +7,10 @@ public class DocumentDisplayManager : MonoBehaviour
     private static DocumentDisplayManager _instance;
     
     [SerializeField]
-    TextMeshProUGUI DocumentTextLeft;
+    private TextMeshProUGUI _documentText;
 
     [SerializeField]
-    TextMeshProUGUI DocumentTextRight;
-
-    [SerializeField]
-    GameObject Book;
+    private GameObject _bookObject;
 
     private void Start()
     {
@@ -29,22 +24,51 @@ public class DocumentDisplayManager : MonoBehaviour
         }
     }
 
-    public void DisplayDocument(string Text)
+    public void DisplayDocument(string inputText)
     {
-        Book.SetActive(true);
-        DocumentTextLeft.text = Text;
-        //DocumentTextRight.text = SplitText(Text, 325)[1];
+        _bookObject.SetActive(true);
+        _documentText.text = inputText;
     }
     public void Update() 
     {
-        if (Book.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        if (_bookObject.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
-            Book.SetActive(false);
+            _bookObject.SetActive(false);
         }
     }
 
-    public string[] SplitText(string Text)
-    {
-        return null;
-    }
+    /// <summary>
+    /// I spend ages trying to make this when unity text UIs have a built in overflow to another text UI ;-;
+    /// Enjoy the most useless code i have ever made in this project
+    /// </summary>
+    //public string[] SplitText(string Text, int CharactersPerPage)
+    //{
+    //    //return null;
+    //    string[] output = new string[2];
+    //    int currentCharacter = 0;
+    //    if (Text.Length <= CharactersPerPage)
+    //    {
+    //        output[0] = Text;
+    //        return output;
+    //    }
+
+    //    int splitAt = CharactersPerPage;
+    //    int upperbound = 10000;
+    //    while (currentCharacter < Text.Length && upperbound > 0) 
+    //    {
+    //        if (currentCharacter >= splitAt && Text[currentCharacter] == ' ')
+    //        {
+    //            output[1] = Text.Substring(currentCharacter);
+    //            return output;
+    //        }
+    //        else 
+    //        {
+    //            output[0] += Text[currentCharacter];
+    //        }
+    //        currentCharacter++;
+    //        upperbound--;
+    //    }
+    //    Debug.LogError("Document Display Manager: Split text while loop upper bound reached");
+    //    return null;
+    //}
 }

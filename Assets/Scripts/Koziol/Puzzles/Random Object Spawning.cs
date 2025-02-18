@@ -15,9 +15,9 @@ public class RandomObjectSpawning : MonoBehaviour
     {
         for (int i = 0; i < _spawnAmount; i++)
         {
-            Transform SpawnLocation = _spawnLocations[Random.Range(0, _spawnLocations.Count)];
-            Instantiate(_objectToSpawn, SpawnLocation);
-            _spawnLocations.Remove(SpawnLocation);
+            Transform spawnLocation = _spawnLocations[Random.Range(0, _spawnLocations.Count)];
+            Instantiate(_objectToSpawn, spawnLocation);
+            _spawnLocations.Remove(spawnLocation);
         }
     }
 }

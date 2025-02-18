@@ -35,11 +35,11 @@ public class DebugMenu : MonoBehaviour
         _debugText = GetComponentInChildren<TextMeshProUGUI>();
         _isDebugActive = false;
 
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        if (Player != null)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            Player.TryGetComponent<Transform>(out _playerPosition);
-            _lts = Player.GetComponentInChildren<LevelTeleportSystem>();
+            player.TryGetComponent<Transform>(out _playerPosition);
+            _lts = player.GetComponentInChildren<LevelTeleportSystem>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
@@ -89,18 +89,18 @@ public class DebugMenu : MonoBehaviour
     }
     float GetAverageFPS()
     {
-        float FpsTotal = 0;
-        int FramesToCheck = _framesForAverage;
-        if (FramesToCheck >= _fpsRecordings.Count)
+        float fpsTotal = 0;
+        int framesToCheck = _framesForAverage;
+        if (framesToCheck >= _fpsRecordings.Count)
         {
-            FramesToCheck = _fpsRecordings.Count - 1;
+            framesToCheck = _fpsRecordings.Count - 1;
         }
-        while (FramesToCheck > 0) 
+        while (framesToCheck > 0) 
         {
-            FpsTotal += _fpsRecordings[_fpsRecordings.Count - FramesToCheck - 1];
-            FramesToCheck--;
+            fpsTotal += _fpsRecordings[_fpsRecordings.Count - framesToCheck - 1];
+            framesToCheck--;
         }
-        return FpsTotal / _framesForAverage;
+        return fpsTotal / _framesForAverage;
     }
     float GetMinFPS()
     {
@@ -116,11 +116,11 @@ public class DebugMenu : MonoBehaviour
         if (_lts.CurrentLevel == LevelEnum.LevelOne) return "Present";
         return "Past";
     }
-    string GetPlayerPosition(DebugPostionType PositionType)
+    string GetPlayerPosition(DebugPostionType positionType)
     {
         if (_playerPosition == null) return "N/A";
         float x = 0, y = 0, z = 0;
-        switch (PositionType)
+        switch (positionType)
         {
             case DebugPostionType.Global:
                 x = _playerPosition.position.x; 
@@ -144,7 +144,7 @@ public class DebugMenu : MonoBehaviour
                 break;
         }
 
-        if (PositionType == DebugPostionType.Global | PositionType == DebugPostionType.Local)
+        if (positionType == DebugPostionType.Global | positionType == DebugPostionType.Local)
         {
             return $"x: {x}, y: {y}, z: {z}";
         }

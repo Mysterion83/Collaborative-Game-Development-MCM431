@@ -6,11 +6,11 @@ public class InteractableDocument : Interactable
 {
     [SerializeField]
     [TextArea(10, 20)]
-    string DocumentText;
+    private string _documentText;
 
     public override void Interact()
     {
-        DocumentDisplayManager.Instance.DisplayDocument(DocumentText);
+        DocumentDisplayManager.Instance.DisplayDocument(_documentText);
     }
     public override void ScrollInteract(float mouseScrollDelta)
     {

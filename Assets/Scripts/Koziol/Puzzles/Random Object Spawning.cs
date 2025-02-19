@@ -4,20 +4,24 @@ using UnityEngine;
 public class RandomObjectSpawning : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _objectToSpawn;
+    private List<GameObject> _objectsToSpawn;
 
     [SerializeField]
     private List<Transform> _spawnLocations;
-    [SerializeField]
-    private int _spawnAmount;
-    // Start is called before the first frame update
+
     void Start()
     {
-        for (int i = 0; i < _spawnAmount; i++)
+        if (_objectsToSpawn.Count > _spawnLocations.Count)
+        {
+            Debug.LogError("Random Object Spawning: There are more objects to spawn than spawn locations");
+            return;
+        }
+        for (int i = 0; i < _objectsToSpawn.Count; i++)
         {
             Transform spawnLocation = _spawnLocations[Random.Range(0, _spawnLocations.Count)];
-            Instantiate(_objectToSpawn, spawnLocation);
+            Instantiate(_objectsToSpawn[0], spawnLocation);
             _spawnLocations.Remove(spawnLocation);
+            _objectsToSpawn.RemoveAt(0);
         }
     }
 }

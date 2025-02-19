@@ -38,7 +38,7 @@ public class DocumentDisplayManager : MonoBehaviour
     }
 
     /// <summary>
-    /// I spend ages trying to make this when unity text UIs have a built in overflow to another text UI ;-;
+    /// I spent ages trying to make this when unity text UIs have a built in overflow to another text UI ;-;
     /// Enjoy the most useless code i have ever made in this project
     /// </summary>
     //public string[] SplitText(string Text, int CharactersPerPage)

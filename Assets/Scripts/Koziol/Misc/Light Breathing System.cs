@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LightFlickeringSystem : MonoBehaviour
+public class LightBreathingSystem : MonoBehaviour
 {
     [SerializeField]
     private float _intensity;

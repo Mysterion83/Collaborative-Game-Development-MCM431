@@ -25,8 +25,11 @@ public class PlayerCamera : MonoBehaviour
         // Apply the vertical rotation to the camera
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         
-        // Rotate the player based on horizontal mouse movement
+        // Rotate the parent object based on horizontal mouse movement
         transform.Rotate(Vector3.up * MouseX);
+
+        // Teleport the camera to the player's position every frame
+        Camera.main.transform.position = transform.position;
     }
 
     private void LockCursor()

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Rotating_Switches : MonoBehaviour
+public class Rotating_Switches : Interactable
 {
     public List<GameObject> rotatingObjects = new List<GameObject>(); // Objects to rotate
     public List<Vector3> rotationAmount = new List<Vector3>(); // Rotation angles
@@ -94,14 +94,22 @@ public class Rotating_Switches : MonoBehaviour
         }
     }
 
-
-    void Update()
+    public override void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isAllRotating) // Temporary Interaction system just to make sure it works
+        if (!isAllRotating)
         {
             RotateAll();
         }
+    }
 
+    public override void ScrollInteract(float mouseScrollDelta)
+    {
+        return;
+    }
+
+
+    void Update()
+    {
         if(!CheckAllNotRotating())
         {
             for (int i = 0; i < animators.Count; i++)

@@ -8,9 +8,13 @@ public class CharacterMovement : MonoBehaviour
     public float SprintSpeed = 10f;
     public float JumpForce = 5f;
 
+    public float GroundedDrag = 2f;
+    public float AirDrag = 0f;
+
     private Rigidbody rb;
     private bool isGrounded;
-    private float CurrentSpeed;
+    public float CurrentSpeed;
+    private float MovementSpeed;
 
     void Start()
     {
@@ -34,12 +38,15 @@ public class CharacterMovement : MonoBehaviour
             move.Normalize();
         }
 
-        CurrentSpeed = GetCurrentSpeed();
+        // Update CurrentSpeed based on the Rigidbody's velocity
+        CurrentSpeed = rb.velocity.magnitude;
+
+        MovementSpeed = GetCurrentSpeed();
 
         ApplyDrag();
 
 
-        rb.AddForce(move * CurrentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
+        rb.AddForce(move * MovementSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
 
         // Handle jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -74,11 +81,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            rb.drag = 2; // Set drag when grounded
+            rb.drag = GroundedDrag; // Set drag when grounded
         }
         else
         {
-            rb.drag = 0; // Set a drag value when not grounded
+            rb.drag = AirDrag; // Set a drag value when not grounded
         }
     }
 }

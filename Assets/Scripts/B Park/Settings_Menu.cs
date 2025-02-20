@@ -18,12 +18,10 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text SFXVolumePercentageText;
     public TMP_Text MusicVolumePercentageText;
 
-    [Header("Audio")]
-    public AudioMixer audioMixer;
-
     [Header("Other")]
     public Material brightnessMaterial;
 
+    private AudioMixer MainAudioMixer;
     private Resolution[] resolutions;
 
     void Start()
@@ -59,6 +57,8 @@ public class SettingsMenu : MonoBehaviour
             graphicsDropdown.onValueChanged.AddListener(SetGraphicsQuality);
 
         }
+
+        MainAudioMixer = AudioManager.Instance.MainAudioMixer;
 
         //Loads saved volume and brightness values
         masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0.5f);
@@ -102,17 +102,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20); //Converts Slider value to decibels
+        MainAudioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20); //Converts Slider value to decibels
         PlayerPrefs.SetFloat("MasterVolume", volume);
     }
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20); 
+        //audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20); 
+        MainAudioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        //audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        MainAudioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 

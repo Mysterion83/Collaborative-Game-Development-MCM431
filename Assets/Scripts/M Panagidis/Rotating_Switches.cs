@@ -57,16 +57,6 @@ public class Rotating_Switches : Interactable
         }
     }
 
-    private void resetRotateAll()
-    {
-        for (int i = 0; i < animators.Count; i++)
-        {
-            //disables animations
-            animators[i].SetBool(animBoolName,false);
-            isRotating[i] = false;
-        }
-    }
-
     private bool CheckAllNotRotating()
     {
         bool allNotRotating = true;

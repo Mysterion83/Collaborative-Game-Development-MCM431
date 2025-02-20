@@ -16,7 +16,7 @@ public class Planet : MonoBehaviour
         switches = gameObject.GetComponent<Switches>();
         planetPuzzleScript = planetPuzzle.GetComponent<Planet_Puzzle>();
     }
-    private bool checkRotation()
+    private bool CheckRotation()
     {
         if(gameObject.transform.eulerAngles.y <= correctRotation + planetPuzzleScript.errorRange && gameObject.transform.eulerAngles.y >= correctRotation - planetPuzzleScript.errorRange)
         {
@@ -30,7 +30,7 @@ public class Planet : MonoBehaviour
 
     void Update()
     {
-        isCorrectRotation = checkRotation();
+        isCorrectRotation = CheckRotation();
         switches.switchON = isCorrectRotation;
     }
 }

@@ -11,7 +11,7 @@ public class Planet_Puzzle : MonoBehaviour
     private Switches switches;
     public float errorRange = 1f;
 
-    public bool CheckPlanet()
+    public bool CheckPlanet() //checks if planets are aligned correctly
     {
         bool SwitchOn = true;
         for (int i = 0; i < planets.Count; i++)

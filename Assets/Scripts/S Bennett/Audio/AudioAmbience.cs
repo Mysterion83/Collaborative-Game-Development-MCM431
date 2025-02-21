@@ -6,7 +6,7 @@ public class AudioAmbience : MonoBehaviour
 {
     private AudioController audioController;
 
-    public bool canPlayAmbience;
+    public bool canPlayAmbience = true;
     private bool ambiencePlaying = false;
     [SerializeField] private int ambienceClipNumber;
 

@@ -17,6 +17,8 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text masterVolumePercentageText;
     public TMP_Text SFXVolumePercentageText;
     public TMP_Text MusicVolumePercentageText;
+    public GameObject mainMenu;
+    public GameObject settingsMenu;
 
     [Header("Other")]
     public Material brightnessMaterial;
@@ -163,5 +165,11 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log("Settings Applied and Saved");
+    }
+
+    public void returnButton()
+    {
+       settingsMenu.SetActive(false);
+       mainMenu.SetActive(true);
     }
 }

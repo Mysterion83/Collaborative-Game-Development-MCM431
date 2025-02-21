@@ -5,13 +5,18 @@ using UnityEngine;
 public class Pressure_Plate : MonoBehaviour
 {
     public bool plateON = false;
-    private Switches switches;
+    private int index;
+
+    [SerializeField]
+    private PuzzleManager puzzleManager;
+
 
     public void OnTriggerStay(Collider collider)
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Heavy"))
         {
             plateON = true;
+            puzzleManager.SetState(index, plateON);
         }
     }
 
@@ -20,16 +25,13 @@ public class Pressure_Plate : MonoBehaviour
         if (collider.gameObject.layer == LayerMask.NameToLayer("Heavy"))
         {
             plateON = false;
+            puzzleManager.SetState(index, plateON);
+
         }
     }
 
     private void Start()
     {
-        switches = gameObject.GetComponent<Switches>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        switches.switchON = plateON;
+        index = puzzleManager.AddSwitch();
     }
 }

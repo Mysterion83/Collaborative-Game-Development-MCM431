@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    private Switches switches;
     public bool isCorrectRotation = false;
     public float correctRotation;
+    private int index;
 
-    public GameObject planetPuzzle;
-    private Planet_Puzzle planetPuzzleScript;
+    [SerializeField]
+    private Planet_Puzzle puzzleManager;
 
     void Start()
     {
-        switches = gameObject.GetComponent<Switches>();
-        planetPuzzleScript = planetPuzzle.GetComponent<Planet_Puzzle>();
+        index = puzzleManager.AddSwitch();
     }
     private bool CheckRotation()
     {
-        if(gameObject.transform.eulerAngles.y <= correctRotation + planetPuzzleScript.errorRange && gameObject.transform.eulerAngles.y >= correctRotation - planetPuzzleScript.errorRange)
+        if(gameObject.transform.eulerAngles.y <= correctRotation + puzzleManager.GetErrorRange() && gameObject.transform.eulerAngles.y >= correctRotation - puzzleManager.GetErrorRange())
         {
             return true;
         }
@@ -31,6 +30,6 @@ public class Planet : MonoBehaviour
     void Update()
     {
         isCorrectRotation = CheckRotation();
-        switches.switchON = isCorrectRotation;
+        puzzleManager.SetState(index, isCorrectRotation);
     }
 }

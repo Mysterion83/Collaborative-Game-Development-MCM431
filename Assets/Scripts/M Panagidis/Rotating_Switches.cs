@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Rotating_Switches : Interactable
 {
-    public List<GameObject> rotatingObjects = new List<GameObject>(); // Objects to rotate
-    public List<Vector3> rotationAmount = new List<Vector3>(); // Rotation angles
-    public List<bool> isClockwise = new List<bool>(); // Direction of rotation
-    private List<Animator> animators = new List<Animator>();
-    private List<Vector3> rotationTargets = new List<Vector3>();
-    private List<bool> isRotating = new List<bool>(); //checks if planets are still under rotation to prevent players from spamming interact
-    private List<bool> hasResetRotation = new List<bool>(); //checks if a rotation has been complete to prevent bugs
+    public GameObject[] rotatingObjects; // Objects to rotate
+    public Vector3[] rotationAmount; // Rotation angles
+    public bool[] isClockwise; // Direction of rotation
+    private Animator[] animators;
+    private Vector3[] rotationTargets;
+    private bool[] isRotating; //checks if planets are still under rotation to prevent players from spamming interact
+    private bool[] hasResetRotation; //checks if a rotation has been complete to prevent bugs
     
     private static bool isAllRotating = false;
 
@@ -25,14 +25,14 @@ public class Rotating_Switches : Interactable
     private void Start()
     {
         //setting up all of the lists with initial elements
-        for (int i = 0; i < rotatingObjects.Count; i++)
+        for (int i = 0; i < rotatingObjects.Length; i++)
         {
             if (rotatingObjects[i] != null)
             {
-                animators.Add(rotatingObjects[i].GetComponent<Animator>());
-                rotationTargets.Add((isClockwise[i] ? rotationAmount[i] : new Vector3(0, 360 - rotationAmount[i].y, 0)));
-                isRotating.Add(false);
-                hasResetRotation.Add(false);
+                animators[i] = rotatingObjects[i].GetComponent<Animator>();
+                rotationTargets[i] = (isClockwise[i] ? rotationAmount[i] : new Vector3(0, 360 - rotationAmount[i].y, 0));
+                isRotating[i] = false;
+                hasResetRotation[i] = false;
                 if (isClockwise[i])
                 {
                     animators[i].SetBool(animBoolClockwiseName, true);
@@ -47,7 +47,7 @@ public class Rotating_Switches : Interactable
 
     private void RotateAll()
     {
-        for (int i = 0; i < animators.Count; i++)
+        for (int i = 0; i < animators.Length; i++)
         {
             //activates animations
             animators[i].SetBool(animBoolName, true);
@@ -60,7 +60,7 @@ public class Rotating_Switches : Interactable
     private bool CheckAllNotRotating()
     {
         bool allNotRotating = true;
-        for (int i = 0; i < isRotating.Count; i++)
+        for (int i = 0; i < isRotating.Length; i++)
         {
             if (isRotating[i])
             {
@@ -73,7 +73,7 @@ public class Rotating_Switches : Interactable
 
     private void UpdateRotationAmount()
     {
-        for (int i = 0; i < rotationTargets.Count; i++)
+        for (int i = 0; i < rotationTargets.Length; i++)
         {
             if ((rotationTargets[i].y + rotationAmount[i].y * (isClockwise[i] ? 1 : -1)) * (isClockwise[i] ? 1 : -1) >= (isClockwise[i] ? 360 : 0))
             {
@@ -102,7 +102,7 @@ public class Rotating_Switches : Interactable
     {
         if(!CheckAllNotRotating())
         {
-            for (int i = 0; i < animators.Count; i++)
+            for (int i = 0; i < animators.Length; i++)
             {
                 //checks if the planet is about to complete a rotation
                 if (hasResetRotation[i])

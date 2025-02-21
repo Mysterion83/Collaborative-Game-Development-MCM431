@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 113583521}
   - component: {fileID: 113583520}
   - component: {fileID: 113583519}
-  - component: {fileID: 113583518}
   - component: {fileID: 113583523}
   m_Layer: 0
   m_Name: Button3
@@ -143,19 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &113583518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113583517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!135 &113583519
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -251,10 +237,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 113583517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08b36e227cd7844994cf8c095efca8, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonON: 0
+  puzzleManager: {fileID: 633722055}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +548,6 @@ GameObject:
   m_Component:
   - component: {fileID: 340031808}
   - component: {fileID: 340031809}
-  - component: {fileID: 340031811}
   - component: {fileID: 340031810}
   m_Layer: 0
   m_Name: Planet1
@@ -622,20 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectRotation: 0
   correctRotation: 80
-  planetPuzzle: {fileID: 633722053}
---- !u!114 &340031811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340031807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
+  puzzleManager: {fileID: 633722055}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +859,6 @@ GameObject:
   m_Component:
   - component: {fileID: 633722056}
   - component: {fileID: 633722055}
-  - component: {fileID: 633722054}
   m_Layer: 0
   m_Name: PlanetPuzzle
   m_TagString: Untagged
@@ -895,19 +866,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &633722054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633722053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!114 &633722055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,9 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d5d442b12ace84e853a2e208dbe713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
-  - {fileID: 340031807}
-  errorRange: 1
+  animator: {fileID: 340031809}
+  animBoolName: isRotating
 --- !u!4 &633722056
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,8 +1090,7 @@ GameObject:
   - component: {fileID: 1005131458}
   - component: {fileID: 1005131457}
   - component: {fileID: 1005131456}
-  - component: {fileID: 1005131455}
-  - component: {fileID: 1005131454}
+  - component: {fileID: 1005131460}
   m_Layer: 0
   m_Name: Button
   m_TagString: Interactable
@@ -1142,32 +1098,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1005131454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005131453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08b36e227cd7844994cf8c095efca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonON: 0
---- !u!114 &1005131455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005131453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!135 &1005131456
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1254,6 +1184,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005131460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005131453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 633722055}
 --- !u!1001 &1092233117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,9 +1241,25 @@ PrefabInstance:
       propertyPath: switches.Array.data[5]
       value: 
       objectReference: {fileID: 633722053}
+    - target: {fileID: 606927850647281890, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696893088573516587, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       propertyPath: m_Name
       value: Hinges
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815785586718779489, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7337158520139434897, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1342,14 +1301,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8559578157970865625, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5077467719110265373, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622105585}
+    - targetCorrespondingSourceObject: {fileID: 2696893088573516587, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119502574}
   m_SourcePrefab: {fileID: 100100000, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+--- !u!1 &1119502569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2696893088573516587, guid: b9cb6d3ab50141246ab16ce38211be23, type: 3}
+  m_PrefabInstance: {fileID: 1092233117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1119502574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119502569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c664ed71d8ee045bceb8ee1d78e342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1622105585}
+  animBoolName: isOpen
+  animOpenName: Open
+  unlocked: 0
 --- !u!1 &1170231054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1346,6 @@ GameObject:
   - component: {fileID: 1170231058}
   - component: {fileID: 1170231057}
   - component: {fileID: 1170231056}
-  - component: {fileID: 1170231055}
   - component: {fileID: 1170231060}
   m_Layer: 0
   m_Name: Button2
@@ -1371,19 +1354,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1170231055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170231054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!135 &1170231056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1479,10 +1449,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170231054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08b36e227cd7844994cf8c095efca8, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonON: 0
+  puzzleManager: {fileID: 633722055}
 --- !u!1 &1195409697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1570,6 @@ GameObject:
   - component: {fileID: 1461934320}
   - component: {fileID: 1461934319}
   - component: {fileID: 1461934318}
-  - component: {fileID: 1461934317}
   - component: {fileID: 1461934322}
   m_Layer: 0
   m_Name: Button1
@@ -1609,19 +1578,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1461934317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461934316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!135 &1461934318
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1717,10 +1673,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461934316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c08b36e227cd7844994cf8c095efca8, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonON: 0
+  puzzleManager: {fileID: 633722055}
 --- !u!1 &1513025149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +1690,6 @@ GameObject:
   - component: {fileID: 1513025153}
   - component: {fileID: 1513025152}
   - component: {fileID: 1513025151}
-  - component: {fileID: 1513025150}
   m_Layer: 0
   m_Name: Pressure Plate
   m_TagString: Untagged
@@ -1742,19 +1697,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1513025150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513025149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff0df31a1f099e42b2d99ec61de1a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchON: 0
 --- !u!114 &1513025151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1768,6 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateON: 0
+  puzzleManager: {fileID: 633722055}
 --- !u!65 &1513025152
 BoxCollider:
   m_ObjectHideFlags: 0

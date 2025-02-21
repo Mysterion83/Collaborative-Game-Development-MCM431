@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenController : MonoBehaviour
 {
-    // SCENE NAMES REQUIRED FOR NAVIGATON
-    [SerializeField] public string TitleScreenScene;
-    [SerializeField] public string Level1Scene;
+    // Scene names required for navigation
+    public string TitleScreenScene;
+    public string Level1Scene; // Will be removed once the save file system is fully implemented
     [SerializeField] GameObject TitleScreenCanvas;
     [SerializeField] GameObject SettingsMenuCanvas;
 
@@ -16,8 +16,7 @@ public class TitleScreenController : MonoBehaviour
         SettingsMenuCanvas.SetActive(false);
     }
 
-
-    // SCENE NAVIGATION BETWEEN TITLE AND GAME
+    // Title Screen button functions - prior to complete implementation of save file system
     public void LoadTitleScreen()
     {
         if (TitleScreenScene == "")
@@ -30,6 +29,7 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
+    //  Play() will become redundant once the save file system is complete; two new functions, LoadNewGame() and LoadSaveFile(), will be implemented to handle loading either a new or old save file from the title screen
     public void Play()
     {
         if (Level1Scene == "")
@@ -42,6 +42,7 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
+    // Settings() will alternate between showing the title screen and settings panel based on their active states
     public void Settings()
     {
         if (!SettingsMenuCanvas.activeSelf)

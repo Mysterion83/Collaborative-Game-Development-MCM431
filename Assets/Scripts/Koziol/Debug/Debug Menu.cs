@@ -11,6 +11,8 @@ public class DebugMenu : MonoBehaviour
 
     private LevelTeleportSystem _lts;
 
+    private CharacterMovement _playerMovement;
+
 
 
     [SerializeField]
@@ -40,6 +42,7 @@ public class DebugMenu : MonoBehaviour
         {
             player.TryGetComponent<Transform>(out _playerPosition);
             _lts = player.GetComponentInChildren<LevelTeleportSystem>();
+            _playerMovement = player.GetComponentInChildren<CharacterMovement>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
@@ -152,7 +155,6 @@ public class DebugMenu : MonoBehaviour
     }
     float GetPlayerMovementspeed()
     {
-        Debug.LogWarning("Debug Menu: GetPlayerMovementspeed is not Implemented");
-        return 0;
+        return (Mathf.Round(_playerMovement.CurrentSpeed*100)/100);
     }
 }

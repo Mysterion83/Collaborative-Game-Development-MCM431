@@ -5,9 +5,14 @@ using UnityEngine;
 public class FlickeringLights : MonoBehaviour
 {
     public Light flickeringLight; // Reference to the Light component
-    public float minIntensity = 0.5f; // Minimum intensity of the light
-    public float maxIntensity = 1.5f; // Maximum intensity of the light
-    public float flickerSpeed = 0.1f; // Speed of the flicker
+
+    public float MaxWait = 1;
+    public float MinWait = 0;
+    public float MaxFlicker = 0.2f;
+    public float MinFlicker = 0;
+
+    float Timer;
+    float Interval;
 
     private void Start()
     {
@@ -19,8 +24,24 @@ public class FlickeringLights : MonoBehaviour
 
     private void Update()
     {
-        // Change the intensity of the light over time
-        float intensity = Mathf.Lerp(minIntensity, maxIntensity, Mathf.PingPong(Time.time * flickerSpeed, 1));
-        flickeringLight.intensity = intensity;
+        Timer += Time.deltaTime;
+        if (Timer > Interval)
+        {
+            ToggleLight();
+        }
+    }
+
+    void ToggleLight()
+    {
+        flickeringLight.enabled = !flickeringLight.enabled;
+        if (flickeringLight.enabled)
+        {
+            Interval = Random.Range(MinWait, MaxWait);
+        }
+        else
+        {
+            Interval = Random.Range(MinFlicker, MaxFlicker);
+        }
+        Timer = 0;
     }
 }

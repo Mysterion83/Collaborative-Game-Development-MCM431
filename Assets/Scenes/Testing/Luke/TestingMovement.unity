@@ -395,9 +395,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flickeringLight: {fileID: 306577396}
-  minIntensity: 100
-  maxIntensity: 5000
-  flickerSpeed: 1
+  MaxWait: 1
+  MinWait: 0
+  MaxFlicker: 0.2
+  MinFlicker: 0
 --- !u!114 &306577395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 600
+  m_Intensity: 50000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -532,7 +533,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 3978.8735
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -573,7 +574,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
@@ -750,6 +751,8 @@ MonoBehaviour:
   MoveSpeed: 700
   SprintSpeed: 1200
   JumpForce: 5
+  GroundedDrag: 2
+  AirDrag: 0
   CurrentSpeed: 0
 --- !u!114 &360611529
 MonoBehaviour:
@@ -796,9 +799,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flickeringLight: {fileID: 614540870}
-  minIntensity: 100
-  maxIntensity: 200000
-  flickerSpeed: 1
+  MaxWait: 1
+  MinWait: 0
+  MaxFlicker: 0.2
+  MinFlicker: 0
 --- !u!114 &614540869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 600
+  m_Intensity: 1800
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -933,7 +937,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2802.5015
+  m_Intensity: 8407.505
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

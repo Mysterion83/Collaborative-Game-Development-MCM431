@@ -29,7 +29,7 @@ public class PlayerCamera : MonoBehaviour
         transform.Rotate(Vector3.up * MouseX);
 
         // Teleport the camera to the player's position every frame
-        Camera.main.transform.position = transform.position;
+        Camera.main.transform.position = transform.position + new Vector3(0,0.5f,0);
     }
 
     private void LockCursor()

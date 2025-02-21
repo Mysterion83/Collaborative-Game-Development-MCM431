@@ -8,12 +8,14 @@ public class TitleScreenController : MonoBehaviour
     // Scene names required for navigation
     public string TitleScreenScene;
     public string Level1Scene; // Will be removed once the save file system is fully implemented
-    [SerializeField] GameObject TitleScreenCanvas;
-    [SerializeField] GameObject SettingsMenuCanvas;
+    [SerializeField] GameObject TitleScreen;
+    [SerializeField] GameObject SettingsPanel;
+    [SerializeField] GameObject ControlsPanel;
 
     private void Start()
     {
-        SettingsMenuCanvas.SetActive(false);
+        SettingsPanel.SetActive(false);
+        ControlsPanel.SetActive(false);
     }
 
     // Title Screen button functions - prior to complete implementation of save file system
@@ -45,15 +47,30 @@ public class TitleScreenController : MonoBehaviour
     // Settings() will alternate between showing the title screen and settings panel based on their active states
     public void Settings()
     {
-        if (!SettingsMenuCanvas.activeSelf)
+        if (!SettingsPanel.activeSelf)
         {
-            TitleScreenCanvas.SetActive(false);
-            SettingsMenuCanvas.SetActive(true);
+            TitleScreen.SetActive(false);
+            SettingsPanel.SetActive(true);
         }
         else
         {
-            TitleScreenCanvas.SetActive(true);
-            SettingsMenuCanvas.SetActive(false);
+            TitleScreen.SetActive(true);
+            SettingsPanel.SetActive(false);
+        }
+    }
+
+    // Controls() will alternate between showing the title screen and settings panel based on their active states
+    public void Controls()
+    {
+        if (!ControlsPanel.activeSelf)
+        {
+            TitleScreen.SetActive(false);
+            ControlsPanel.SetActive(true);
+        }
+        else
+        {
+            TitleScreen.SetActive(true);
+            ControlsPanel.SetActive(false);
         }
     }
 

@@ -8,17 +8,20 @@ public class InventoryManager : MonoBehaviour
 {
     GameObject Inventory;
     bool inventoryOpen = true;
-    
+    private int currentSlotSelected = 0;
+
     [SerializeField] private ItemSlot[] itemSlots;
 
     void Start()
     {
         Inventory = GameObject.FindGameObjectWithTag("Inventory");
+        itemSlots[0].SetSlotActive();
     }
 
     void Update()
     {
         HandleInventoryUI();
+        CycleItemSlots();
     }
 
     // Checks if the inventory has a specific item based on its ID
@@ -95,6 +98,31 @@ public class InventoryManager : MonoBehaviour
             itemSlots[i].thisItemSelected = false;
             itemSlots[i].selectedShader.SetActive(false);
         }
+    }
+
+    private void CycleItemSlots()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            currentSlotSelected++;
+
+            if (currentSlotSelected > itemSlots.Length - 1)
+            {
+                currentSlotSelected = 0;
+            }
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            currentSlotSelected--;
+
+            if (currentSlotSelected < 0)
+            {
+                currentSlotSelected = itemSlots.Length - 1;
+            }
+        }
+
+        DeselectAllItemSlots();
+        itemSlots[currentSlotSelected].SetSlotActive();
     }
 
     // Temporary, allows the inventory to be opened and closed //

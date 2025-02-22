@@ -72,7 +72,7 @@ public class CommandConsole : MonoBehaviour
                 DebugCommandBase commandBase = command as DebugCommandBase;
                 helpText += commandBase.CommandID + " - " + commandBase.CommandDescription + " - " + commandBase.CommandFormat +  "\n";
             }
-            _consoleText.text += helpText;
+            OutputToConsole(helpText);
         });
         LVL_DESTROY = new DebugCommand("lvl_destroy", "Destroys the console", "destroy", () =>
         {
@@ -83,6 +83,7 @@ public class CommandConsole : MonoBehaviour
                 return;
             }
             Destroy(hit.collider.gameObject);
+            OutputToConsole($"Destroyed: {hit.collider.name}");
         });
         TELEPORT = new DebugCommand<float, float, float, int>("teleport", "Teleports the player to a location", "teleport <x> <y> <z> <teleport type>", (x, y, z, i) =>
         {
@@ -90,19 +91,23 @@ public class CommandConsole : MonoBehaviour
             if (i == 0)
             {
                 player.transform.position = new Vector3(x, y, z);
+                OutputToConsole($"Teleported the player to {x}, {y}, {z} global position");
             }
             else
             {
                 player.transform.localPosition = new Vector3(x, y, z);
+                OutputToConsole($"Teleported the player to {x}, {y}, {z} local position");
             }
         });
         MAXFPS = new DebugCommand<int>("maxfps", "Sets the maximum frame rate", "maxfps <FPS Amount>", (x) =>
         {
             Application.targetFrameRate = x;
+            OutputToConsole($"Changed FPS to {x} FPS");
         });
         TIMESCALE = new DebugCommand<float>("timescale", "Sets the time scale of the game", "timescale <Timescale Amount>", (x) =>
         {
             Time.timeScale = x;
+            OutputToConsole($"Set time scale to {x} seconds per second");
         });
         I_ADDITEM = new DebugCommand<int>("i_additem", "Adds an item to the player's inventory", "i_additem <item id>", (x) =>
         {
@@ -115,29 +120,43 @@ public class CommandConsole : MonoBehaviour
         LVL_LOADSCENE = new DebugCommand<int>("lvl_loadscene", "Loads a scene", "lvl_loadscene <scene id>", (x) =>
         {
             SceneManager.LoadScene(x);
+            OutputToConsole($"Loaded Scene {x}");
         });
         LVL_RELOADSCENE = new DebugCommand("lvl_reloadscene", "Reloads the current scene", "lvl_reloadscene", () =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            OutputToConsole($"Reloaded Scene {SceneManager.GetActiveScene().buildIndex}");
         });
         C_FOV = new DebugCommand<float>("c_fov", "Sets the field of view of the camera", "c_fov <FOV Value>", (x) =>
         {
             GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.GetComponent<Camera>().fieldOfView = x;
+            OutputToConsole($"Set FOV to {x} degrees");
         });
         C_MINDISTANCE = new DebugCommand<float>("c_mindistance", "Sets the minimum distance of the camera", "c_mindistance <Distance>", (x) =>
         {
             GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.GetComponent<Camera>().nearClipPlane = x;
+            OutputToConsole($"Set camera minimum distance to {x}");
         });
         C_MAXDISTANCE = new DebugCommand<float>("c_maxdistance", "Sets the maximum distance of the camera", "c_maxdistance <Distance>", (x) =>
         {
             GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
             camera.GetComponent<Camera>().farClipPlane = x;
+            OutputToConsole($"Set camera maximum distance to {x}");
         });
         CL_DEBUG = new DebugCommand<int>("cl_debug", "Toogles the debug Menu", "cl_debug <Enabled>", (x) =>
         {
-            DebugMenu.Instance.IsDebugActive = (x == 1);
+            if (x == 1)
+            {
+                DebugMenu.Instance.IsDebugActive = true;
+                OutputToConsole("Enabled Debug Menu");
+            }
+            else
+            {
+                DebugMenu.Instance.IsDebugActive = false;
+                OutputToConsole("Disabled Debug Menu");
+            }
         });
 
         CommandList = new List<object>()
@@ -231,5 +250,10 @@ public class CommandConsole : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OutputToConsole(string input)
+    {
+        _consoleText.text += input + "\n";
     }
 }

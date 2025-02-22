@@ -429,17 +429,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1022252818389429509, guid: 99ba45250f340814c9ed821b3f8b5927, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4356374911966788132, guid: 99ba45250f340814c9ed821b3f8b5927, type: 3}
       propertyPath: m_Name
       value: Graphics
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356374911966788132, guid: 99ba45250f340814c9ed821b3f8b5927, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8059456831690726606, guid: 99ba45250f340814c9ed821b3f8b5927, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4908,7 +4900,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7413640702832280174, guid: 6891cc6180e31ff4998bf99c834ba367, type: 3}
       propertyPath: m_Name
-      value: DevelopmentTools
+      value: Development Tools
       objectReference: {fileID: 0}
     - target: {fileID: 8690718491138436137, guid: 6891cc6180e31ff4998bf99c834ba367, type: 3}
       propertyPath: m_LocalPosition.x

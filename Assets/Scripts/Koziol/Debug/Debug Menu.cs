@@ -44,6 +44,7 @@ public class DebugMenu : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        IsDebugActive = false;
     }
 
     private void OnLevelWasLoaded(int level)
@@ -64,7 +65,6 @@ public class DebugMenu : MonoBehaviour
         _fpsRecordings = new List<float>();
 
         _debugText = GetComponentInChildren<TextMeshProUGUI>();
-        IsDebugActive = false;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)

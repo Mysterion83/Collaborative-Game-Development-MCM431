@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -102,6 +101,15 @@ public class InventoryManager : MonoBehaviour
 
     private void CycleItemSlots()
     {
+        ScrollWheelInputs();
+        NumKeyInputs();
+
+        DeselectAllItemSlots();
+        itemSlots[currentSlotSelected].SetSlotActive();
+    }
+
+    private void ScrollWheelInputs()
+    {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             currentSlotSelected++;
@@ -120,9 +128,26 @@ public class InventoryManager : MonoBehaviour
                 currentSlotSelected = itemSlots.Length - 1;
             }
         }
+    }
 
-        DeselectAllItemSlots();
-        itemSlots[currentSlotSelected].SetSlotActive();
+    private void NumKeyInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentSlotSelected = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentSlotSelected = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentSlotSelected = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentSlotSelected = 3;
+        }
     }
 
     // Temporary, allows the inventory to be opened and closed //

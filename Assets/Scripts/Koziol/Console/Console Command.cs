@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugCommandBase
+public class ConsoleCommandBase
 {
     private string _commandID;
     private string _commandDescription;
@@ -13,18 +13,18 @@ public class DebugCommandBase
     public string CommandDescription { get { return _commandDescription; } }
     public string CommandFormat { get { return _commandFormat; } }
 
-    public DebugCommandBase(string commandID, string commandDescription, string commandFormat)
+    public ConsoleCommandBase(string commandID, string commandDescription, string commandFormat)
     {
         _commandID = commandID;
         _commandDescription = commandDescription;
         _commandFormat = commandFormat;
     }
 }
-public class DebugCommand : DebugCommandBase
+public class ConsoleCommand : ConsoleCommandBase
 {
     private Action command;
 
-    public DebugCommand(string commandID, string commandDescription, string commandFormat, Action command) : base(commandID, commandDescription, commandFormat)
+    public ConsoleCommand(string commandID, string commandDescription, string commandFormat, Action command) : base(commandID, commandDescription, commandFormat)
     {
         this.command = command;
     }
@@ -34,10 +34,10 @@ public class DebugCommand : DebugCommandBase
         command.Invoke();
     }
 }
-public class DebugCommand<T1> : DebugCommandBase
+public class ConsoleCommand<T1> : ConsoleCommandBase
 {
     private Action<T1> command;
-    public DebugCommand(string commandID, string commandDescription, string commandFormat, Action<T1> command) : base(commandID, commandDescription, commandFormat)
+    public ConsoleCommand(string commandID, string commandDescription, string commandFormat, Action<T1> command) : base(commandID, commandDescription, commandFormat)
     {
         this.command = command;
     }
@@ -46,10 +46,10 @@ public class DebugCommand<T1> : DebugCommandBase
         command.Invoke(arg1);
     }
 }
-public class DebugCommand<T1, T2> : DebugCommandBase
+public class ConsoleCommand<T1, T2> : ConsoleCommandBase
 {
     private Action<T1, T2> command;
-    public DebugCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2> command) : base(commandID, commandDescription, commandFormat)
+    public ConsoleCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2> command) : base(commandID, commandDescription, commandFormat)
     {
         this.command = command;
     }
@@ -58,10 +58,10 @@ public class DebugCommand<T1, T2> : DebugCommandBase
         command.Invoke(arg1, arg2);
     }
 }
-public class DebugCommand<T1, T2, T3> : DebugCommandBase
+public class ConsoleCommand<T1, T2, T3> : ConsoleCommandBase
 {
     private Action<T1, T2, T3> command;
-    public DebugCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2, T3> command) : base(commandID, commandDescription, commandFormat)
+    public ConsoleCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2, T3> command) : base(commandID, commandDescription, commandFormat)
     {
         this.command = command;
     }
@@ -70,10 +70,10 @@ public class DebugCommand<T1, T2, T3> : DebugCommandBase
         command.Invoke(arg1, arg2, arg3);
     }
 }
-public class DebugCommand<T1, T2, T3, T4> : DebugCommandBase
+public class ConsoleCommand<T1, T2, T3, T4> : ConsoleCommandBase
 {
     private Action<T1, T2, T3, T4> command;
-    public DebugCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2, T3, T4> command) : base(commandID, commandDescription, commandFormat)
+    public ConsoleCommand(string commandID, string commandDescription, string commandFormat, Action<T1, T2, T3, T4> command) : base(commandID, commandDescription, commandFormat)
     {
         this.command = command;
     }

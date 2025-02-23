@@ -8,12 +8,14 @@ public class TitleScreenController : MonoBehaviour
     // Scene names required for navigation
     public string TitleScreenScene;
     public string Level1Scene; // Will be removed once the save file system is fully implemented
-    [SerializeField] GameObject TitleScreenCanvas;
-    [SerializeField] GameObject SettingsMenuCanvas;
+    [SerializeField] GameObject TitleScreenPanel;
+    [SerializeField] GameObject ControlsPanel;
+    [SerializeField] GameObject SettingsPanel;
 
     private void Start()
     {
-        SettingsMenuCanvas.SetActive(false);
+        SettingsPanel.SetActive(false);
+        ControlsPanel.SetActive(false);
     }
 
     // Title Screen button functions - prior to complete implementation of save file system
@@ -42,18 +44,32 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
-    // Settings() will alternate between showing the title screen and settings panel based on their active states
-    public void Settings()
+    // ToggleControlsPanel() and ToggleSettingsPanel() will alternate between showing the title screen and their namesake panels based on their active states in the inspector
+    public void ToggleControlsPanel()
     {
-        if (!SettingsMenuCanvas.activeSelf)
+        if (!ControlsPanel.activeSelf)
         {
-            TitleScreenCanvas.SetActive(false);
-            SettingsMenuCanvas.SetActive(true);
+            TitleScreenPanel.SetActive(false);
+            ControlsPanel.SetActive(true);
         }
         else
         {
-            TitleScreenCanvas.SetActive(true);
-            SettingsMenuCanvas.SetActive(false);
+            TitleScreenPanel.SetActive(true);
+            ControlsPanel.SetActive(false);
+        }
+    }
+
+    public void ToggleSettingsPanel()
+    {
+        if (!SettingsPanel.activeSelf)
+        {
+            TitleScreenPanel.SetActive(false);
+            SettingsPanel.SetActive(true);
+        }
+        else
+        {
+            TitleScreenPanel.SetActive(true);
+            SettingsPanel.SetActive(false);
         }
     }
 

@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -10,17 +10,34 @@ public class InventoryManager : MonoBehaviour
     private int currentSlotSelected = 0;
 
     [SerializeField] private ItemSlot[] itemSlots;
+    private ItemSO[] items;
 
     void Start()
     {
         Inventory = GameObject.FindGameObjectWithTag("Inventory");
         itemSlots[0].SetSlotActive();
+
+        AssignItemIDs();
     }
 
     void Update()
     {
         HandleInventoryUI();
         CycleItemSlots();
+    }
+
+    private void AssignItemIDs()
+    {
+        Object[] itemObjects = Resources.LoadAll("Items");
+        items = new ItemSO[itemObjects.Length];
+
+        itemObjects.CopyTo(items, 0);
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i].SetItemID(i);
+            Debug.Log(items[i].GetItemID());
+        }
     }
 
     // Checks if the inventory has a specific item based on its ID

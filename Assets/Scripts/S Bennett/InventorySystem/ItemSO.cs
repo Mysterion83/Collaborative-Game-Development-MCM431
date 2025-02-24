@@ -17,6 +17,10 @@ public class ItemSO : ScriptableObject
     //{
 
     //}
+    public void SetItemID(int inItemID)
+    {
+        itemID = inItemID;
+    }
 
     public int GetItemID()
     {

@@ -45,9 +45,15 @@ public class CharacterMovement : MonoBehaviour
 
         ApplyDrag();
 
+        // Apply movement only if grounded
+        if (isGrounded)
+        {
+            rb.AddForce(move * MovementSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
+        }
+    }
 
-        rb.AddForce(move * MovementSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
-
+    void Update()
+    {
         // Handle jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

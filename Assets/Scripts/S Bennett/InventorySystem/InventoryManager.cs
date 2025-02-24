@@ -26,6 +26,18 @@ public class InventoryManager : MonoBehaviour
         CycleItemSlots();
     }
 
+    public ItemSO GetItemSO(int targetItemID)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            ItemSO currentItem = items[i];
+
+            if (currentItem.GetItemID() == targetItemID) return currentItem;
+        }
+
+        return null;
+    }
+
     private void AssignItemIDs()
     {
         Object[] itemObjects = Resources.LoadAll("Items");
@@ -41,10 +53,8 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Checks if the inventory has a specific item based on its ID
-    public bool HasItem(ItemSO itemToCheck)
+    public bool HasItem(int targetItemID)
     {
-        int targetItemID = itemToCheck.GetItemID();
-
         for (int i = 0; i < itemSlots.Length; i++)
         {
             int storedItemID = itemSlots[i].GetStoredItemID();
@@ -59,7 +69,7 @@ public class InventoryManager : MonoBehaviour
 
     // Attempts to add an item to the inventory by looping through each slot //
     // If the slot is empty, it will add the item to the nearest available slot //
-    public void AddItem(ItemSO inItem)
+    public void AddItem(int targetItemID)
     {
         int slotFullCounter = 0;
 
@@ -67,7 +77,8 @@ public class InventoryManager : MonoBehaviour
         {
             if (!itemSlots[i].slotHasItem)
             {
-                itemSlots[i].AddItem(inItem);
+                ItemSO itemToAdd = GetItemSO(targetItemID);
+                itemSlots[i].AddItem(itemToAdd);
                 return;
             }
             else if (itemSlots[i].slotHasItem) slotFullCounter++;
@@ -82,10 +93,10 @@ public class InventoryManager : MonoBehaviour
     // Removes an item from the inventory based on the item's ID //
     // Loops through the Item Slot array in reverse-order //
     // Checks if an item was not removed and returns an error if this case is met //
-    public void RemoveTargetItem(ItemSO itemToRemove)
+    public void RemoveTargetItem(int targetItemID)
     {
-        int targetItemID = itemToRemove.GetItemID();
         bool targetItemDeleted = false;
+        ItemSO itemToRemove = GetItemSO(targetItemID);
 
         for (int i = itemSlots.Length - 1; i >= 0; i--)
         {

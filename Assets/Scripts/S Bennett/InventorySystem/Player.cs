@@ -21,20 +21,20 @@ public class Player : MonoBehaviour
         // Temporary, only here for testing purposes to see if Items can be added to the inventory //
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            inventoryManager.AddItem(TestItem1);
-            inventoryManager.AddItem(TestItem2);
-            inventoryManager.AddItem(TestItem3);
-            inventoryManager.AddItem(TestItem4);
+            inventoryManager.AddItem(0);
+            inventoryManager.AddItem(1);
+            inventoryManager.AddItem(2);
+            inventoryManager.AddItem(3);
         }
         // Temporary, only here for testing purposes to see if Items can be removed from the inventory //
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            inventoryManager.RemoveTargetItem(TestItem1);
+            inventoryManager.RemoveTargetItem(1);
         }
         // Temp
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (inventoryManager.HasItem(TestItem3))
+            if (inventoryManager.HasItem(3))
             {
                 Debug.Log("Item 3 Found!");
             } 

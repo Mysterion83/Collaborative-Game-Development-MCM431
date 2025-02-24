@@ -50,7 +50,7 @@ public class ItemSlot : MonoBehaviour
 
     public void RemoveItem()
     {
-        itemID = 0;
+        itemID = -1;
         itemName = "";
         itemDescription = "";
         itemSprite = emptySprite;

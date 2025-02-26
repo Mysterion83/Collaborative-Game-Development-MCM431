@@ -5,12 +5,26 @@ using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance { get; private set; }
+
     GameObject Inventory;
     bool inventoryOpen = true;
     private int currentSlotSelected = 0;
 
     [SerializeField] private ItemSlot[] itemSlots;
     private ItemSO[] items;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {

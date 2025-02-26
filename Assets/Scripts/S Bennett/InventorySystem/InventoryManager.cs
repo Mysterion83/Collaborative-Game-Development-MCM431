@@ -38,6 +38,7 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    // Loads all resources in alphabetical order and assigns their ID based on its array position, from 0
     private void AssignItemIDs()
     {
         Object[] itemObjects = Resources.LoadAll("Items");
@@ -48,7 +49,6 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             items[i].SetItemID(i);
-            Debug.Log(items[i].GetItemID());
         }
     }
 

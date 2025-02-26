@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
+[Obsolete("This script is obsolete and can be safely removed when the inventory is final")]
 public class ItemInspectPanel : MonoBehaviour
 {
     // Item Description Data // 

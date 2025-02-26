@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractableItem : Interactable
 {
     [SerializeField]
-    private ItemSO _item;
+    private int _itemID;
 
     private InventoryManager _playerInventory;
 
@@ -14,7 +14,7 @@ public class InteractableItem : Interactable
     }
     public override void Interact()
     {
-        _playerInventory.AddItem(_item);
+        _playerInventory.AddItem(_itemID);
         Destroy(gameObject);
     }
 

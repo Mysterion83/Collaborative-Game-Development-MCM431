@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractableLockedButton : InteractableButton
 {
     [SerializeField]
-    private ItemSO _requiredItem;
+    private int _requiredItemID;
     [SerializeField]
     private bool _DoesRemoveItem;
 
@@ -17,13 +17,13 @@ public class InteractableLockedButton : InteractableButton
 
     public override void Interact()
     {
-        if (!_playerInventory.HasItem(_requiredItem))
+        if (!_playerInventory.HasItem(_requiredItemID))
         {
             return;
         }
         if (_DoesRemoveItem)
         {
-            _playerInventory.RemoveTargetItem(_requiredItem);
+            _playerInventory.RemoveTargetItem(_requiredItemID);
         }
         base.Interact();
     }

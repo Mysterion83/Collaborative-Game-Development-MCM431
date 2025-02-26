@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenController : MonoBehaviour
 {
-    // SCENE NAMES REQUIRED FOR NAVIGATON
-    [SerializeField] public string TitleScreenScene;
-    [SerializeField] public string Level1Scene;
-    [SerializeField] GameObject TitleScreenCanvas;
-    [SerializeField] GameObject SettingsMenuCanvas;
+    // Scene names required for navigation
+    public string TitleScreenScene;
+    public string Level1Scene; // Will be removed once the save file system is fully implemented
+    [SerializeField] GameObject TitleScreenPanel;
+    [SerializeField] GameObject ControlsPanel;
+    [SerializeField] GameObject SettingsPanel;
 
     private void Start()
     {
-        SettingsMenuCanvas.SetActive(false);
+        SettingsPanel.SetActive(false);
+        ControlsPanel.SetActive(false);
     }
 
-
-    // SCENE NAVIGATION BETWEEN TITLE AND GAME
+    // Title Screen button functions - prior to complete implementation of save file system
     public void LoadTitleScreen()
     {
         if (TitleScreenScene == "")
@@ -30,6 +31,7 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
+    //  Play() will become redundant once the save file system is complete; two new functions, LoadNewGame() and LoadSaveFile(), will be implemented to handle loading either a new or old save file from the title screen
     public void Play()
     {
         if (Level1Scene == "")
@@ -42,17 +44,32 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
-    public void Settings()
+    // ToggleControlsPanel() and ToggleSettingsPanel() will alternate between showing the title screen and their namesake panels based on their active states in the inspector
+    public void ToggleControlsPanel()
     {
-        if (!SettingsMenuCanvas.activeSelf)
+        if (!ControlsPanel.activeSelf)
         {
-            TitleScreenCanvas.SetActive(false);
-            SettingsMenuCanvas.SetActive(true);
+            TitleScreenPanel.SetActive(false);
+            ControlsPanel.SetActive(true);
         }
         else
         {
-            TitleScreenCanvas.SetActive(true);
-            SettingsMenuCanvas.SetActive(false);
+            TitleScreenPanel.SetActive(true);
+            ControlsPanel.SetActive(false);
+        }
+    }
+
+    public void ToggleSettingsPanel()
+    {
+        if (!SettingsPanel.activeSelf)
+        {
+            TitleScreenPanel.SetActive(false);
+            SettingsPanel.SetActive(true);
+        }
+        else
+        {
+            TitleScreenPanel.SetActive(true);
+            SettingsPanel.SetActive(false);
         }
     }
 

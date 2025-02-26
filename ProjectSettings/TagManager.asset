@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Interactable
   - Ground
+  - Inventory
+  - LevelOne
+  - LevelTwo
+  - AudioObject
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

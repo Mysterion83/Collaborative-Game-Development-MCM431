@@ -13,10 +13,10 @@ public class ItemSO : ScriptableObject
     [SerializeField] private string itemName;
     [TextArea(10, 15)][SerializeField] private string itemDescription;
 
-    //static int AssignItemID()
-    //{
-
-    //}
+    public void SetItemID(int inItemID)
+    {
+        itemID = inItemID;
+    }
 
     public int GetItemID()
     {

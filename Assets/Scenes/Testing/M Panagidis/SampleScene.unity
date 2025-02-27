@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectRotation: 0
   correctRotation: 80
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!1001 &1092233117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!1 &1195409697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,7 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f513f641a2caf47a383b905638fdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!1 &1513025149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateON: 0
-  puzzleManager: {fileID: 633722055}
+  _puzzleManager: {fileID: 633722055}
 --- !u!65 &1513025152
 BoxCollider:
   m_ObjectHideFlags: 0

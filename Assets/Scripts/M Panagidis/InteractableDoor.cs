@@ -7,15 +7,15 @@ public class InteractableDoor : Interactable
     public Animator animator;
     public string animBoolName;
     public string animOpenName;
-    private bool isInAnimation = false;
+    private bool _isInAnimation = false;
 
     public bool unlocked = false;
 
     public override void Interact()
     {
-        if (!isInAnimation)
+        if (!_isInAnimation)
         {
-            isInAnimation = true;
+            _isInAnimation = true;
             if (unlocked)
             {
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName(animOpenName))
@@ -32,7 +32,7 @@ public class InteractableDoor : Interactable
                 animator.SetBool(animBoolName, false);
             }
         }
-        isInAnimation = false;
+        _isInAnimation = false;
     }
 
     public override void ScrollInteract(float mouseScrollDelta)

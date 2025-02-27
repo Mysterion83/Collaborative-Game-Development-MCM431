@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Planet_Puzzle : PuzzleManager
 {
-    private float errorRange = 1f;
+    private float _errorRange = 1f;
 
     public float GetErrorRange()
     {
-        return this.errorRange;
+        return this._errorRange;
     }
 
     void Update()

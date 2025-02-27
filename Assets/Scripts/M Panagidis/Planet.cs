@@ -6,18 +6,18 @@ public class Planet : MonoBehaviour
 {
     public bool isCorrectRotation = false;
     public float correctRotation;
-    private int index;
+    private int _index;
 
     [SerializeField]
-    private Planet_Puzzle puzzleManager;
+    private Planet_Puzzle _puzzleManager;
 
     void Start()
     {
-        index = puzzleManager.AddSwitch();
+        _index = _puzzleManager.AddSwitch();
     }
     private bool CheckRotation()
     {
-        if(gameObject.transform.eulerAngles.y <= correctRotation + puzzleManager.GetErrorRange() && gameObject.transform.eulerAngles.y >= correctRotation - puzzleManager.GetErrorRange())
+        if(gameObject.transform.eulerAngles.y <= correctRotation + _puzzleManager.GetErrorRange() && gameObject.transform.eulerAngles.y >= correctRotation - _puzzleManager.GetErrorRange())
         {
             return true;
         }
@@ -30,6 +30,6 @@ public class Planet : MonoBehaviour
     void Update()
     {
         isCorrectRotation = CheckRotation();
-        puzzleManager.SetState(index, isCorrectRotation);
+        _puzzleManager.SetState(_index, isCorrectRotation);
     }
 }

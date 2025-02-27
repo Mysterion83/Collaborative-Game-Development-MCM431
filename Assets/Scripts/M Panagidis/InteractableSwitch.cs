@@ -6,15 +6,15 @@ public class InteractableSwitch : Interactable
 {
     public bool State { get { return _state; } }
     private bool _state;
-    private int index;
+    private int _index;
 
     [SerializeField]
-    private PuzzleManager puzzleManager;
+    private PuzzleManager _puzzleManager;
 
     public override void Interact()
     {
         _state = !_state;
-        puzzleManager.SetState(index, State);
+        _puzzleManager.SetState(_index, State);
     }
 
     public override void ScrollInteract(float mouseScrollDelta)
@@ -24,7 +24,7 @@ public class InteractableSwitch : Interactable
 
     private void Start()
     {
-        index = puzzleManager.AddSwitch();
+        _index = _puzzleManager.AddSwitch();
     }
 }
 

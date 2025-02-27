@@ -6,6 +6,7 @@ public class Player_Movement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    // public float MaxmoveSpeed;
 
     public float groundDrag;
 
@@ -47,13 +48,25 @@ public class Player_Movement : MonoBehaviour
         SpeedControl();
         // drag if floor
         if (grounded)
+        {
             rb.drag = groundDrag;
+        }
             
         else
+        {
             rb.drag = 0;
+        }
         //rest jump
         if (grounded && !readyToJump)
+        {
             ResetJump();
+        }
+        // if (rb.velocity.magnitude > MaxmoveSpeed)
+        // {
+        //     Vector3 brakeForce = -rb.velocity.normalized * (rb.velocity.magnitude - MaxmoveSpeed);
+        //     rb.AddForce(brakeForce, ForceMode.Impulse);
+        // }
+
   
     }
     private void FixedUpdate()
@@ -86,6 +99,7 @@ public class Player_Movement : MonoBehaviour
         // in air
         else if (!(grounded))
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMult, ForceMode.Force);
+            //rb.velocity = Vector3.zero;
 
     }
 
@@ -108,6 +122,17 @@ public class Player_Movement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    //Temporary fix for the bouncing when picking up object, does make you instead slightly slide on it.
+    // Will figure something more concrete.
+      void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "PickUpAble")
+        {
+            Debug.Log("hmm2");
+            rb.velocity = Vector3.zero;
+        }
     }
 }
 

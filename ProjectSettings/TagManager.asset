@@ -10,7 +10,7 @@ TagManager:
   - LevelOne
   - LevelTwo
   - AudioObject
-  - CanPickUp
+  - PickUpAble
   layers:
   - Default
   - TransparentFX

@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
 public class ItemPickUp : MonoBehaviour
 {
     [SerializeField] Transform holdingPosition;
+    Transform OrigionalParent;
+
     private GameObject heldObject;
     private Rigidbody heldObjectRB;
+    
 
     [SerializeField] private float pickUpRange = 5.0f;
     [SerializeField] private float pickUpForce = 150.0f;
     [SerializeField] KeyCode pickUpKey = KeyCode.F;
+    
 
     private void Update()
     {
         if(Input.GetKeyDown(pickUpKey))
         {
-            Debug.Log(heldObject);
 
             if(heldObject == null)
             {
@@ -46,11 +47,13 @@ public class ItemPickUp : MonoBehaviour
         {
             heldObjectRB = pickObject.GetComponent<Rigidbody>();
             heldObjectRB.useGravity = false;
-            heldObjectRB.drag = 5;
+            // heldObjectRB.isKinematic = true;
+            heldObjectRB.drag = 10;
             heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation;
-
+            OrigionalParent = heldObjectRB.transform.parent;
             heldObjectRB.transform.parent = holdingPosition;
             heldObject = pickObject;
+            pickObject.transform.localPosition = new Vector3(0,0,0);
         }
 
 
@@ -60,10 +63,11 @@ public class ItemPickUp : MonoBehaviour
     {
  
         heldObjectRB.useGravity = true;
+        heldObjectRB.isKinematic = false;
         heldObjectRB.drag = 1;
         heldObjectRB.constraints = RigidbodyConstraints.None;
 
-        heldObjectRB.transform.parent = null;
+        heldObjectRB.transform.SetParent(OrigionalParent);
         heldObject = null;
     }
 
@@ -75,7 +79,6 @@ public class ItemPickUp : MonoBehaviour
             heldObjectRB.AddForce(moveDir * pickUpForce);
 
         }
+
     }
-
-
 }

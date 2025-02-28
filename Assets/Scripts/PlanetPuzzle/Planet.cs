@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    
+    public Vector3 currentPosition;
 
     void Start()
     {
-        
+        UpdatePosition();
     }
 
-    void Update()
+    public void UpdatePosition()
     {
-        
+        currentPosition = transform.localPosition;
     }
 }

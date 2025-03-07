@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Collaborative-Game-Development-MCM431.sln"
+    "dotnet.defaultSolution": "GIt.sln"
 }

@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlanetPuzzleManager : Interactable
 {
-    [SerializeField] private Planet[] planets; 
-    public Vector3[] planetPositions;
+    [Header("Planet Data")]
+    [SerializeField] private GameObject[] planets; 
+
+    [Header("Rotation Parameters")]
+    [SerializeField] private GameObject RotationPoint;
+    [SerializeField] private int targetPointRotation;
+    [SerializeField] private int pointRotationSpeed;
+    [SerializeField] private float rotationAmount;
+    [SerializeField] private float[] rotationSpeeds;
 
     public bool isSolved {get {return _isSolved;}}
     private bool _isSolved;
-    
-    void Start()
-    {
-        planetPositions = new Vector3[planets.Length];
-    }
+    private bool canRotate = false;
 
     public override void Interact()
     {
         if (planets.Length == 0) Debug.LogWarning("Interactable Button: Button Does not have any planet interactables to interact with", gameObject);
-        CheckPositions();
+        canRotate = true;
     }
 
     public override void ScrollInteract(float mouseScrollDelta)
@@ -26,12 +29,34 @@ public class PlanetPuzzleManager : Interactable
         return;
     }
 
-    private void CheckPositions()
+    private void Update()
     {
-        for (int i = 0; i < planetPositions.Length; i++)
+        if (Input.GetKey(KeyCode.E) && canRotate)
         {
-            planets[i].UpdatePosition();
-            planetPositions[i] = planets[i].currentPosition;
+            RotatePlanets();
+
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                canRotate = false;
+            }
+        }
+    }
+
+    private void RotatePlanets()
+    {
+        if (RotationPoint.transform.eulerAngles.y >= targetPointRotation)
+        {
+            canRotate = false;
+            return;
+        }
+        else
+        {
+            RotationPoint.transform.Rotate(new Vector3(0, rotationAmount, 0), pointRotationSpeed * Time.deltaTime);
+
+            planets[0].transform.RotateAround(RotationPoint.transform.position, new Vector3(0, rotationAmount, 0), rotationSpeeds[0] * Time.deltaTime);
+            planets[1].transform.RotateAround(RotationPoint.transform.position, new Vector3(0, rotationAmount, 0), rotationSpeeds[1] * Time.deltaTime);
+            planets[2].transform.RotateAround(RotationPoint.transform.position, new Vector3(0, rotationAmount, 0), rotationSpeeds[2] * Time.deltaTime);
+            planets[3].transform.RotateAround(RotationPoint.transform.position, new Vector3(0, rotationAmount, 0), rotationSpeeds[3] * Time.deltaTime);
         }
     }
 }

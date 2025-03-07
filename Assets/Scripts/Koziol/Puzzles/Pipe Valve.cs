@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableSwitch : Interactable
+public class PipeValve : InteractableSwitch
 {
-    public bool State { get { return _state; } }
-    protected bool _state;
     public override void Interact()
     {
-        _state = !_state;
+        base.Interact();
+        UpdateGuage();
     }
     public override void ScrollInteract(float mouseScrollDelta)
     {
         return;
+    }
+    private void UpdateGuage()
+    {
+        if (_state)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }

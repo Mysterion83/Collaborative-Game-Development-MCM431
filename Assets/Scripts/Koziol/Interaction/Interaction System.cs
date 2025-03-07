@@ -39,4 +39,9 @@ public class InteractionSystem : MonoBehaviour
             }
         }
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * _maxInteractionDistance);
+    }
 }

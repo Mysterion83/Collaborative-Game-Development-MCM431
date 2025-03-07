@@ -17,6 +17,8 @@ public class Gearbox : InteractableLockedButton
 
     public override void Interact()
     {
+        _requiredItemID = InventoryManager.Instance.currentSelectedItemID;
+            
         if (!InventoryManager.Instance.HasItem(_requiredItemID))
         {
             return;

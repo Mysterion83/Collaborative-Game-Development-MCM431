@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private ItemSlot[] itemSlots;
     private ItemSO[] items;
 
+    public int currentSelectedItemID;
+
     private void Awake()
     {
         if (Instance == null)
@@ -148,6 +150,7 @@ public class InventoryManager : MonoBehaviour
 
         DeselectAllItemSlots();
         itemSlots[currentSlotSelected].SetSlotActive();
+        currentSelectedItemID = itemSlots[currentSlotSelected].GetStoredItemID();
     }
 
     private void ScrollWheelInputs()

@@ -9,6 +9,7 @@ TagManager:
   - LevelOne
   - LevelTwo
   - AudioObject
+  - PuzzleBlock
   layers:
   - Default
   - TransparentFX

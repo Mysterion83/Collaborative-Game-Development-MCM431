@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gearbox : MonoBehaviour
+public class Gearbox : InteractableLockedButton
 {
     private int gearsCollected = 0;
     public int requiredGears = 3;
@@ -12,16 +12,35 @@ public class Gearbox : MonoBehaviour
     private void Start()
     {
         // Ensure the object is locked at the start
-        if (objectToLock != null)
+        LockObject();
+    }
+
+    public override void Interact()
+    {
+        if (!InventoryManager.Instance.HasItem(_requiredItemID))
         {
-            objectToLock.SetActive(false); // Disable the object initially
+            return;
         }
+        else if (InventoryManager.Instance.HasItem(_requiredItemID))
+        {
+            AddGear();
+        }
+        if (_DoesRemoveItem)
+        {
+            InventoryManager.Instance.RemoveTargetItem(_requiredItemID);
+        }
+    }
+    
+    public override void ScrollInteract(float mouseScrollDelta)
+    {
+        return;
     }
 
     public void AddGear()
     {
         gearsCollected++;
         Debug.Log("Gears collected: " + gearsCollected);
+        
         if (gearsCollected >= requiredGears && isLocked)
         {
             UnlockObject();

@@ -21,6 +21,7 @@ public class PlayerInteraction : MonoBehaviour
                 Gear gear = hit.collider.GetComponent<Gear>();
                 if (gear != null)
                 {
+                    InventoryManager.Instance.AddItem(0);
                     gear.PickUp();
                     gearsHeld++;
                     Debug.Log("Picked up a gear. Total gears held: " + gearsHeld);

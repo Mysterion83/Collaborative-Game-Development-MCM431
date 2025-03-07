@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ee4b741829eee841bdf5c27df9f8b2c, type: 3}
-  m_Name: Gear 2
+  m_Name: Gear_2
   m_EditorClassIdentifier: 
-  itemID: 0
+  itemID: 1
   itemSprite: {fileID: 0}
   itemName: Gear
-  itemDescription: This is a Gear
+  itemDescription: This is another gear

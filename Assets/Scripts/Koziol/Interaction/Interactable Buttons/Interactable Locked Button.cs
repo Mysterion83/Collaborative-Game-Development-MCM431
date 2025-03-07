@@ -3,27 +3,24 @@ using UnityEngine;
 public class InteractableLockedButton : InteractableButton
 {
     [SerializeField]
-    private int _requiredItemID;
+    protected int _requiredItemID;
     [SerializeField]
-    private bool _DoesRemoveItem;
-
-    InventoryManager _playerInventory;
+    protected bool _DoesRemoveItem;
 
     private void Start()
     {
-        _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<InventoryManager>();
-        if (_playerInventory == null) Debug.LogError("Interactable Locked Button: Inventory Manager not found");
+        if (InventoryManager.Instance == null) Debug.LogError("Interactable Locked Button: Inventory Manager not found");
     }
 
     public override void Interact()
     {
-        if (!_playerInventory.HasItem(_requiredItemID))
+        if (!InventoryManager.Instance.HasItem(_requiredItemID))
         {
             return;
         }
         if (_DoesRemoveItem)
         {
-            _playerInventory.RemoveTargetItem(_requiredItemID);
+            InventoryManager.Instance.RemoveTargetItem(_requiredItemID);
         }
         base.Interact();
     }

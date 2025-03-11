@@ -13,17 +13,15 @@ public class InteractionSystem : MonoBehaviour
 
     private void Update()
     {
+        interactionPromptX.SetActive(false);
+        centerDot.SetActive(true);
         Ray interactionRay = new Ray(transform.position, transform.forward);
         if (!Physics.Raycast(interactionRay, out RaycastHit hit, _maxInteractionDistance)) //Raycast Check to see if the ray hit something
         {
-            interactionPromptX.SetActive(false);
-            centerDot.SetActive(true);
             return;
         }
         if (hit.collider.gameObject.tag != "Interactable")
         {
-            interactionPromptX.SetActive(false);
-            centerDot.SetActive(true);
             return;
         }
         Interactable[] interactions = hit.collider.gameObject.GetComponents<Interactable>();
@@ -31,8 +29,6 @@ public class InteractionSystem : MonoBehaviour
         if (interactions.Length == 0)
         {
             Debug.LogError("Interaction System: Interactable Object Does Not Have a Derived Interactable Component");
-            interactionPromptX.SetActive(false);
-            centerDot.SetActive(true);
             return;
         }
 

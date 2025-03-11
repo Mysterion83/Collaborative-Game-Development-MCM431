@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeValve : InteractableSwitch
+public class InteractablePipeValve : InteractableSwitch
 {
     public override void Interact()
     {

@@ -8,7 +8,6 @@ using TMPro;
 public class ItemSlot : MonoBehaviour
 {
     // Class References //
-    private InventoryManager inventoryManager;
     private ItemInspectPanel inspectPanel;
 
     // Item Data //
@@ -28,7 +27,6 @@ public class ItemSlot : MonoBehaviour
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         itemInspectImage.sprite = emptySprite;
     }
 
@@ -64,7 +62,7 @@ public class ItemSlot : MonoBehaviour
     // If the slot is empty when selected, it will reset the item inspect panel //
     public void SetSlotActive()
     {
-        inventoryManager.DeselectAllItemSlots();
+        InventoryManager.Instance.DeselectAllItemSlots();
         thisItemSelected = true;
         selectedShader.SetActive(true);
     }

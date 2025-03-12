@@ -3,9 +3,7 @@ using UnityEngine;
 public class InteractableItem : Interactable
 {
     [SerializeField]
-    private int _itemID;
-
-    private InventoryManager _playerInventory;
+    private int _itemID = -1;
 
     public void Start()
     {

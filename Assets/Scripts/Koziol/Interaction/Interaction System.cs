@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(Camera))]
 public class InteractionSystem : MonoBehaviour
@@ -8,6 +9,8 @@ public class InteractionSystem : MonoBehaviour
 
     private void Update()
     {
+        UIManager.Instance.ChangeInteractText("");
+        UIManager.Instance.ChangeCrosshair(false);
         Ray interactionRay = new Ray(transform.position, transform.forward);
         if (!Physics.Raycast(interactionRay, out RaycastHit hit, _maxInteractionDistance)) //Raycast Check to see if the ray hit something
         {
@@ -18,11 +21,14 @@ public class InteractionSystem : MonoBehaviour
             return;
         }
         Interactable[] interactions = hit.collider.gameObject.GetComponents<Interactable>();
+
         if (interactions.Length == 0)
         {
             Debug.LogError("Interaction System: Interactable Object Does Not Have a Derived Interactable Component");
             return;
         }
+        UIManager.Instance.ChangeInteractText(interactions[0].TooltipText);
+        UIManager.Instance.ChangeCrosshair(true);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -38,5 +44,10 @@ public class InteractionSystem : MonoBehaviour
                 interaction.ScrollInteract(Input.mouseScrollDelta.y);
             }
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * _maxInteractionDistance);
     }
 }

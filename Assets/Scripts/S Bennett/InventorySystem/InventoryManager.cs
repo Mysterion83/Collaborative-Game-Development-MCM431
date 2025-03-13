@@ -69,39 +69,47 @@ public class InventoryManager : MonoBehaviour
     // Checks if the inventory has a specific item based on its ID
     public bool HasItem(int targetItemID)
     {
-        for (int i = 0; i < itemSlots.Length; i++)
+        if (CheckItemExists(targetItemID))
         {
-            int storedItemID = itemSlots[i].GetStoredItemID();
-
-            if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+            for (int i = 0; i < itemSlots.Length; i++)
             {
-                return true;
+                int storedItemID = itemSlots[i].GetStoredItemID();
+
+                if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+                {
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
+        else return false;
     }
 
     // Attempts to add an item to the inventory by looping through each slot //
     // If the slot is empty, it will add the item to the nearest available slot //
     public void AddItem(int targetItemID)
     {
-        int slotFullCounter = 0;
-
-        for (int i = 0; i < itemSlots.Length; i++)
+        if (CheckItemExists(targetItemID))
         {
-            if (!itemSlots[i].slotHasItem)
-            {
-                ItemSO itemToAdd = GetItemSO(targetItemID);
-                itemSlots[i].AddItem(itemToAdd);
-                return;
-            }
-            else if (itemSlots[i].slotHasItem) slotFullCounter++;
+            int slotFullCounter = 0;
 
-            if (slotFullCounter == itemSlots.Length)
+            for (int i = 0; i < itemSlots.Length; i++)
             {
-                Debug.LogError("The player inventory is full and no items can be added");
+                if (!itemSlots[i].slotHasItem)
+                {
+                    ItemSO itemToAdd = GetItemSO(targetItemID);
+                    itemSlots[i].AddItem(itemToAdd);
+                    return;
+                }
+                else if (itemSlots[i].slotHasItem) slotFullCounter++;
+
+                if (slotFullCounter == itemSlots.Length)
+                {
+                    Debug.LogError("The player inventory is full and no items can be added");
+                }
             }
         }
+        else return;
     }
 
     // Removes an item from the inventory based on the item's ID //
@@ -109,25 +117,43 @@ public class InventoryManager : MonoBehaviour
     // Checks if an item was not removed and returns an error if this case is met //
     public void RemoveTargetItem(int targetItemID)
     {
-        bool targetItemDeleted = false;
-        ItemSO itemToRemove = GetItemSO(targetItemID);
-
-        for (int i = itemSlots.Length - 1; i >= 0; i--)
+        if (CheckItemExists(targetItemID))
         {
-            int storedItemID = itemSlots[i].GetStoredItemID();
+            bool targetItemDeleted = false;
+            ItemSO itemToRemove = GetItemSO(targetItemID);
 
-            if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+            for (int i = itemSlots.Length - 1; i >= 0; i--)
             {
-                itemSlots[i].RemoveItem();
-                targetItemDeleted = true;
-            }
+                int storedItemID = itemSlots[i].GetStoredItemID();
 
-            if (targetItemDeleted == false && i == 0)
-            {
-               Debug.LogError($"Target item '{itemToRemove.GetItemName()}' does not exist within the inventory and could not be deleted");
-               break;
+                if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+                {
+                    itemSlots[i].RemoveItem();
+                    targetItemDeleted = true;
+                }
+
+                if (targetItemDeleted == false && i == 0)
+                {
+                    Debug.LogError($"Target item '{itemToRemove.GetItemName()}' does not exist within the inventory and could not be deleted");
+                    break;
+                }
             }
         }
+        else return;
+    }
+
+    private bool CheckItemExists(int itemID)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].GetItemID() == itemID)
+            {
+                return true;
+            }
+        }
+
+        Debug.LogError("Target Item does not exist within the items folder. Please ensure all item scriptable objects are within this folder.");
+        return false;
     }
 
     // Called when an item is selected within the inventory // 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractableSwitch : Interactable
 {
     public bool State { get { return _state; } }
-    private bool _state;
+    protected bool _state;
     public override void Interact()
     {
         _state = !_state;

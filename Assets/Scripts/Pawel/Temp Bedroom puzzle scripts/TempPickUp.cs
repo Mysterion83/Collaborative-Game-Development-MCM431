@@ -15,7 +15,7 @@ public class TempPickUp : MonoBehaviour
         //Debug.Log(tempStore.GotKeys);
         if(collision.gameObject.tag =="Player")
         {
-            item.SetActive(false);
+            Destroy(gameObject);
             tempStore.addToGot(key_name);
         }
     }

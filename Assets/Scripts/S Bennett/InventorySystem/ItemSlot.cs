@@ -5,10 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler
+public class ItemSlot : MonoBehaviour
 {
     // Class References //
-    private InventoryManager inventoryManager;
     private ItemInspectPanel inspectPanel;
 
     // Item Data //
@@ -22,15 +21,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Sprite emptySprite;
     public Image itemInspectImage;
     
-
     // Item Selection //
     public GameObject selectedShader;
     public bool thisItemSelected;
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-        inspectPanel = GameObject.Find("InspectPanel").GetComponent<ItemInspectPanel>();
         itemInspectImage.sprite = emptySprite;
     }
 
@@ -52,7 +48,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void RemoveItem()
     {
-        itemID = 0;
+        itemID = -1;
         itemName = "";
         itemDescription = "";
         itemSprite = emptySprite;
@@ -61,30 +57,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemInspectImage.sprite = emptySprite;
     }
 
-    // Checks if the mouse has clicked this particular item slot //
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            OnLeftClick();
-        }
-    }
-
     // Called when this specific item slot is clicked //
     // Passes the currently stored item slot data for this specific item slot to the item inspector //
     // If the slot is empty when selected, it will reset the item inspect panel //
-    private void OnLeftClick()
+    public void SetSlotActive()
     {
-        inventoryManager.DeselectAllItemSlots();
+        InventoryManager.Instance.DeselectAllItemSlots();
         thisItemSelected = true;
         selectedShader.SetActive(true);
-
-        if (!slotHasItem)
-        {
-            inspectPanel.ResetInspectPanel();
-            return;
-        }
-
-        inspectPanel.UpdateInspectPanel(itemName, itemDescription, itemInspectImage);
     }
 }

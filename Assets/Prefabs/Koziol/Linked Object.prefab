@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _linkedObject: {fileID: 0}
+  _linkedObject: {fileID: 5597016542738813051}
   _isPresentObject: 0
   _previousPositionDistanceLeeway: 0.0000001
   _previousAngleLeeway: 0.0000001
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e8a7443bb692d45843b9ba7ad295ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _linkedObject: {fileID: 0}
-  _isPresentObject: 0
+  _linkedObject: {fileID: 7314621552589333491}
+  _isPresentObject: 1
   _previousPositionDistanceLeeway: 0.0000001
   _previousAngleLeeway: 0.0000001
 --- !u!54 &7684664421482314652

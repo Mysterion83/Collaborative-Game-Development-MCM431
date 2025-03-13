@@ -5,11 +5,18 @@ using System.Collections.Generic;
 
 public class DebugMenu : MonoBehaviour
 {
+    public static DebugMenu Instance { get { return _instance; } }
+    private static DebugMenu _instance;
+
     private TextMeshProUGUI _debugText;
 
     private Transform _playerPosition;
 
     private LevelTeleportSystem _lts;
+
+    private CharacterMovement _playerMovement;
+
+    
 
 
 
@@ -24,22 +31,47 @@ public class DebugMenu : MonoBehaviour
 
     private float _totalRunTime = 0;
 
-    private bool _isDebugActive;
+    public bool IsDebugActive;
 
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        IsDebugActive = false;
+    }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.TryGetComponent<Transform>(out _playerPosition);
+            _lts = player.GetComponentInChildren<LevelTeleportSystem>();
+            _playerMovement = player.GetComponentInChildren<CharacterMovement>();
+        }
+        else Debug.LogError("Debug Menu: Could not find object with Player Tag");
+    }
 
     void Start()
     {
+
         _fpsRecordings = new List<float>();
 
         _debugText = GetComponentInChildren<TextMeshProUGUI>();
-        _isDebugActive = false;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             player.TryGetComponent<Transform>(out _playerPosition);
             _lts = player.GetComponentInChildren<LevelTeleportSystem>();
+            _playerMovement = player.GetComponentInChildren<CharacterMovement>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
@@ -51,11 +83,7 @@ public class DebugMenu : MonoBehaviour
     {
         _totalRunTime += Time.deltaTime;
         UpdateFPSArray();
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            ToggleDebugMenu();
-        }
-        if (_isDebugActive)
+        if (IsDebugActive)
         {
             _debugText.text =
                 $"Debug Menu:\nFPS: Avg: {Mathf.Round(GetAverageFPS())} Min: {Mathf.Round(GetMinFPS())} Max: {Mathf.Round(GetMaxFPS())}\n" +
@@ -76,7 +104,7 @@ public class DebugMenu : MonoBehaviour
     }
     void ToggleDebugMenu()
     {
-        _isDebugActive = !_isDebugActive;
+        IsDebugActive = !IsDebugActive;
     }
     void UpdateFPSArray()
     {
@@ -152,7 +180,7 @@ public class DebugMenu : MonoBehaviour
     }
     float GetPlayerMovementspeed()
     {
-        Debug.LogWarning("Debug Menu: GetPlayerMovementspeed is not Implemented");
-        return 0;
+        if (_playerMovement == null) return 0;
+        return (Mathf.Round(_playerMovement.CurrentSpeed*100)/100);
     }
 }

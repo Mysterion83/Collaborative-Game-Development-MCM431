@@ -14,6 +14,9 @@ public class PlanetPuzzleManager : Interactable
     [SerializeField] private float rotationAmount;
     [SerializeField] private float[] rotationSpeeds;
 
+    [Header("Items")]
+    [SerializeField] private GameObject key;
+
     public bool isSolved {get {return _isSolved;}}
     private bool _isSolved;
     private bool canRotate = false;
@@ -29,8 +32,15 @@ public class PlanetPuzzleManager : Interactable
         return;
     }
 
+    private void Start()
+    {
+        key.SetActive(false);
+    }
+
     private void Update()
     {
+        CheckSolved();
+
         if (Input.GetKey(KeyCode.E) && canRotate)
         {
             RotatePlanets();
@@ -42,10 +52,20 @@ public class PlanetPuzzleManager : Interactable
         }
     }
 
+    private void CheckSolved()
+    {
+        if (_isSolved)
+        {
+            key.SetActive(true);
+            enabled = false;
+        }
+    }
+
     private void RotatePlanets()
     {
         if (RotationPoint.transform.eulerAngles.y >= targetPointRotation)
         {
+            _isSolved = true;
             canRotate = false;
             return;
         }

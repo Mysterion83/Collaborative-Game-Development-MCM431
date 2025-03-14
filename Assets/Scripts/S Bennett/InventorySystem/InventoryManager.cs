@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +12,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private ItemSlot[] itemSlots;
     private ItemSO[] items;
+
+    public int currentSelectedItemID;
 
     private void Awake()
     {
@@ -174,6 +175,7 @@ public class InventoryManager : MonoBehaviour
 
         DeselectAllItemSlots();
         itemSlots[currentSlotSelected].SetSlotActive();
+        currentSelectedItemID = itemSlots[currentSlotSelected].GetStoredItemID();
     }
 
     private void ScrollWheelInputs()

@@ -41,14 +41,9 @@ public class PlanetPuzzleManager : Interactable
     {
         CheckSolved();
 
-        if (Input.GetKey(KeyCode.E) && canRotate)
+        if (canRotate)
         {
             RotatePlanets();
-
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                canRotate = false;
-            }
         }
     }
 

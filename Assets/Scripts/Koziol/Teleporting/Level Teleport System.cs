@@ -36,6 +36,10 @@ public class LevelTeleportSystem : MonoBehaviour
     [Tooltip("The Volume used for the teleport effects")]
     private Volume _volume;
 
+
+    [SerializeField]
+    KeyCode TeleportKey = KeyCode.T;
+
     private bool _isOnCooldown = false;
 
     private void Start()
@@ -61,7 +65,7 @@ public class LevelTeleportSystem : MonoBehaviour
         {
             PlayCooldownEffect();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && IsAllowedToTeleport)
+        else if (Input.GetKeyDown(TeleportKey) && IsAllowedToTeleport)
         {
             _isTeleporting = true;
             _currentTeleportTimer = _TeleportDelay;

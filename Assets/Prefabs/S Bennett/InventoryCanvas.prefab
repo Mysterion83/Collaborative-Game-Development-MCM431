@@ -75,12 +75,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -158,11 +158,11 @@ RectTransform:
   - {fileID: 3246579352197308575}
   m_Father: {fileID: 7815376231160255739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 467.5, y: -387.5}
-  m_SizeDelta: {x: -1065, y: -825}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 20}
+  m_SizeDelta: {x: 855, y: 255}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &4120604486795253362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -459,10 +459,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5948905005323774056}
     m_Modifications:
-    - target: {fileID: 41965372594517747, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
-      propertyPath: thisItemSelected
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Name
       value: ItemSlot

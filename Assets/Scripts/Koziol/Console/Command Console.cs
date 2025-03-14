@@ -261,7 +261,7 @@ public class CommandConsole : MonoBehaviour
             }
         }
     }
-    private void OutputToConsole(string input)
+    public void OutputToConsole(string input)
     {
         _consoleText.text += input + "\n";
     }

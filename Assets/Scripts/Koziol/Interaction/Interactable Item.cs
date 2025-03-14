@@ -7,7 +7,7 @@ public class InteractableItem : Interactable
 
     public void Start()
     {
-       if (InventoryManager.Instance == null) Debug.LogError("Interactable _item: Inventory Manager not found");
+        if (InventoryManager.Instance == null) Debug.LogError("Interactable _item: Inventory Manager not found");
     }
     public override void Interact()
     {

@@ -456,7 +456,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.75, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &188694667
 MeshRenderer:
@@ -1571,7 +1571,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.75, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &335326856
 MeshRenderer:
@@ -1922,7 +1922,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 7.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &356806921
 MeshRenderer:
@@ -2273,7 +2273,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.8, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &391551212
 MeshRenderer:
@@ -3042,7 +3042,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.8, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &412444787
 MeshRenderer:
@@ -4218,7 +4218,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1.5, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &657788728
 MeshRenderer:
@@ -5443,7 +5443,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &839692459
 MeshRenderer:
@@ -7015,7 +7015,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1134783415
 MeshRenderer:
@@ -7993,7 +7993,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1225479762
 MeshRenderer:
@@ -9268,7 +9268,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 0.7, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1402566542
 MeshRenderer:
@@ -9784,7 +9784,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.8, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1452363871
 MeshRenderer:
@@ -11257,7 +11257,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1.5, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1674587821
 MeshRenderer:
@@ -11938,7 +11938,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1742316806
 MeshRenderer:
@@ -12586,7 +12586,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 0.7, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1794770465
 MeshRenderer:
@@ -12937,7 +12937,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.21, y: 0.01, z: 0.297}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1802245031
 MeshRenderer:
@@ -13915,7 +13915,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.8, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2054056418
 MeshRenderer:
@@ -14431,7 +14431,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2105622143
 MeshRenderer:

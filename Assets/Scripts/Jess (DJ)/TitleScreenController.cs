@@ -40,7 +40,7 @@ public class TitleScreenController : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(Level1Scene, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         }
     }
 

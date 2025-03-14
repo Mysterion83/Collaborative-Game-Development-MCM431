@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class TimedLever : InteractableSwitch
 {    
-    public bool State { get { return _state; } }
-    private bool _state = false;
-    private float _timer = 0;
+    private Coroutine _timedLeverCoroutine;
 
     [SerializeField]
     private float _timeAmount = 5f;
 
     public override void Interact()
     {
-        _state = true;
-        _timer = _timeAmount;
+        if (_timedLeverCoroutine != null )
+        {
+            StopCoroutine(_timedLeverCoroutine);
+        }
+        _timedLeverCoroutine = StartCoroutine(ActivateTimer());
     }
 
-    void FixedUpdate()
+    private IEnumerator ActivateTimer()
     {
-        if (_timer > 0)
-        {
-            _timer -= Time.fixedDeltaTime;
-        }
-
-        if (_timer <= 0 && _state)
-        {
-            _timer = 0;
-            _state = false;
-        }
+        _state = true;
+        yield return new WaitForSeconds(_timeAmount);
+        _state = false;
     }
 }

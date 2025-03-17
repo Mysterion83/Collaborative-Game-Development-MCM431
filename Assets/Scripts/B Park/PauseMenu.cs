@@ -57,8 +57,7 @@ public class PauseMenu : MonoBehaviour
 
         if (playerCamera != null)
             playerCamera.SetPaused(true); // Stop camera movement
-
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+                
     }
 
     public void OpenSettings()

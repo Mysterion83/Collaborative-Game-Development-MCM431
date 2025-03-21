@@ -8,9 +8,9 @@ public class TitleScreenController : MonoBehaviour
     // Scene names required for navigation
     public string TitleScreenScene;
     public string Level1Scene; // Will be removed once the save file system is fully implemented
-    [SerializeField] GameObject TitleScreenPanel;
-    [SerializeField] GameObject ControlsPanel;
+    [SerializeField] GameObject TitleScreen;
     [SerializeField] GameObject SettingsPanel;
+    [SerializeField] GameObject ControlsPanel;
 
     private void Start()
     {
@@ -40,36 +40,37 @@ public class TitleScreenController : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(Level1Scene, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         }
     }
 
-    // ToggleControlsPanel() and ToggleSettingsPanel() will alternate between showing the title screen and their namesake panels based on their active states in the inspector
-    public void ToggleControlsPanel()
-    {
-        if (!ControlsPanel.activeSelf)
-        {
-            TitleScreenPanel.SetActive(false);
-            ControlsPanel.SetActive(true);
-        }
-        else
-        {
-            TitleScreenPanel.SetActive(true);
-            ControlsPanel.SetActive(false);
-        }
-    }
-
-    public void ToggleSettingsPanel()
+    // Settings() will alternate between showing the title screen and settings panel based on their active states
+    public void Settings()
     {
         if (!SettingsPanel.activeSelf)
         {
-            TitleScreenPanel.SetActive(false);
+            TitleScreen.SetActive(false);
             SettingsPanel.SetActive(true);
         }
         else
         {
-            TitleScreenPanel.SetActive(true);
+            TitleScreen.SetActive(true);
             SettingsPanel.SetActive(false);
+        }
+    }
+
+    // Controls() will alternate between showing the title screen and settings panel based on their active states
+    public void Controls()
+    {
+        if (!ControlsPanel.activeSelf)
+        {
+            TitleScreen.SetActive(false);
+            ControlsPanel.SetActive(true);
+        }
+        else
+        {
+            TitleScreen.SetActive(true);
+            ControlsPanel.SetActive(false);
         }
     }
 

@@ -1,15 +1,17 @@
+using JetBrains.Annotations;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
-public class Door_Lever_Script : MonoBehaviour
+
+
+
+public class Door_Lever_Script : InteractableSwitch
 {
     public string Lever_Name;
-    public GameObject Library_Door;
-    private Library_Door Door_Script;
-    public GameObject Door;
+    public GameObject Library_Stairs_Object;
     // Start is called before the first frame update
     void Start()
     {
-        Door_Script = GameObject.Find(Door.name).GetComponent<Library_Door>();
     }
 
     // Update is called once per frame
@@ -25,10 +27,20 @@ public class Door_Lever_Script : MonoBehaviour
             {
                 if (hit.collider.gameObject.name == Lever_Name)
                 {
-                    Door_Script.Open();
+                    Interact();
 
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
+        }
+    }
+    public override void Interact()
+    {
+        base.Interact();
+        Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
+        Debug.Log(_state);
     }
 }

@@ -14,7 +14,7 @@ public class DebugMenu : MonoBehaviour
 
     private LevelTeleportSystem _lts;
 
-    private CharacterMovement _playerMovement;
+    private TempPlayerMovement _playerMovement;
 
     
 
@@ -54,7 +54,7 @@ public class DebugMenu : MonoBehaviour
         {
             player.TryGetComponent<Transform>(out _playerPosition);
             _lts = player.GetComponentInChildren<LevelTeleportSystem>();
-            _playerMovement = player.GetComponentInChildren<CharacterMovement>();
+            _playerMovement = player.GetComponentInChildren<TempPlayerMovement>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }
@@ -71,7 +71,7 @@ public class DebugMenu : MonoBehaviour
         {
             player.TryGetComponent<Transform>(out _playerPosition);
             _lts = player.GetComponentInChildren<LevelTeleportSystem>();
-            _playerMovement = player.GetComponentInChildren<CharacterMovement>();
+            _playerMovement = player.GetComponentInChildren<TempPlayerMovement>();
         }
         else Debug.LogError("Debug Menu: Could not find object with Player Tag");
     }

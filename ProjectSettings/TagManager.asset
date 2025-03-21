@@ -9,6 +9,8 @@ TagManager:
   - LevelOne
   - LevelTwo
   - AudioObject
+  - PuzzleBlock
+  - PickUpAble
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Heavy
   - 
   - 
   - 

@@ -5,12 +5,13 @@ using UnityEngine;
 public class CheckHasWineBottle : MonoBehaviour
 {
     public bool hasWineBottle = false;
+    public bool hasDestroyedAgedWine = false;
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if (transform.GetChild(0) != null)
+        if (transform.childCount > 0)
         {
-            if (transform.GetChild(0).name.Substring(0, 10) == "WineBottle")
+            if (transform.GetChild(0).name.Substring(0, 17) == "SpecialWineBottle")
             {
                 hasWineBottle = true;
             }
@@ -19,6 +20,14 @@ public class CheckHasWineBottle : MonoBehaviour
         {
             hasWineBottle = false;
         }
-        
+    }
+
+    public void DestroyWineBottle()
+    {
+        if (transform.childCount > 0)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+            hasDestroyedAgedWine = true;
+        }
     }
 }

@@ -4,23 +4,42 @@ using UnityEngine;
 
 public class AgeWine : MonoBehaviour
 {
-    private LevelTeleportSystem _levelTeleportSystem;
+    public GameObject pastWineHolder; 
     private CheckHasWineBottle _checkHasWineBottle;
-
-    public Vector3 bottleOffset;
-    public GameObject agedWineBottle;
+    private GameObject _agedWineBottle;
+    private WineBottlePlacement _wineBottlePlacement;
 
     private void Start()
     {
-        _levelTeleportSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelTeleportSystem>();
-        _checkHasWineBottle = GameObject.FindGameObjectWithTag("Level One").transform.Find("WinePlaceholder").gameObject.GetComponent<CheckHasWineBottle>();
+        _agedWineBottle = transform.GetChild(0).gameObject;
+        _checkHasWineBottle = pastWineHolder.GetComponent<CheckHasWineBottle>();
+        _wineBottlePlacement = GetComponent <WineBottlePlacement>();
     }
     private void Update()
     {
-        if (_checkHasWineBottle.hasWineBottle && _levelTeleportSystem.CurrentLevel == LevelEnum.LevelTwo)
+        if (_agedWineBottle != null)
         {
-            GameObject _agedWineBottle = Instantiate(agedWineBottle, transform);
-            _agedWineBottle.transform.position = transform.position + bottleOffset;
+            if (_checkHasWineBottle.hasWineBottle)
+            {
+                _agedWineBottle.SetActive(true);
+                _wineBottlePlacement.isAgingWineActive = true;
+                Debug.Log("Hello");
+            }
+            else
+            {
+                _agedWineBottle.SetActive(false);
+                _wineBottlePlacement.isAgingWineActive = false;
+            }
+        }
+        else
+        {
+            if (!_checkHasWineBottle.hasDestroyedAgedWine)
+            {
+                _checkHasWineBottle.DestroyWineBottle();
+                _wineBottlePlacement.isAgingWineActive = false;
+                _wineBottlePlacement.isAgingWine = false;
+                Debug.Log("Bye");
+            }
         }
     }
 }

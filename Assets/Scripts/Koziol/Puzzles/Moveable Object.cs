@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveableObject : MonoBehaviour
+public class MoveableObject : Interactable
 {
     [SerializeField]
     float speed;
@@ -46,4 +46,15 @@ public class MoveableObject : MonoBehaviour
     {
         MoveObject = true;
     }
+
+    public override void Interact()
+    {
+        MoveObjectToNextPosition();
+    }
+
+    public override void ScrollInteract(float mouseScrollDelta)
+    {
+        return;
+    }
 }
+

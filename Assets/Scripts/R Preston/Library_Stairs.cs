@@ -72,6 +72,7 @@ public class Library_Stairs : MonoBehaviour
         }
         if (((this.transform.position.y >= Start_Pos && Lever_State == false) || (this.transform.position.y <= End_Pos && Lever_State == true))) 
         {
+            Debug.Log("STOP!!");
             Called = false;
         }
     }

@@ -19,7 +19,7 @@ public class Door_Lever_Script : InteractableSwitch
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //Debug.Log("Button Accepted");
+            Debug.Log("Button Accepted");
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -27,20 +27,26 @@ public class Door_Lever_Script : InteractableSwitch
             {
                 if (hit.collider.gameObject.name == Lever_Name)
                 {
+                    Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
                     Interact();
+                    Debug.Log("2");
 
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
-        }
+        //if (Input.GetKeyDown(KeyCode.E)) 
+        //{
+        //    Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
+        //    Debug.Log("3");
+        //    Interact();
+        //    Debug.Log("5");
+        //}
     }
     public override void Interact()
     {
         base.Interact();
-        Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
+        //Library_Stairs_Object.GetComponent<Library_Stairs>().Lever_State = _state;
         Debug.Log(_state);
+        Debug.Log("4");
     }
 }

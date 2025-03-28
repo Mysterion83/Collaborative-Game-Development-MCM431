@@ -622,58 +622,86 @@ MonoBehaviour:
     Josh Hames
 
 
+<<<<<<< Updated upstream
     Amy
     O''Donoghue
+=======
+    Patryk
+    Krawczyk
+
+    Terumi Ichida
+>>>>>>> Stashed changes
 
     Teru
 
 
-    Christopher Goffin
+    Christopher
+    Goffin
 
     Valeria Macia
+<<<<<<< Updated upstream
 
 
     Valeria
     Macia
+=======
+>>>>>>> Stashed changes
 
 
     Albert Monger
 
-    Beatrix Franklin
+    Beatrix
+    Franklin
 
     Ben Dorrington
 
     Jay
     Rudd
 
-    Josh Hames
+    Josh
+    Hames
+
+
+<<<<<<< Updated upstream
+    Amy O''Donoghue
+
+    Teru
+=======
+    Patryk Krawczyk
 
 
     Amy O''Donoghue
 
-    Teru
+    Terumi
+    Ichida
+>>>>>>> Stashed changes
 
 
 
     Piotr Koziol
 
 
-    NAME
+    Sam Bennet
+
+
+
+    Sam Bennet
+
+
+    Ben Park
+
+    Jessica
+    Ahmed
 
 
     NAME
+    Brendon Ly
 
+    Michalis Panayides
 
-    NAME
+    Pawe Ejdys
 
-
-    NAME
-
-
-    NAME
-
-
-    NAME
+    Robin Preston
 
 
     NAME
@@ -1092,6 +1120,13 @@ MonoBehaviour:
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+>>>>>>> Stashed changes
     2D Artists
 
 
@@ -1119,25 +1154,21 @@ MonoBehaviour:
     Programmer Lead
 
 
-    ROLE
+    Gameplay
+    Systems Programmer
 
 
-    ROLE
+    Audio Programmer
 
 
-    ROLE
+    UI/UX Programmers
 
 
-    ROLE
+
+    Programmers
 
 
-    ROLE
 
-
-    ROLE
-
-
-    ROLE
 
 
     ROLE
@@ -1161,7 +1192,7 @@ MonoBehaviour:
     ROLE
 
 
-'
+    ROLE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

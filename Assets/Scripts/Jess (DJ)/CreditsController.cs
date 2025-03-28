@@ -20,6 +20,12 @@ public class CreditsController : MonoBehaviour
             Debug.Log("Credits animation ended");
             SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Single);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("User terminated credits");
+            SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Single);
+        }
     }
 
 }

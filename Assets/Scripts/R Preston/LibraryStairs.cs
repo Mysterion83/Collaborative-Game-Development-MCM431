@@ -26,13 +26,13 @@ public class LibraryStairs : MonoBehaviour
         {
             Debug.Log("Switch On");
             //transform.position = endPosition;
-            //animator.SetTrigger("TrLowerStairs");
+            animator.SetTrigger("TrLowerStairs");
         }
         else if (interactableSwitch.State == false)
         {
             Debug.Log("Switch Off");
             //transform.position = startPosition;
-            //animator.SetTrigger("TrRaiseStairs");
+            animator.SetTrigger("TrRaiseStairs");
         }
     }
 }

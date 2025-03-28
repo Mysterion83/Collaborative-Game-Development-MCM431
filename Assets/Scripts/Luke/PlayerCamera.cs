@@ -6,6 +6,7 @@ public class PlayerCamera : MonoBehaviour
 {
     public float MouseSensitivity = 2f;
     private float xRotation = 0f;
+    private bool isPaused = false;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f || isPaused)
+            return;
         // Handle mouse look
         float MouseX = Input.GetAxis("Mouse X") * MouseSensitivity;
         float MouseY = Input.GetAxis("Mouse Y") * MouseSensitivity;
@@ -35,5 +38,10 @@ public class PlayerCamera : MonoBehaviour
     private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void SetPaused(bool paused)
+    {
+        isPaused = paused;
     }
 }

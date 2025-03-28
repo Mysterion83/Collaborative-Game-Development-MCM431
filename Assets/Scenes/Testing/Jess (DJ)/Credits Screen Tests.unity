@@ -574,21 +574,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Jack Darby
-
-    Harry Humberstone
-
+  m_text: 'Harry Humberstone
 
     Jack Darby
 
 
     Jack Darby
 
-    Finley
-    Jordan
+    Maisey Johnson
+
+
+    Connor
+    Stewart
+
+    Finley Jordan
+
+    Jack Darby
+
+    Ross Oliver
 
 
     Finley Jordan
+
+    Marlena
+    Hernes
+
+    Ross Oliver
+
 
 
     Harry Humberstone
@@ -600,20 +612,26 @@ MonoBehaviour:
     Jack
     Darby
 
+    Maisey Johnson
+
+    Marlena Hernes
+
+    Ross Oliver
 
 
 
-    Christopher Goffin
+    Christopher
+    Goffin
 
     Valeria Marcia
 
 
+    Albert Monger
+
     Amy O''Donoghue
 
-    Albert
-    Monger
-
-    Beatrix Franklin
+    Beatrix
+    Franklin
 
     Ben Dorrington
 
@@ -621,37 +639,48 @@ MonoBehaviour:
 
     Josh Hames
 
+    Mya Baptista-Catlyn
 
-    Amy
-    O''Donoghue
+    Terumi
+    Ichida
 
-    Teru
+
+
+    Amy O''Donoghue
+
+    Terumi Ichida
 
 
     Christopher Goffin
 
-    Valeria Macia
-
-
     Valeria
     Macia
+
+
+    Valeria Macia
 
 
     Albert Monger
 
     Beatrix Franklin
 
-    Ben Dorrington
+    Ben
+    Dorrington
 
-    Jay
-    Rudd
+    Christopher Goffin
+
+    Jay Rudd
 
     Josh Hames
 
+    Mya Baptista-Catlyn
 
-    Amy O''Donoghue
 
-    Teru
+
+    Amy
+    O''Donoghue
+
+    Terumi Ichida
 
 
 
@@ -1060,12 +1089,18 @@ MonoBehaviour:
     Narrative Designer
 
 
+
     Puzzle Designer
 
 
 
+
+
     Map
-    Layout Designer
+    Layout Designers
+
+
+
 
 
     UI Designer
@@ -1074,7 +1109,9 @@ MonoBehaviour:
     HUD Designer
 
 
-    Sound Designer
+    Sound Designers
+
+
 
 
 
@@ -1085,6 +1122,9 @@ MonoBehaviour:
 
 
     3D Artists
+
+
+
 
 
 
@@ -1105,6 +1145,9 @@ MonoBehaviour:
 
 
     Texture Artist
+
+
+
 
 
 
@@ -1248,6 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996184390}
   - component: {fileID: 1996184391}
+  - component: {fileID: 1996184392}
   m_Layer: 5
   m_Name: Credits - WIP
   m_TagString: Untagged
@@ -1297,6 +1341,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1996184392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996184389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5249ea33d00a94e4bb4923087fddb9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

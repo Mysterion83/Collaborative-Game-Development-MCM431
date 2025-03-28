@@ -412,55 +412,11 @@ MonoBehaviour:
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 1
-  m_UsedGlyphRects:
-  - m_X: 0
-    m_Y: 0
-    m_Width: 83
-    m_Height: 28
-  - m_X: 83
-    m_Y: 0
-    m_Width: 70
-    m_Height: 25
-  - m_X: 153
-    m_Y: 0
-    m_Width: 65
-    m_Height: 78
-  - m_X: 83
-    m_Y: 25
-    m_Width: 28
-    m_Height: 81
-  - m_X: 0
-    m_Y: 28
-    m_Width: 64
-    m_Height: 66
-  - m_X: 0
-    m_Y: 94
-    m_Width: 60
-    m_Height: 82
-  - m_X: 218
-    m_Y: 0
-    m_Width: 70
-    m_Height: 80
-  - m_X: 111
-    m_Y: 25
-    m_Width: 42
-    m_Height: 75
-  - m_X: 153
-    m_Y: 78
-    m_Width: 42
-    m_Height: 65
-  - m_X: 60
-    m_Y: 106
-    m_Width: 59
-    m_Height: 82
-  - m_X: 0
-    m_Y: 176
-    m_Width: 57
-    m_Height: 66
+  m_UsedGlyphRects: []
   m_FreeGlyphRects:
-  - m_X: 288
+  - m_X: 0
     m_Y: 0
-    m_Width: 223
+    m_Width: 511
     m_Height: 511
   - m_X: 195
     m_Y: 80
@@ -615,9 +571,9 @@ Texture2D:
   m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0
   serializedVersion: 2
-  m_Width: 512
-  m_Height: 512
-  m_CompleteImageSize: 262144
+  m_Width: 0
+  m_Height: 0
+  m_CompleteImageSize: 0
   m_MipsStripped: 0
   m_TextureFormat: 1
   m_MipCount: 1

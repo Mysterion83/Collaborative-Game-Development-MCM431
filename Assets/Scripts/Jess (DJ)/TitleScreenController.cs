@@ -8,7 +8,8 @@ public class TitleScreenController : MonoBehaviour
     // Scene names required for navigation
     public string TitleScreenScene;
     public string Level1Scene; // Will be removed once the save file system is fully implemented
-    [SerializeField] GameObject TitleScreen;
+    public string CreditsScene;
+
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] GameObject ControlsPanel;
 
@@ -17,6 +18,8 @@ public class TitleScreenController : MonoBehaviour
         SettingsPanel.SetActive(false);
         ControlsPanel.SetActive(false);
     }
+
+    // ------------ LOADING SCENES ------------
 
     // Title Screen button functions - prior to complete implementation of save file system
     public void LoadTitleScreen()
@@ -44,35 +47,47 @@ public class TitleScreenController : MonoBehaviour
         }
     }
 
-    // Settings() will alternate between showing the title screen and settings panel based on their active states
-    public void Settings()
+    public void LoadCredits()
     {
-        if (!SettingsPanel.activeSelf)
+        if (CreditsScene == "")
         {
-            TitleScreen.SetActive(false);
-            SettingsPanel.SetActive(true);
+            Debug.LogWarning("Credits scene name not provided");
         }
         else
         {
-            TitleScreen.SetActive(true);
-            SettingsPanel.SetActive(false);
+            SceneManager.LoadSceneAsync(CreditsScene, LoadSceneMode.Single);
         }
     }
 
-    // Controls() will alternate between showing the title screen and settings panel based on their active states
-    public void Controls()
+
+    // ------------ TOGGLING PANELS ------------
+
+    // ToggleControls() will alternate between showing the title screen and settings panel based on their active states
+    public void ToggleControls()
     {
         if (!ControlsPanel.activeSelf)
         {
-            TitleScreen.SetActive(false);
             ControlsPanel.SetActive(true);
         }
         else
         {
-            TitleScreen.SetActive(true);
             ControlsPanel.SetActive(false);
         }
     }
+
+    public void ToggleSettings()
+    {
+        if (!SettingsPanel.activeSelf)
+        {
+            SettingsPanel.SetActive(true);
+        }
+        else
+        {
+            SettingsPanel.SetActive(false);
+        }
+    }
+
+
 
     public void QuitGame()
     {

@@ -120,6 +120,7 @@ MonoBehaviour:
   - {fileID: 116418551808786577}
   - {fileID: 2378590579184643932}
   - {fileID: 8757837282092787079}
+  currentSelectedItemID: -1
 --- !u!1 &984900256520922121
 GameObject:
   m_ObjectHideFlags: 0

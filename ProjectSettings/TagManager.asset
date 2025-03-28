@@ -9,6 +9,8 @@ TagManager:
   - LevelOne
   - LevelTwo
   - AudioObject
+  - PuzzleBlock
+  - PickUpAble
   - Ground
   layers:
   - Default
@@ -20,7 +22,7 @@ TagManager:
   - Ground
   - 
   - 
-  - 
+  - Heavy
   - 
   - 
   - 

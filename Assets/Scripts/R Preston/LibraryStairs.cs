@@ -9,12 +9,14 @@ public class LibraryStairs : MonoBehaviour
     [SerializeField] private InteractableSwitch interactableSwitch;
     private Animator animator;
 
-    [SerializeField] private Vector3 startPosition;
-    [SerializeField] private Vector3 endPosition;
+    [SerializeField] private float startPosition;
+    [SerializeField] private float endPosition;
 
     void Start()
     {
-        transform.position = startPosition;
+        startPosition = transform.position.y;
+        animator.SetFloat("TrLowerStairs", endPosition);
+        animator.SetFloat("TrRaiseStairs", startPosition);
         animator = GetComponent<Animator>();
     }
 
@@ -24,13 +26,13 @@ public class LibraryStairs : MonoBehaviour
         {
             Debug.Log("Switch On");
             //transform.position = endPosition;
-            //animator.SetTrigger("TrRaiseStairs");
+            //animator.SetTrigger("TrLowerStairs");
         }
         else if (interactableSwitch.State == false)
         {
             Debug.Log("Switch Off");
             //transform.position = startPosition;
-            //animator.SetTrigger("TrLowerStairs");
+            //animator.SetTrigger("TrRaiseStairs");
         }
     }
 }

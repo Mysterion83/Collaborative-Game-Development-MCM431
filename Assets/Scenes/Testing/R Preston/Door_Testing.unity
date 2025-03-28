@@ -945,8 +945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableSwitch: {fileID: 151112135}
-  startPosition: {x: 0, y: 0, z: 0}
-  endPosition: {x: 0, y: 20, z: 0}
+  startPosition: 101
+  endPosition: 5
 --- !u!95 &2004638023
 Animator:
   serializedVersion: 5

@@ -15,15 +15,16 @@ public class AgeWine : MonoBehaviour
         _checkHasWineBottle = pastWineHolder.GetComponent<CheckHasWineBottle>();
         _wineBottlePlacement = GetComponent <WineBottlePlacement>();
     }
+
     private void Update()
     {
+        //Manages Interactability and visibility of the wine bottle
         if (_agedWineBottle != null)
         {
             if (_checkHasWineBottle.hasWineBottle)
             {
                 _agedWineBottle.SetActive(true);
                 _wineBottlePlacement.isAgingWineActive = true;
-                Debug.Log("Hello");
             }
             else
             {
@@ -33,12 +34,12 @@ public class AgeWine : MonoBehaviour
         }
         else
         {
+            //Destroys original wine bottle and allows bottle placement
             if (!_checkHasWineBottle.hasDestroyedAgedWine)
             {
                 _checkHasWineBottle.DestroyWineBottle();
                 _wineBottlePlacement.isAgingWineActive = false;
                 _wineBottlePlacement.isAgingWine = false;
-                Debug.Log("Bye");
             }
         }
     }

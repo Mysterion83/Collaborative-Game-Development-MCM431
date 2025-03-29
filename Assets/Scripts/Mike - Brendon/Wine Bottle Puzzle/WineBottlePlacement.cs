@@ -30,6 +30,7 @@ public class WineBottlePlacement : Interactable
 
     public override void Interact()
     {
+        // If the player has special or normal wine bottle and if there is not a bottle on the rack, places bottle
         if ((InventoryManager.Instance.currentSelectedItemID == 4 || InventoryManager.Instance.currentSelectedItemID == 5) && transform.childCount == (isAgingWine? 1 : 0) && !isAgingWineActive) 
         {
             Place();

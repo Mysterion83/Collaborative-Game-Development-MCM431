@@ -4,21 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-<<<<<<< Updated upstream
   m_Scenes: []
-=======
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 4b7769f4518703840b5fd0f647567834
-  - enabled: 0
-    path: Assets/Scenes/Main.unity
-    guid: 7226677e5d6a6f34196e93a707e773ec
-  - enabled: 1
-    path: Assets/Scenes/Testing/Jess (DJ)/Credits Screen Tests.unity
-    guid: d30450e7c6bcce24c8741d9e8e520a56
-  - enabled: 1
-    path: Assets/Scenes/Build-Testing/MainTestScene.unity
-    guid: 81f691b6b33d35044841919c344801cf
->>>>>>> Stashed changes
   m_configObjects: {}

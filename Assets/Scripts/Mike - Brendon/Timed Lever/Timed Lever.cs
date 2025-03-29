@@ -11,6 +11,7 @@ public class TimedLever : InteractableSwitch
 
     public override void Interact()
     {
+        // Stops any current timer and resets it
         if (_timedLeverCoroutine != null )
         {
             StopCoroutine(_timedLeverCoroutine);

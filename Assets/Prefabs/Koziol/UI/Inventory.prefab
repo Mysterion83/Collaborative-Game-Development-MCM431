@@ -71,8 +71,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 84e26e00cbd318d4e8ef20518c0d6112, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -122,6 +122,7 @@ MonoBehaviour:
   - {fileID: 6457305817057075177}
   - {fileID: 7271394395397935907}
   - {fileID: 8961835661458879280}
+  currentSelectedItemID: 0
 --- !u!1001 &6036369319458952676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,13 +131,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6676853260027105402}
     m_Modifications:
-    - target: {fileID: 41965372594517747, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
-      propertyPath: thisItemSelected
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Name
       value: ItemSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720921985892352139, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057670716367205355, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Pivot.x
@@ -251,6 +252,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720921985892352139, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6057670716367205355, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -331,6 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262358814691354779, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -363,6 +376,14 @@ PrefabInstance:
     - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Name
       value: ItemSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720921985892352139, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057670716367205355, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Pivot.x
@@ -476,6 +497,14 @@ PrefabInstance:
     - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Name
       value: ItemSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697243153518034927, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720921985892352139, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057670716367205355, guid: 30633e2fc93c147449fc627c76ea729b, type: 3}
       propertyPath: m_Pivot.x

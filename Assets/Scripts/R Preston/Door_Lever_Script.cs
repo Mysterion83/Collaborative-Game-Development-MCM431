@@ -13,79 +13,91 @@ public class Door_Lever_Script : InteractableSwitch
     public float End_Pos;
     public bool Called;
     public float Speed;
+    public bool Calldown;
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //if (Input.GetKeyDown(KeyCode.E))
+        ////if (Input.GetKeyDown(KeyCode.E))
+        ////{
+        ////    Debug.Log("Button Accepted");
+        ////    RaycastHit hit;
+        ////    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        ////    if (Physics.Raycast(ray, out hit))
+        ////    {
+        ////        if (hit.collider.gameObject.name == Lever_Name)
+        ////        {
+        ////            Interact();
+        ////            Debug.Log("2");
+
+        ////        }
+        ////    }
+        ////}
+        ////Debug.Log(_state);
+        ////Debug.Log("4");
+        //if ((_state == false && Library_Stairs_Object.transform.position.y <= End_Pos) || _state == true && Library_Stairs_Object.transform.position.y >= Start_Pos)
         //{
-        //    Debug.Log("Button Accepted");
-        //    RaycastHit hit;
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        if (hit.collider.gameObject.name == Lever_Name)
-        //        {
-        //            Interact();
-        //            Debug.Log("2");
-
-        //        }
-        //    }
+        //    Called = true;
         //}
-        //Debug.Log(_state);
-        //Debug.Log("4");
-        if ((_state == false && Library_Stairs_Object.transform.position.y <= End_Pos) || _state == true && Library_Stairs_Object.transform.position.y >= Start_Pos)
-        {
-            Called = true;
-        }
-        if (Called == true)
-        {
-            //Debug.Log("Shit was Called? " + Called);
-            if (_state == true)
-            {
-                //Debug.Log("One step beyond, I guess");
-                //Debug.Log("Switch Detected!");
-                if (Library_Stairs_Object.transform.position.y != End_Pos)
-                {
-                    //Debug.Log("Should be moving?");
-                    //Debug.Log("Going Down! (Probably)");
-                    if (((Start_Pos < 0) && (End_Pos < 0)) || ((Start_Pos > 0) && (End_Pos > 0)))
-                    {
-                        Library_Stairs_Object.transform.position -= new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
-                    }
-                    else if ((Start_Pos > 0) && (End_Pos < 0))
-                    {
-                        Library_Stairs_Object.transform.position -= new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
-                    }
-                    //Debug.Log("Gone Down! (Probably)");
-                }
-            }
-            if (_state == false)
-            {
-                //Debug.Log("Going Up! (Probably)");
-                if (((Start_Pos < 0) && (End_Pos < 0)) || ((Start_Pos > 0) && (End_Pos > 0)))
-                {
-                    Library_Stairs_Object.transform.position += new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
-                }
-                else if ((Start_Pos > 0) && (End_Pos < 0))
-                {
-                    Library_Stairs_Object.transform.position += new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
-                }
-                //Debug.Log("Gone Up! (Probably)");
-                Called = true;
-            }
-        }
-        if ((Library_Stairs_Object.transform.position.y >= Start_Pos && _state == false) || (Library_Stairs_Object.transform.position.y <= End_Pos && _state == true))
-        {
-            //Debug.Log("STOP!!");
-            Called = false;
-        }
         //if (Called == true)
         //{
-        //    Interact();
+        //    //Debug.Log("Shit was Called? " + Called);
+        //    if (_state == true)
+        //    {
+        //        //Debug.Log("One step beyond, I guess");
+        //        //Debug.Log("Switch Detected!");
+        //        if (Library_Stairs_Object.transform.position.y != End_Pos)
+        //        {
+        //            //Debug.Log("Should be moving?");
+        //            //Debug.Log("Going Down! (Probably)");
+        //            if (((Start_Pos < 0) && (End_Pos < 0)) || ((Start_Pos > 0) && (End_Pos > 0)))
+        //            {
+        //                Library_Stairs_Object.transform.position -= new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
+        //            }
+        //            else if ((Start_Pos > 0) && (End_Pos < 0))
+        //            {
+        //                Library_Stairs_Object.transform.position -= new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
+        //            }
+        //            //Debug.Log("Gone Down! (Probably)");
+        //        }
+        //    }
+        //    if (_state == false)
+        //    {
+        //        //Debug.Log("Going Up! (Probably)");
+        //        if (((Start_Pos < 0) && (End_Pos < 0)) || ((Start_Pos > 0) && (End_Pos > 0)))
+        //        {
+        //            Library_Stairs_Object.transform.position += new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
+        //        }
+        //        else if ((Start_Pos > 0) && (End_Pos < 0))
+        //        {
+        //            Library_Stairs_Object.transform.position += new Vector3(0, ((((Start_Pos - End_Pos) / Speed) * Time.deltaTime)), 0);
+        //        }
+        //        //Debug.Log("Gone Up! (Probably)");
+        //        Called = true;
+        //    }
         //}
+        //if ((Library_Stairs_Object.transform.position.y >= Start_Pos && _state == false) || (Library_Stairs_Object.transform.position.y <= End_Pos && _state == true))
+        //{
+        //    //Debug.Log("STOP!!");
+        //    Called = false;
+        //}
+        ////if (Called == true)
+        ////{
+        ////    Interact();
+        ////}
+        if (_state == true && Calldown == false) 
+        {
+            Library_Stairs_Object.GetComponent<LibraryStairs>().Stairsdown();
+            Calldown = true;
+            //Debug.Log(Calldown + " is Calldown rn");
+        }
+        else if (_state == false && Calldown == true) 
+        {
+            Library_Stairs_Object.GetComponent<LibraryStairs>().Stairsdown();
+            Calldown = false;
+        }
     }
     //if (Input.GetKeyDown(KeyCode.E)) 
     //{

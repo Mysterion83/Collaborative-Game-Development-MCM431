@@ -7,7 +7,7 @@ using UnityEngine.Animations;
 public class LibraryStairs : MonoBehaviour
 {
     [SerializeField] private InteractableSwitch interactableSwitch;
-    private Animator animator;
+    [SerializeField] public Animator animator;
 
     [SerializeField] private float startPosition;
     [SerializeField] private float endPosition;
@@ -20,13 +20,30 @@ public class LibraryStairs : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    //void FixedUpdate()
+    //{
+    //    if (interactableSwitch.State == true)
+    //    {
+    //        //transform.position = endPosition;
+    //        animator.SetTrigger("TrLowerStairs");
+    //        //Debug.Log("Stairs Lowering");
+    //    }
+    //    else if (interactableSwitch.State == false)
+    //    {
+    //        //Debug.Log("Switch Off");
+    //        //transform.position = startPosition;
+    //        animator.SetTrigger("TrRaiseStairs");
+    //    }
+    //}
+    public void Stairsdown() 
     {
+        //animator.SetTrigger("TrLowerStairs");
+        //Debug.Log("Stairs Lowering 2");
         if (interactableSwitch.State == true)
         {
-            Debug.Log("Switch On");
             //transform.position = endPosition;
             animator.SetTrigger("TrLowerStairs");
+            Debug.Log("Stairs Lowering");
         }
         else if (interactableSwitch.State == false)
         {

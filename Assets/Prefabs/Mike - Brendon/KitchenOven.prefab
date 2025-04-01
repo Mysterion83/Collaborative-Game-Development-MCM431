@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bc54e9175ef94ad46a1f22a4e0aac4ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3057527078ed4fb40a42ce644b2fe93f, type: 2}
     - target: {fileID: 919132149155446097, guid: bc54e9175ef94ad46a1f22a4e0aac4ef, type: 3}
       propertyPath: m_Name
       value: Victorian_Oven

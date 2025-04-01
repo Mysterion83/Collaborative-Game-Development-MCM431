@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee4b741829eee841bdf5c27df9f8b2c, type: 3}
   m_Name: WineBottle
   m_EditorClassIdentifier: 
-  itemID: 0
+  itemID: 6
   itemSprite: {fileID: 0}
   itemName: Wine Bottle
   itemDescription: This is a high quality wine bottle.

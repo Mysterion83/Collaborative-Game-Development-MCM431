@@ -5,11 +5,11 @@ using UnityEngine;
 public class TempBasementKeyAppear : MonoBehaviour
 {
     [SerializeField]
-    public GameObject ba,se,me,nt;
+    public GameObject pl1,pl2,pl3,pl4;
     public GameObject key;
     void Update()
     {
-        if ((ba.GetComponent<Switches>().switchON) && (se.GetComponent<Switches>().switchON) && (me.GetComponent<Switches>().switchON) && (nt.GetComponent<Switches>().switchON))
+        if ((pl1.GetComponent<Switches>().switchON) && (pl2.GetComponent<Switches>().switchON) && (pl3.GetComponent<Switches>().switchON) && (pl4.GetComponent<Switches>().switchON))
         {
             key.SetActive(true);
         }

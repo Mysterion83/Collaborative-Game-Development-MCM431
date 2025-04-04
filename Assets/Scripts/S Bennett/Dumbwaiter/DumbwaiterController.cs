@@ -22,7 +22,7 @@ public class DumbwaiterController : Interactable
 
             // Reset Player position to prevent the player from falling through the lift platform
             Vector3 liftPos = LiftPlatform.transform.position;
-            Player.transform.position = new Vector3(liftPos.x, liftPos.y + 2, liftPos.z);
+            Player.transform.position = new Vector3(liftPos.x, liftPos.y + 1, liftPos.z);
 
             // Play the lift animation
             animator.SetTrigger("TrLiftUp");

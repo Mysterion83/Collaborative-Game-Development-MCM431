@@ -5,6 +5,6 @@ public class InteractableSingleUseButton : InteractableButton
     public override void Interact()
     {
         base.Interact();
-        tag = "None";
+        tag = "Untagged";
     }
 }

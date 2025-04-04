@@ -83,7 +83,7 @@ MonoBehaviour:
   TooltipText: '[E] Interact'
   Player: {fileID: 0}
   LiftPlatform: {fileID: 7156624006325362364}
-  LiftButton: {fileID: 0}
+  LiftButton: {fileID: 7629204622898972363}
   liftColliderHandler: {fileID: 2764788035802036945}
   animator: {fileID: 160042983158944017}
 --- !u!1 &3081314437864730869

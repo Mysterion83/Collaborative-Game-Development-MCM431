@@ -1,9 +1,7 @@
+using System;
 using JetBrains.Annotations;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
-
-
-
 
 public class Door_Lever_Script : InteractableSwitch
 {
@@ -113,6 +111,5 @@ public class Door_Lever_Script : InteractableSwitch
     public override void Interact()
     {
         base.Interact();
-
     }
 }

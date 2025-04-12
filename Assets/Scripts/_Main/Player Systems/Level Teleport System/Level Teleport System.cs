@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 public class LevelTeleportSystem : MonoBehaviour
 {
     [SerializeField]
-    public bool IsAllowedToTeleport = true;
+    public bool IsAllowedToTeleport = false;
 
     [SerializeField]
     [Tooltip("The First Level Empty Object in the Scene")]

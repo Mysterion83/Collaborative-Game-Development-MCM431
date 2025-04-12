@@ -14565,12 +14565,11 @@ PrefabInstance:
     - target: {fileID: 681754238894239261, guid: d1d1ae615d25524429b1e0c83db022ae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 69f5e1dbdca68f54a908b0c992319da3, type: 2}
+      objectReference: {fileID: 2100000, guid: f410453f8e792654a85d6d56a8664552, type: 2}
     - target: {fileID: 683517410468345563, guid: d1d1ae615d25524429b1e0c83db022ae, type: 3}
       propertyPath: _documentText
-      value: "The Steel Book holds the key to my ornate planetarium\u2026. The only
-        one of its kind not just in the United States, but across the globe, in its
-        walls hold information not known to the public."
+      value: This library serves as the collection over years of history, regarding
+        Ebonmire
       objectReference: {fileID: 0}
     - target: {fileID: 2682635406528508867, guid: d1d1ae615d25524429b1e0c83db022ae, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22738,6 +22737,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c8f3cfe17ccd6e24d94f1abce2c22040, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c095b0eb198ef31499958bd74b8bc678, type: 2}
     - target: {fileID: 919132149155446097, guid: c8f3cfe17ccd6e24d94f1abce2c22040, type: 3}
       propertyPath: m_Name
       value: Spiral Staircase

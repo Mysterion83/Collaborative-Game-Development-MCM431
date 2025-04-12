@@ -52432,7 +52432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5306241210745717801, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.24
+      value: 20.14
       objectReference: {fileID: 0}
     - target: {fileID: 5306241210745717801, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63138,15 +63138,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 381217427}
     m_Modifications:
-    - target: {fileID: 3460982884953316551, guid: b0e62851b0ded384da627fc6e063a8f6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f410453f8e792654a85d6d56a8664552, type: 2}
-    - target: {fileID: 3462605314748285953, guid: b0e62851b0ded384da627fc6e063a8f6, type: 3}
-      propertyPath: _documentText
-      value: This library serves as the collection over years of history, regarding
-        Ebonmire
-      objectReference: {fileID: 0}
     - target: {fileID: 4124800266600972193, guid: b0e62851b0ded384da627fc6e063a8f6, type: 3}
       propertyPath: m_Name
       value: (NEW) Library-Past

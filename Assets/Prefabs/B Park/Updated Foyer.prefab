@@ -10389,13 +10389,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1655920734847057888}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1683556898292766921}
   m_SourcePrefab: {fileID: 100100000, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
 --- !u!4 &8141311709732238286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
   m_PrefabInstance: {fileID: 8606667651154711589}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8912746193870727540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
+  m_PrefabInstance: {fileID: 8606667651154711589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1655920734847057888
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912746193870727540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -180091941550346506, guid: 20dc7266064148a4585e2b0d1c67e067, type: 3}
+--- !u!114 &1683556898292766921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912746193870727540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde2534e84a5b0544b005b598dbb26fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TooltipText: '[E] Interact'
+  _levelTeleportSystem: {fileID: 0}
 --- !u!1001 &8646154730548487518
 PrefabInstance:
   m_ObjectHideFlags: 0

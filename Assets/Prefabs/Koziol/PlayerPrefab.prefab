@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resume Button
       objectReference: {fileID: 0}
+    - target: {fileID: 711051050885197306, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ff21988e2df9a9448379f6991077bca, type: 3}
     - target: {fileID: 755306713962186329, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
       propertyPath: m_Type
       value: 0
@@ -741,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6470270889111954474, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567024940550156057, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
       propertyPath: m_fontSize
@@ -1062,6 +1066,10 @@ PrefabInstance:
     - target: {fileID: 7898415086360150143, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
       propertyPath: m_Name
       value: Settings Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965972518163576015, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8068702707615675143, guid: c261d56012fc84b40beac47de9aa81c2, type: 3}
       propertyPath: m_text

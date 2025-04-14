@@ -6349,6 +6349,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 523021435603467538, guid: 1844f950259cbb449aa4e8c01ef28c8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 568080494533331131, guid: 1844f950259cbb449aa4e8c01ef28c8e, type: 3}
       propertyPath: _levelOneObject
       value: 
@@ -6443,10 +6447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2366735723130982206, guid: 1844f950259cbb449aa4e8c01ef28c8e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3460437843794947575, guid: 1844f950259cbb449aa4e8c01ef28c8e, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4066659452918034221, guid: 1844f950259cbb449aa4e8c01ef28c8e, type: 3}
@@ -52125,7 +52125,7 @@ PrefabInstance:
       objectReference: {fileID: 993719709}
     - target: {fileID: 505362813729943066, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_VersionIndex
-      value: 7968
+      value: 7971
       objectReference: {fileID: 0}
     - target: {fileID: 552330920383453967, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_Mesh
@@ -52225,7 +52225,7 @@ PrefabInstance:
       objectReference: {fileID: 2144148109}
     - target: {fileID: 2361901352075062179, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_VersionIndex
-      value: 7838
+      value: 7841
       objectReference: {fileID: 0}
     - target: {fileID: 2464827507862476028, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_Mesh
@@ -52275,6 +52275,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1168802455}
+    - target: {fileID: 3025034367781311112, guid: 7182644984cb20541be5914c7031034e, type: 3}
+      propertyPath: musicBoxUI
+      value: 
+      objectReference: {fileID: 2063950531}
     - target: {fileID: 3025034367781311112, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: _levelTeleportSystem
       value: 
@@ -52421,7 +52425,7 @@ PrefabInstance:
       objectReference: {fileID: 888895929}
     - target: {fileID: 5169841776299550602, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_VersionIndex
-      value: 5817
+      value: 5820
       objectReference: {fileID: 0}
     - target: {fileID: 5188799554368201889, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_Mesh
@@ -52689,7 +52693,7 @@ PrefabInstance:
       objectReference: {fileID: 494070713}
     - target: {fileID: 8738053769875810585, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_VersionIndex
-      value: 7844
+      value: 7847
       objectReference: {fileID: 0}
     - target: {fileID: 8888365002831935124, guid: 7182644984cb20541be5914c7031034e, type: 3}
       propertyPath: m_Mesh
@@ -106750,6 +106754,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2063950531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7581748399294745462, guid: 7182644984cb20541be5914c7031034e, type: 3}
+  m_PrefabInstance: {fileID: 1022988864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2065634252
 Mesh:
   m_ObjectHideFlags: 0
@@ -109443,7 +109452,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8954878656094397331, guid: 6891cc6180e31ff4998bf99c834ba367, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6891cc6180e31ff4998bf99c834ba367, type: 3}

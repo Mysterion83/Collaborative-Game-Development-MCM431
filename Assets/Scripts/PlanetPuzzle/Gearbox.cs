@@ -9,6 +9,10 @@ public class Gearbox : InteractableLockedButton
     public GameObject objectToLock;
     private bool isLocked = true;
 
+    [SerializeField] int gear1ID;
+    [SerializeField] int gear2ID;
+    [SerializeField] int gear3ID;
+
     private void Start()
     {
         // Ensure the object is locked at the start
@@ -18,21 +22,25 @@ public class Gearbox : InteractableLockedButton
     public override void Interact()
     {
         _requiredItemID = InventoryManager.Instance.currentSelectedItemID;
-            
+
         if (!InventoryManager.Instance.HasItem(_requiredItemID))
         {
             return;
         }
         else if (InventoryManager.Instance.HasItem(_requiredItemID))
         {
-            AddGear();
+            if (_requiredItemID == gear1ID || _requiredItemID == gear2ID || _requiredItemID == gear3ID)
+            {
+                AddGear();
+            }
+            else return;
         }
         if (_DoesRemoveItem)
         {
             InventoryManager.Instance.RemoveTargetItem(_requiredItemID);
         }
     }
-    
+
     public override void ScrollInteract(float mouseScrollDelta)
     {
         return;
@@ -42,7 +50,7 @@ public class Gearbox : InteractableLockedButton
     {
         gearsCollected++;
         Debug.Log("Gears collected: " + gearsCollected);
-        
+
         if (gearsCollected >= requiredGears && isLocked)
         {
             UnlockObject();

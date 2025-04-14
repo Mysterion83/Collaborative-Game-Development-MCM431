@@ -37,7 +37,6 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        HandleInventoryUI();
         CycleItemSlots();
     }
 
@@ -161,7 +160,7 @@ public class InventoryManager : MonoBehaviour
     // Any currently not selected item will be deselected one by one //
     public void DeselectAllItemSlots()
     {
-        for (int i = 0; i < itemSlots.Length; i++) 
+        for (int i = 0; i < itemSlots.Length; i++)
         {
             itemSlots[i].thisItemSelected = false;
             itemSlots[i].selectedShader.SetActive(false);
@@ -217,25 +216,6 @@ public class InventoryManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currentSlotSelected = 3;
-        }
-    }
-
-    // Temporary, allows the inventory to be opened and closed //
-    // Call this in a UI class when implemented //
-    public void HandleInventoryUI()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (!inventoryOpen)
-            {
-                inventoryOpen = true;
-                Inventory.SetActive(true);
-            }
-            else if (inventoryOpen)
-            {
-                inventoryOpen = false;
-                Inventory.SetActive(false);
-            }
         }
     }
 }

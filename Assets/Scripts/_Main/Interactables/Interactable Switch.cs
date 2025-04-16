@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableSwitch : Interactable
 {
     public bool State { get { return _state; } }
+    [SerializeField]
     protected bool _state;
     public override void Interact()
     {

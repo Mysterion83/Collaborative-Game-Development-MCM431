@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class InteractablePipeValve : InteractableSwitch
 {
+    [SerializeField]
+    WaterCisternPuzzle _waterCisternPuzzle;
     public override void Interact()
     {
         base.Interact();
         UpdateGuage();
+        _waterCisternPuzzle.UpdatePipeStates();
     }
     public override void ScrollInteract(float mouseScrollDelta)
     {

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5634618049891485503
+--- !u!1001 &3325718493377452627
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.186
+      value: 0.404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5e9ca594e9941c149aa516c4ec45405a, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       propertyPath: m_Name
-      value: SpecialWineBottle
+      value: AgedWineBottle
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       propertyPath: m_TagString
@@ -66,23 +66,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4853379150045288626}
+      addedObject: {fileID: 1732499277427821714}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1949420584092465307}
+      addedObject: {fileID: 41594777987942437}
   m_SourcePrefab: {fileID: 100100000, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
---- !u!1 &4824277221554551406 stripped
+--- !u!1 &2514761800016783106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
-  m_PrefabInstance: {fileID: 5634618049891485503}
+  m_PrefabInstance: {fileID: 3325718493377452627}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &4853379150045288626
+--- !u!64 &1732499277427821714
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824277221554551406}
+  m_GameObject: {fileID: 2514761800016783106}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -98,17 +98,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4663133891737284120, guid: 4e8631f777c984e45aa9a335a4ad1420, type: 3}
---- !u!114 &1949420584092465307
+--- !u!114 &41594777987942437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824277221554551406}
+  m_GameObject: {fileID: 2514761800016783106}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb8b0041e185486408723f78b502c290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: '[E] Pickup "Vintage Scarlet"'
-  _itemID: 8
+  TooltipText: '[E] Pickup Aged "Vintage Scarlet"'
+  _itemID: 0

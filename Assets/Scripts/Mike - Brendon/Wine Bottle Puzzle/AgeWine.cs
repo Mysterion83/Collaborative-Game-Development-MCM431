@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AgeWine : MonoBehaviour
 {
-    public GameObject pastWineHolder; 
-    private CheckHasWineBottle _checkHasWineBottle;
+    public GameObject pastWineSlot; 
+    private CheckHasSpecialWineBottle _checkHasWineBottle;
     private GameObject _agedWineBottle;
-    private WineBottlePlacement _wineBottlePlacement;
+    private WineBottleSlot _wineBottleSlot;
 
     private void Start()
     {
         _agedWineBottle = transform.GetChild(0).gameObject;
-        _checkHasWineBottle = pastWineHolder.GetComponent<CheckHasWineBottle>();
-        _wineBottlePlacement = GetComponent <WineBottlePlacement>();
+        _checkHasWineBottle = pastWineSlot.GetComponent<CheckHasSpecialWineBottle>();
+        _wineBottleSlot = GetComponent<WineBottleSlot>();
     }
 
     private void Update()
@@ -21,15 +21,18 @@ public class AgeWine : MonoBehaviour
         //Manages Interactability and visibility of the wine bottle
         if (_agedWineBottle != null)
         {
-            if (_checkHasWineBottle.hasWineBottle)
+            if (_checkHasWineBottle.hasSpecialWineBottle)
             {
                 _agedWineBottle.SetActive(true);
-                _wineBottlePlacement.isAgingWineActive = true;
+                _wineBottleSlot.isAgingWineActive = true;
+                _agedWineBottle.transform.position = transform.position + _wineBottleSlot.placementOffset;
+                _agedWineBottle.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x + _wineBottleSlot.rotationOffset.x, transform.rotation.y + _wineBottleSlot.rotationOffset.y, transform.rotation.z + _wineBottleSlot.rotationOffset.z));
+                _wineBottleSlot._slotCollider.enabled = false;
             }
             else
             {
                 _agedWineBottle.SetActive(false);
-                _wineBottlePlacement.isAgingWineActive = false;
+                _wineBottleSlot.isAgingWineActive = false;
             }
         }
         else
@@ -38,8 +41,8 @@ public class AgeWine : MonoBehaviour
             if (!_checkHasWineBottle.hasDestroyedAgedWine)
             {
                 _checkHasWineBottle.DestroyWineBottle();
-                _wineBottlePlacement.isAgingWineActive = false;
-                _wineBottlePlacement.isAgingWine = false;
+                _wineBottleSlot.isAgingWineActive = false;
+                _wineBottleSlot.isAgingWine = false;
             }
         }
     }

@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenController : MonoBehaviour
 {
-    // Scene names required for navigation
-    public string TitleScreenScene;
-    public string Level1Scene; // Will be removed once the save file system is fully implemented
-    public string CreditsScene;
+    // Main game scene name required for Play()
+    public string Level1Scene;
+
 
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] GameObject ControlsPanel;
@@ -21,20 +20,11 @@ public class TitleScreenController : MonoBehaviour
 
     // ------------ LOADING SCENES ------------
 
-    // Title Screen button functions - prior to complete implementation of save file system
     public void LoadTitleScreen()
     {
-        if (TitleScreenScene == "")
-        {
-            Debug.LogWarning("Title screen scene name not provided");
-        }
-        else
-        {
-            SceneManager.LoadSceneAsync(TitleScreenScene, LoadSceneMode.Single);
-        }
+        SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Single);
     }
 
-    //  Play() will become redundant once the save file system is complete; two new functions, LoadNewGame() and LoadSaveFile(), will be implemented to handle loading either a new or old save file from the title screen
     public void Play()
     {
         if (Level1Scene == "")
@@ -49,14 +39,7 @@ public class TitleScreenController : MonoBehaviour
 
     public void LoadCredits()
     {
-        if (CreditsScene == "")
-        {
-            Debug.LogWarning("Credits scene name not provided");
-        }
-        else
-        {
-            SceneManager.LoadSceneAsync(CreditsScene, LoadSceneMode.Single);
-        }
+        SceneManager.LoadSceneAsync("Final Credits", LoadSceneMode.Single);
     }
 
 

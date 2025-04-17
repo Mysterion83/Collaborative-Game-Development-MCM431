@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 7226677e5d6a6f34196e93a707e773ec
   - enabled: 1
-    path: Assets/Scenes/Testing/Jess (DJ)/Credits Screen Tests.unity
-    guid: d30450e7c6bcce24c8741d9e8e520a56
+    path: Assets/Scenes/Final Credits.unity
+    guid: b2d55c3d814b67d4e8e42de419191e59
   m_configObjects: {}

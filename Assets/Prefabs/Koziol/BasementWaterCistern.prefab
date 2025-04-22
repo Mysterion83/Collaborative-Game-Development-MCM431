@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &176750242445126314
 Transform:
@@ -47,7 +47,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8764790620373612784
 Transform:
@@ -125,7 +125,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1988275496156660450
 Transform:
@@ -473,7 +473,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6953707855255263406
 Transform:
@@ -521,7 +521,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5044924571801925514
 Transform:
@@ -720,7 +720,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5756532030837501434
 Transform:
@@ -970,7 +970,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1857253591477144719
 Transform:
@@ -1010,7 +1010,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &949042125733463492
 Transform:
@@ -1049,7 +1049,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6674329476916157875
 Transform:
@@ -1085,7 +1085,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1764086409528245088
 Transform:
@@ -1123,7 +1123,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2946599619237557177
 Transform:
@@ -1471,7 +1471,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8441739581564203454
 Transform:
@@ -1504,7 +1504,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1222993382160261076
 Transform:
@@ -1544,7 +1544,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3285732931267684497
 Transform:
@@ -1897,7 +1897,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3458471685410735906
 Transform:
@@ -2096,7 +2096,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4025884088378224323
 Transform:
@@ -2136,7 +2136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3886558005758094659
 Transform:
@@ -2209,7 +2209,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1069026923382808490
 Transform:
@@ -2242,7 +2242,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1246530487169633476
 Transform:
@@ -2284,7 +2284,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &104516060035331703
 Transform:
@@ -2483,7 +2483,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4019261211275221711
 Transform:
@@ -2523,7 +2523,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4760080264471668844
 Transform:
@@ -2556,7 +2556,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2799832322922627827
 Transform:
@@ -2589,7 +2589,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7492253979362714491
 Transform:
@@ -2706,7 +2706,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6461969096338386559
 Transform:
@@ -2746,7 +2746,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2747935450606447727
 Transform:
@@ -2782,7 +2782,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1250077470505263923
 Transform:
@@ -2826,7 +2826,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4534905730960743849
 Transform:
@@ -3174,7 +3174,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2382908280447388017
 Transform:
@@ -3208,7 +3208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5285586134273297305
 Transform:
   m_ObjectHideFlags: 0
@@ -3282,7 +3282,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3566260036038450823
 Transform:
@@ -3327,7 +3327,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6330125528048376194
 Transform:
@@ -3526,7 +3526,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5737630665334603674
 Transform:
@@ -3567,7 +3567,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3615656413914870287
 Transform:
@@ -3956,7 +3956,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5654401551901642152
 Transform:
@@ -3992,7 +3992,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8914940032357594908
 Transform:
@@ -4069,6 +4069,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4165,6 +4169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4259,6 +4267,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4355,6 +4367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4449,6 +4465,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4545,6 +4565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4595,6 +4619,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4702,6 +4734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4752,6 +4788,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4933,6 +4977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5058,6 +5106,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.75
@@ -5164,6 +5220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5258,6 +5318,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5354,6 +5418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5449,6 +5517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5543,6 +5615,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5875,6 +5951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5969,6 +6049,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6065,6 +6149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6159,6 +6247,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6255,6 +6347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6349,6 +6445,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6526,6 +6626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6620,6 +6724,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6716,6 +6824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6766,6 +6878,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6873,6 +6993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6967,6 +7091,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7063,6 +7191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7157,6 +7289,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7253,6 +7389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7347,6 +7487,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7524,6 +7668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7618,6 +7766,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7714,6 +7866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7808,6 +7964,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7904,6 +8064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7999,6 +8163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8093,6 +8261,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8270,6 +8442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8365,6 +8541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8415,6 +8595,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8521,6 +8709,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8690,6 +8882,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
       propertyPath: m_Name
       value: Basement_Main_Pillars (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8861,6 +9057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8955,6 +9155,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9051,6 +9255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9145,6 +9353,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9241,6 +9453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9291,6 +9507,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9472,6 +9696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9566,6 +9794,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
       propertyPath: m_Name
       value: Basement_Main_Pillars (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9663,6 +9895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9758,6 +9994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9852,6 +10092,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
       propertyPath: m_Name
       value: Basement_Main_Pillars (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9949,6 +10193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10043,6 +10291,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10139,6 +10391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10189,6 +10445,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10295,6 +10559,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10480,6 +10748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10574,6 +10846,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10670,6 +10946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10765,6 +11045,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10859,6 +11143,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
       propertyPath: m_Name
       value: Basement_Main_Pillars
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10956,6 +11244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11050,6 +11342,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11235,6 +11531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11285,6 +11585,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11392,6 +11700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11486,6 +11798,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11582,6 +11898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Main_Pillars (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11677,6 +11997,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11850,6 +12174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11945,6 +12273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11995,6 +12327,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12101,6 +12441,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12278,6 +12622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12372,6 +12720,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
       propertyPath: m_Name
       value: Basement_Main_Pillars (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddc2a3fde77cdc8499e74cfd3622b74b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12469,6 +12821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12563,6 +12919,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12659,6 +13019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12753,6 +13117,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12849,6 +13217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12944,6 +13316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13038,6 +13414,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13216,6 +13596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13311,6 +13695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13361,6 +13749,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13468,6 +13864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13562,6 +13962,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13832,6 +14236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14042,6 +14450,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.75
@@ -14148,6 +14564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14242,6 +14662,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14338,6 +14762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14432,6 +14860,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14528,6 +14960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14623,6 +15059,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14673,6 +15113,14 @@ PrefabInstance:
     - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_Name
       value: Pipe (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 563498036043520861, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042552204218563962, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6767359603141315028, guid: 2af2cee86ff26e94eaf0da172a46ff41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14779,6 +15227,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14956,6 +15408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15124,6 +15580,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15294,6 +15754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15388,6 +15852,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15484,6 +15952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basement_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15578,6 +16050,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15754,6 +16230,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
       propertyPath: m_Name
       value: Basement_Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5bfe7e34470c4745a078e8d26f73bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -91,4 +91,25 @@ public class WaterCisternPuzzle : Interactable
     {
         return;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            foreach (CisternWater water in _UnsortedWaterObjects)
+            {
+                water.EnableWater();
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            foreach (CisternWater water in _UnsortedWaterObjects)
+            {
+                water.DisableWater();
+            }
+        }
+    }
 }

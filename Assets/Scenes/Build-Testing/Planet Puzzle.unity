@@ -2032,6 +2032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planetarium-Past
       objectReference: {fileID: 0}
+    - target: {fileID: 5583582226976929181, guid: 625ef78af319f54429e62019db870f3f, type: 3}
+      propertyPath: _itemID
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7760746965945463342, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

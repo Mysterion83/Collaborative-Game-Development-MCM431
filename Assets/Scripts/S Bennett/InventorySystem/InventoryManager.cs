@@ -130,6 +130,39 @@ public class InventoryManager : MonoBehaviour
                 {
                     itemSlots[i].RemoveItem();
                     targetItemDeleted = true;
+                    return;
+                }
+
+                if (targetItemDeleted == false && i == 0)
+                {
+                    Debug.LogError($"Target item '{itemToRemove.GetItemName()}' does not exist within the inventory and could not be deleted");
+                    break;
+                }
+            }
+        }
+        else return;
+    }
+
+    public void RemoveTargetItem(int targetItemID, int amountToRemove)
+    {
+        if (CheckItemExists(targetItemID))
+        {
+            bool targetItemDeleted = false;
+            ItemSO itemToRemove = GetItemSO(targetItemID);
+
+            for (int i = itemSlots.Length - 1; i >= 0; i--)
+            {
+                int storedItemID = itemSlots[i].GetStoredItemID();
+
+                if (itemSlots[i].slotHasItem && targetItemID == storedItemID)
+                {
+                    if (amountToRemove != 0)
+                    {
+                        itemSlots[i].RemoveItem();
+                        targetItemDeleted = true;
+                        amountToRemove--;
+                    }
+                    else return;
                 }
 
                 if (targetItemDeleted == false && i == 0)

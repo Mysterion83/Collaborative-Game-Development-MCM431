@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CodeLock : Interactable
 {
+    public bool solved = false;
     [SerializeField]
     private int[] code = new int[4];
     [SerializeField]
     private InteractableDial[] Dials;
-
 
     private void Start()
     {
@@ -24,6 +24,9 @@ public class CodeLock : Interactable
             {
                 dial.tag = "Untagged";
             }
+
+            solved = true;
+            gameObject.SetActive(false);
         }
         else
         {

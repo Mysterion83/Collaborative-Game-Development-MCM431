@@ -27,7 +27,9 @@ public class AgeWine : MonoBehaviour
                 _wineBottleSlot.isAgingWineActive = true;
                 _agedWineBottle.transform.position = transform.position + _wineBottleSlot.placementOffset;
                 _agedWineBottle.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x + _wineBottleSlot.rotationOffset.x, transform.rotation.y + _wineBottleSlot.rotationOffset.y, transform.rotation.z + _wineBottleSlot.rotationOffset.z));
-                _wineBottleSlot._slotCollider.enabled = false;
+
+                _wineBottleSlot.TooltipText = _wineBottleSlot.agedPickupTooltip;
+                _wineBottleSlot.wineBottleScript = _agedWineBottle.GetComponent<InteractableItem>();
             }
             else
             {

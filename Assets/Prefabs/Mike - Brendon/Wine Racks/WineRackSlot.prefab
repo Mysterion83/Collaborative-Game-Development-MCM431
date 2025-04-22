@@ -56,10 +56,16 @@ MonoBehaviour:
   rotationOffset: {x: 90, y: 0, z: 0}
   isAgingWine: 0
   isAgingWineActive: 0
-  hasWineBottle: 0
+  isBroken: 0
   minWineBottleID: 9
   maxWineBottleID: 12
   specialWineBottleID: 8
+  _slotCollider: {fileID: 0}
+  wineBottleScript: {fileID: 0}
+  pickupTooltip: '[E] Pickup Wine Bottle'
+  specialPickupTooltip: '[E] Pickup "Vintage Scarlet"'
+  agedPickupTooltip: '[E] Pickup Aged "Vintage Scarlet"'
+  placeTooltip: '[E] Place Wine Bottle'
 --- !u!65 &2189974697176577873
 BoxCollider:
   m_ObjectHideFlags: 0

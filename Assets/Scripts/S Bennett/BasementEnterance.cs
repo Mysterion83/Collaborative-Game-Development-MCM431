@@ -10,7 +10,7 @@ public class BasementEnterance : InteractableLockedButton
     private bool isLocked = true;
 
     [SerializeField] int keyID;
-    [SerializeField] OpenDoor door;
+    [SerializeField] BasementDoor door;
 
     private void Start()
     {

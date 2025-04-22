@@ -166,6 +166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8059456831690726606}
     m_Modifications:
+    - target: {fileID: 1102709291761221807, guid: 71a22bc2c51de3946a634f2b7f5d707b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4838196822631732387, guid: 71a22bc2c51de3946a634f2b7f5d707b, type: 3}
       propertyPath: m_Name
       value: Moon

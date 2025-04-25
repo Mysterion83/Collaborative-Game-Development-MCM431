@@ -35850,6 +35850,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1004729774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8867600550314894088, guid: 625ef78af319f54429e62019db870f3f, type: 3}
+  m_PrefabInstance: {fileID: 2945794159722602296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1005051608
 Mesh:
   m_ObjectHideFlags: 0
@@ -76837,6 +76848,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1131521307}
+    - target: {fileID: 5788864883126727519, guid: 625ef78af319f54429e62019db870f3f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5789132735216113479, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -77365,6 +77380,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 1465
       objectReference: {fileID: 0}
+    - target: {fileID: 7332563008621448280, guid: 625ef78af319f54429e62019db870f3f, type: 3}
+      propertyPath: displayValues
+      value: 
+      objectReference: {fileID: 1004729774}
     - target: {fileID: 7341469162397939474, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -77515,11 +77534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760746965945463342, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.43
+      value: 24.33
       objectReference: {fileID: 0}
     - target: {fileID: 7760746965945463342, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.81
+      value: -32.38
       objectReference: {fileID: 0}
     - target: {fileID: 7760746965945463342, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78155,7 +78174,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5975121022509777236, guid: 625ef78af319f54429e62019db870f3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2083186759}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7115933287060917178, guid: 625ef78af319f54429e62019db870f3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 625ef78af319f54429e62019db870f3f, type: 3}
 --- !u!4 &2945794159722602297 stripped
 Transform:
